@@ -1,0 +1,7 @@
+#Ignorer le dossier config
+config/
+#Ignorer .env
+.env
+
+#Ignorer tout les fichier .log dans le repertoir "/logs/"
+logs/
