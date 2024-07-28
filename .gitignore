@@ -5,3 +5,6 @@ config/
 
 #Ignorer tout les fichier .log dans le repertoir "/logs/"
 logs/
+
+#Ignore le dossier test
+tests/
