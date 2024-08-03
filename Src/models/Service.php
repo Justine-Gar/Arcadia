@@ -91,7 +91,7 @@ class Service {
     $description_service = trim($description_service);
     if (empty($description_service))
     {
-      throw new InvalidArgumentException("le nom ne peut etre vide");
+      throw new InvalidArgumentException("la description ne peut etre vide");
     }
     $this->description_service = $description_service;
   }
