@@ -18,8 +18,8 @@ class Role {
    */
   public function __construct(?int $id_role, string $name_role)
   {
-    $this->id_role = $id_role;
-    $this->name_role = $name_role;
+    $this->setIdRole($id_role); 
+    $this->setNameRole($name_role);
   }
 
   //GETTERS
@@ -45,12 +45,12 @@ class Role {
    * @return ?int $id_role iddentifiant défini
    * @throws InvalidArgumentException si id_role est inférieur ou égale à 0;
    */
-  public function setIdRole(?int $id_role): ?int
+  public function setIdRole(?int $id_role): void
   {
       if ($id_role !== null && $id_role <= 0) {
           throw new InvalidArgumentException("L'id_role doit être un entier positif");
       }
-      return $this->id_role = $id_role;
+      $this->id_role = $id_role;
   }
 
   /** Definit le noma du role
@@ -59,12 +59,12 @@ class Role {
    * @return string $name_role le nom defini
    * @throws InvalidArgumentException si le nom est vide;
    */
-  public function setNameRole(string $name_role): string
+  public function setNameRole(string $name_role): void
   {
     $name_role = trim($name_role);
         if (empty($name_role)) {
             throw new InvalidArgumentException("Le nom ne peut pas être vide");
         }
-        return $this->name_role = $name_role;
+        $this->name_role = $name_role;
   }
 }

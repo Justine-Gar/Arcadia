@@ -23,10 +23,10 @@ class User {
      */
     public function __construct(?int $id_user, string $email_user, string $password_user, int $role) 
     {
-        $this->id_user = $id_user;
-        $this->email_user = $email_user;
-        $this->password_user = $password_user;
-        $this->role = $role;
+        $this->setIdUser($id_user);
+        $this->setEmailUser($email_user);
+        $this->setPasswordUser($password_user);
+        $this->setRole($role);
     }
 
     //GETTERS
@@ -78,12 +78,12 @@ class User {
      * @return string
      * @throws InvalidArgumentException
      */
-    public function setEmailUser(string $email_user): string 
+    public function setEmailUser(string $email_user): void 
     {   
         if (!filter_var($email_user, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException("Format d'email_user invalide");
         }
-        return $this->email_user = $email_user;
+        $this->email_user = $email_user;
     }
 
     /** Defini le mot de passe de l'user
@@ -92,13 +92,12 @@ class User {
      * @return string $password_user hasshé
      * @throws InvalideArgumentException
      */
-    public function setPasswordUser(string $password_user): string 
+    public function setPasswordUser(string $password_user): void 
     {   
         if (strlen($password_user) <= 8) {
             throw new InvalidArgumentException("Le mot de passe doit contenir au moin 8 caractères");
         }
         $this->password_user = (new PasswordHasher())->hashPassword($password_user);
-        return $this->password_user;
     }
 
     /** Defini le role de l'user
@@ -107,12 +106,12 @@ class User {
      * @return int
      * @throws InvalideArgumentException
      */
-    public function setRole(int $role): int 
+    public function setRole(int $role): void 
     {   
         $validRoles = [1, 2, 3];
         if (!in_array($role , $validRoles)) {
             throw new InvalidArgumentException("Rôle Invalide");
         }
-        return $this->role = $role;
+        $this->role = $role;
     }
 }
