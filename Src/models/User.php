@@ -75,7 +75,6 @@ class User {
     /** Defini l'email_user de l'user
      * 
      * @param string $email_user
-     * @return string
      * @throws InvalidArgumentException
      */
     public function setEmailUser(string $email_user): void 
@@ -89,7 +88,6 @@ class User {
     /** Defini le mot de passe de l'user
      * 
      * @param string $password_user
-     * @return string $password_user hasshé
      * @throws InvalideArgumentException
      */
     public function setPasswordUser(string $password_user): void 
@@ -103,7 +101,6 @@ class User {
     /** Defini le role de l'user
      * 
      * @param int $role
-     * @return int
      * @throws InvalideArgumentException
      */
     public function setRole(int $role): void 

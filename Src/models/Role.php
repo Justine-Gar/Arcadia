@@ -42,7 +42,6 @@ class Role {
   /** Definit l'id_role du role
    *  
    * @param ?int $id_role le nouveau identifiant
-   * @return ?int $id_role iddentifiant défini
    * @throws InvalidArgumentException si id_role est inférieur ou égale à 0;
    */
   public function setIdRole(?int $id_role): void
@@ -56,7 +55,6 @@ class Role {
   /** Definit le noma du role
    * 
    * @param string $name_role le nouveau nom
-   * @return string $name_role le nom defini
    * @throws InvalidArgumentException si le nom est vide;
    */
   public function setNameRole(string $name_role): void
