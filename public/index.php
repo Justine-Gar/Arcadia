@@ -1,10 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-ini_set('error_log', 'D:/ENV/wamp64/www/Arcadia/php_errors.log');
-error_log("Script started");
-
 //Chemin d'acces
 define('BASE_PATH', dirname(__DIR__));
 
@@ -14,28 +8,38 @@ require_once BASE_PATH . '/lib/core/Autoloader.php';
 //Initialiser
 \lib\core\Autoloader::register();
 
+
 //Charger envirronement
 require_once BASE_PATH . '/lib/core/EnvLoader.php';
-
 \lib\core\EnvLoader::load(BASE_PATH . '/.env');
 
-$appEnv = getenv('APP_ENV');
-if (!$appEnv) {
-    die("La variable d'environnement APP_ENV n'est pas définie.");
-}
 
-$configFile = BASE_PATH . '/lib/config/' . $appEnv . '.php';
-if (!file_exists($configFile)) {
-    die("Le fichier de configuration n'existe pas : " . $configFile);
-}
-$config = require $configFile;
+// Configurer la gestion des erreurs et exceptions
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+  \lib\core\Logger::error("Erreur PHP : [$errno] $errstr dans le fichier $errfile à la ligne $errline");
+});
+
+set_exception_handler(function($exception) {
+  \lib\core\Logger::error("Exception non capturée : " . $exception->getMessage() . "\n" . $exception->getTraceAsString());
+});
+
+register_shutdown_function(function() {
+  $error = error_get_last();
+  if ($error !== null && in_array($error['type'], [E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_PARSE])) {
+      \lib\core\Logger::error("Erreur fatale : " . $error['message'] . " dans " . $error['file'] . " à la ligne " . $error['line']);
+  }
+});
+
 
 //Charger le gestion d'erreur 
 require_once BASE_PATH . '/lib/core/Logger.php';
-\lib\core\Logger::init('/lib/logs');
+\lib\core\Logger::init($config['log_path'] ?? BASE_PATH . '/lib/logs');
+
 
 //Connection a la BDD
+\lib\core\Logger::info('Tentative de connexion à la base de données');
 $dbConnection = \lib\config\Database::getConnection();
+\lib\core\Logger::info('Connexion à la base de données réussie');
 
 // Charger la configuration en fonction de l'environnement
 //getenv() recupere les variable d'envirronement (juste changer dans .env la variable APP_ENV)
@@ -53,20 +57,16 @@ $url = str_replace('/arcadia', '', $url);
 
 try {
 
-  lib\core\Logger::info('Traitement de la requête : ' . $uri);
-  $response= $router->handleRequest($url);
-  
-  if (!($response instanceof \lib\core\Response)) {
-    throw new Exception("Router did not return a Response object");
-  }
-
+  \lib\core\Logger::info('Début du traitement de la requête : ' . $url);
+  $response = $router->handleRequest($url);
+  \lib\core\Logger::info('Fin du traitement de la requête : ' . $url);
   $response->send();
 
 } catch (Exception $e)
 {
   //Gérer les erreurs
-  lib\core\Logger::error('Erreur lors du traitement de la requête : ' . $e->getMessage());
   // Ajouter un log pour voir l'URL traitée
+  \lib\core\Logger::error('Erreur lors du traitement de la requête : ' . $e->getMessage() . "\n" . $e->getTraceAsString());
   $response = new \lib\core\Response();
   $response->setStatusCode(500);
   $response->json(['error' => 'Une erreur interne est survenue: ' . $e->getMessage()]);
