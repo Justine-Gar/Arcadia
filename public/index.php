@@ -9,7 +9,7 @@ error_log("Script started");
 define('BASE_PATH', dirname(__DIR__));
 
 
-//Charger les chemin
+//Charger l'autoloader
 require_once BASE_PATH . '/lib/core/Autoloader.php';
 //Initialiser
 \lib\core\Autoloader::register();
@@ -30,6 +30,9 @@ if (!file_exists($configFile)) {
 }
 $config = require $configFile;
 
+//Charger le gestion d'erreur 
+require_once BASE_PATH . '/lib/core/Logger.php';
+\lib\core\Logger::init('/lib/logs');
 
 //Connection a la BDD
 $dbConnection = \lib\config\Database::getConnection();
@@ -48,26 +51,21 @@ $router = new \lib\core\Router($routes);
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url = str_replace('/arcadia', '', $url);
 
-// Ajouter un log pour voir l'URL traitée
-error_log("Processing URL: " . $url);
-
 try {
-  error_log("Calling Router->handleRequest");
+
+  lib\core\Logger::info('Traitement de la requête : ' . $uri);
   $response= $router->handleRequest($url);
-  error_log("Router->handleRequest returned. Response type: " . gettype($response));
   
   if (!($response instanceof \lib\core\Response)) {
-    error_log("Router did not return a Response object. Actual type: " . gettype($response));
     throw new Exception("Router did not return a Response object");
   }
 
-  error_log("Sending response");
   $response->send();
 
 } catch (Exception $e)
 {
   //Gérer les erreurs
-  error_log("Error occurred: " . $e->getMessage());
+  lib\core\Logger::error('Erreur lors du traitement de la requête : ' . $e->getMessage());
   // Ajouter un log pour voir l'URL traitée
   $response = new \lib\core\Response();
   $response->setStatusCode(500);
