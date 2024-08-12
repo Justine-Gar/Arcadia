@@ -1,8 +1,3 @@
-<?php
-function asset($path) {
-    return '/public/' . ltrim($path, '/');
-}
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,7 +6,7 @@ function asset($path) {
   <!--====  REMIXIONS ====-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
   <!--====  CSS ====-->
-  <link rel="stylesheet" href="<?= asset('css/main.css') ?>"/>
+  <link rel="stylesheet" href="css/main.css">
   <title><?= $title ?? 'Arcadia';?></title>
 </head>
 <body>
@@ -26,5 +21,9 @@ function asset($path) {
 
   <?php require_once __DIR__ . '/partials/_footer.php';?>
 
+  <script src="js/burger.js"></script>
+  <script src="js/homes.js"></script>
+  <script src="js/avis.js"></script>
+  <script src="js/habitat.js"></script>
 </body>
 </html>

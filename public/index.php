@@ -51,6 +51,7 @@ $routes = require BASE_PATH . '/lib/config/routes.php';
 //Initialiser le Router
 $router = new \lib\core\Router($routes);
 
+
 // Gérer la requête
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $url = str_replace('/arcadia', '', $url);
