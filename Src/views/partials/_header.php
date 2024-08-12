@@ -7,9 +7,9 @@
     <div class="navbar">
       <nav id="menu">
         <ul class="menu_items">
-          <li><a href="/accueil" data-item="Accueil">accueil</a></li>
+          <li><a href="/" data-item="Accueil">accueil</a></li>
           <li><a href="/services" data-item="Services">services</a></li>
-          <li><a href="/habitats" data-item="Habitat">habitat</a></li>
+          <li><a href="/habitats" data-item="Habitats">habitat</a></li>
           <li><a href="/contact" data-item="Contact">contact</a></li>
           <li><a href="#" data-item="Connexion">connexion</a></li>
         </ul>

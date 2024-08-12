@@ -1,7 +1,7 @@
 <?php
 //Chemin d'acces
 define('BASE_PATH', dirname(__DIR__));
-
+ob_start();
 //Charger les chemin
 require_once BASE_PATH . '/lib/core/Autoloader.php';
 //Initialiser
@@ -52,5 +52,7 @@ try {
   $response->json(['error' => 'Une erreur interne est survenue']);
   $response->send();
 }
+
+ob_end_flush();
 ?>
 

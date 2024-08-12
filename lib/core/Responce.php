@@ -4,7 +4,7 @@ namespace lib\core;
 
 class Responce
 {
-  private $headers = [];
+    private $headers = [];
     private $content = '';
     private $statusCode = 200;
 
@@ -24,7 +24,10 @@ class Responce
     }
 
     public function send()
-    {
+    {   
+        // Capturer la sortie existante
+        $output = ob_get_clean();
+
         // Définir le code de statut
         http_response_code($this->statusCode);
 
@@ -36,8 +39,8 @@ class Responce
             header("$name: $value");
         }
 
-        // Envoyer le contenu
-        echo $this->content;
+        // Envoyer le contenu capturé et le contenu de la réponse
+        echo $output . $this->content;
     }
 
     private function setDefaultSecurityHeaders()
