@@ -49,7 +49,7 @@ class Router
                 $result = call_user_func_array([$controllerInstance, $action], $params);
 
                 // Gère le résultat retourné par le contrôleur
-                if ($result instanceof Response) {
+                if ($result instanceof Responce) {
                     // Si c'est déjà un objet Response, on l'utilise tel quel
                     $response = $result;
                 } else {
