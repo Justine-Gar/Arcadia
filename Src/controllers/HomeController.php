@@ -1,13 +1,14 @@
 <?php
 namespace Src\controllers;
 
-class HomeController {
+use App\Controllers\Controllers;
+
+class HomeController extends Controllers {
   
-  public function index() {
-
-    $title = 'ArcadiaZOO';
-    $content = 'Bienvenue sur Arcadia';
-
-    require_once __DIR__ . '/../views/Home.php';
+  public function index() 
+  {
+    $this->render('home', [
+      'title' => 'Acceuil',
+    ]);
   }
 }
