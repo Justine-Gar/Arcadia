@@ -2,28 +2,46 @@
 
 namespace lib\core;
 
+use lib\config\database;
+
 class Router
 {   
     
     private $routes = [];
+    private $dbConnection;
 
-
-    public function addRoute($url, $controller, $action)
+    //le constructeur accepte un tableau de route optionnel et la connection a la Base
+    public function __construct(array $routes = [])
     {
-        $this->routes[$url] = ['controller' => $controller, 'action' => $action];
+        $this->routes = $routes;
+        $this->dbConnection = database::getConnection();
     }
 
-    public function dispatch($url)
+    //Methode pour ajouter une nouvelle route
+    public function addRoute($route, $handler)
     {
-        if (array_key_exists($url, $this->routes)) {
-            $controller = $this->routes[$url]['controller'];
-            $action = $this->routes[$url]['action'];
+        //Ajoute une route et son gestionnaire au tableau 
+        $this->routes[$route] = $handler;
+    }
 
-            $controllerInstance = new $controller();
-            $controllerInstance->$action();
-        } else {
-            // Gestion des erreurs 404
-            echo "Page non trouvée";
+
+    //Method principal pour gérer le requete entrante
+    public function handleRequest($url)
+    {
+        //Récupere la methode HTTP de requete actuelle
+        $method = $_SERVER['REQUEST_METHOD'];
+        //Je crée un objet Response pour générer la réponse HTTP
+        $response = new Responce();
+
+        //je parcours toutes les routes enregistrer
+        foreach ($this->routes as $route)
+        {
+            //je vérifie si method HTTP correspond à URL (chemin de la route)
+            if ($route['method'] === $method && $this->matchRoute($route['path'], $url, $params))
+            {
+                
+            }
         }
     }
+
 }
