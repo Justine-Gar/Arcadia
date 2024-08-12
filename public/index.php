@@ -4,18 +4,30 @@ define('BASE_PATH', dirname(__DIR__));
 
 //Charger les chemin
 require_once BASE_PATH . '/lib/core/Autoloader.php';
-require_once BASE_PATH . '/lib/core/EnvLoader.php';
 //Initialiser
 lib\core\Autoloader::register();
-lib\core\EnvLoader::load(BASE_PATH . '/.env');
 
+//Charger envirronement
+require_once BASE_PATH . '/lib/core/EnvLoader.php';
+lib\core\EnvLoader::load(BASE_PATH . '/.env');
+$appEnv = getenv('APP_ENV');
+if (!$appEnv) {
+    die("La variable d'environnement APP_ENV n'est pas définie.");
+}
+
+$configFile = BASE_PATH . '/lib/config/' . $appEnv . '.php';
+if (!file_exists($configFile)) {
+    die("Le fichier de configuration n'existe pas : " . $configFile);
+}
+
+$config = require $configFile;
 
 //Connection a la BDD
 $dbConnection = lib\config\Database::getConnection();
 
 // Charger la configuration en fonction de l'environnement
 //getenv() recupere les variable d'envirronement (juste changer dans .env la variable APP_ENV)
-$config = require BASE_PATH . '/lib/config/' . getenv('APP_ENV') . '.php';
+
 
 //Charger les routes
 $routes = require BASE_PATH . '/lib/config/routes.php';
