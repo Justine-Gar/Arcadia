@@ -1,0 +1,15 @@
+@use 'base/reset' as *;
+@use 'pages/home' as *;
+@use 'pages/services' as *;
+@use 'pages/habitats' as *;
+@use 'pages/contact' as *;
+@use 'pages/faq' as *;
+@use 'layout/header' as *;
+@use 'layout/footer' as *;
+
+html, body {
+  
+  overflow-x: hidden;
+  font-family: 'Dimsum';
+
+}

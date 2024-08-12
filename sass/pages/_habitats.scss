@@ -1,0 +1,1677 @@
+@use "../abstract/all" as *;
+
+/**_______COVER_HABITAT_______**/
+#cover_habitat {
+
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+
+  /**__container services__**/
+  .cover_habitat_container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: $color-back-primary;
+  }
+
+  /**__COVER_IMG_services__**/
+  .cover_habitat_img {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: 55vh;
+    overflow: hidden;
+
+    background-image: url('../../assets/img/jungle/araRouge/adobestock-43097757.avif');
+    background-size: cover;
+    background-position: bottom 100% right 45%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-back-primary-alpha;
+      pointer-events: none;
+    }
+  }
+
+  /**__COVER_SVG_habitat__**/
+  .cover_habitat_cercle {
+
+    position: absolute;
+    left: -35%;
+    top: 30%;
+    width: 100%;
+
+    img {
+      width: 100vw;
+      height: 35vh;
+    }
+  }
+
+  /**__COVER_TXT_habitat__**/
+  .cover_habitat_title {
+
+
+    position: absolute;
+    top: 45%;
+    padding: 20px;
+    z-index: 12;
+    @include flex-algn-start-col;
+
+    h1 {
+      @include font ($font-dimsum, $font-size-xlarge, 300, $color-font-primary);
+      margin-bottom: 15px;
+    }
+
+    p {
+      width: 100%;
+      @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+      text-align: left;
+    }
+  }
+
+  @include respond-to(tablet) {
+    .cover_habitat_container {
+      height: 515px;
+    }
+
+    .cover_habitat_img {
+
+      height: 75vh;
+    }
+
+    .cover_habitat_cercle {
+
+      left: -30%;
+      top: 35%;
+    }
+
+    .cover_habitat_title {
+
+      top: 50%;
+      left: 4%;
+
+    }
+  }
+
+  @include respond-to(desktop) {
+    .cover_habitat_container {
+      height: 515px;
+    }
+
+    .cover_habitat_img {
+
+      height: 90vh;
+    }
+
+    .cover_habitat_cercle {
+
+      left: -30%;
+      top: 35%;
+    }
+
+    .cover_habitat_title {
+
+      top: 50%;
+      left: 17%;
+
+
+      h1 {
+        @include font ($font-dimsum, $font-size-xlarge, 400, $color-font-primary);
+      }
+
+      p {
+
+        @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+      }
+    }
+  }
+
+  @include respond-to(large) {
+    .cover_habitat_container {
+      height: 535px;
+    }
+
+    .cover_habitat_img {
+
+      height: 90vh;
+    }
+
+    .cover_habitat_cercle {
+
+      left: -26%;
+      top: 39%;
+
+      img {
+
+        height: 35vh;
+      }
+    }
+
+    .cover_habitat_title {
+
+      top: 55%;
+      left: 22%;
+
+
+      h1 {
+        @include font ($font-dimsum, $font-size-xlarge, 400, $color-font-primary);
+      }
+
+      p {
+        @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+      }
+    }
+  }
+
+  @include respond-to(xlarge) {
+
+    .cover_habitat_container {
+      height: 800px;
+    }
+
+    .cover_habitat_img {
+
+      height: 130vh;
+    }
+
+    .cover_habitat_cercle {
+
+      left: -22%;
+      top: 39%;
+
+      img {
+
+        height: 42vh;
+      }
+    }
+
+    .cover_habitat_title {
+
+      top: 52%;
+      left: 30%;
+
+
+
+      h1 {
+        @include font ($font-dimsum, $font-size-xxlarge, 500, $color-font-primary);
+
+      }
+
+      p {
+        @include font ($font-monserrat, $font-size-medium, 300, $color-font-third);
+
+      }
+    }
+  }
+}
+
+
+/**_______ONGLET_______**/
+
+#onglet {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .tab_container {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-back-primary;
+
+    @include respond-to(desktop) {
+      min-height: 401vh;
+    }
+
+    @include respond-to(large) {
+      height: 360vh;
+    }
+
+    @include respond-to(xlarge) {
+      height: 262vh;
+    }
+
+    .tabs {
+      width: 100%;
+      position: relative;
+
+      @include respond-to(desktop) {
+        display: flex;
+        flex-direction: row;
+      }
+
+      @include respond-to(large) {
+        display: flex;
+        flex-direction: row;
+      }
+
+      @include respond-to(xlarge) {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .onglet_savane,
+      .onglet_marais,
+      .onglet_jungle {
+        width: 100%;
+
+        @include respond-to(desktop) {
+          flex: 1;
+        }
+
+        @include respond-to(large) {
+          flex: 1;
+        }
+
+        @include respond-to(xlarge) {
+          flex: 1;
+        }
+      }
+
+      /*Ceci est le button de l'onglet*/
+      .tab_button {
+
+        background: none;
+        border: none;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+        width: 100%;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        @include respond-to(desktop) {
+          width: 100%;
+        }
+
+        @include respond-to(large) {
+          width: 100%;
+        }
+
+        @include respond-to(xlarge) {
+          width: 100%;
+        }
+      }
+
+      .tab_button[data-tab="savane"] {
+
+        @include font($font-monserrat, $font-size-xlarge, bold, $color-font-primary);
+        text-transform: uppercase;
+        background-color: $color-back-third;
+        padding: 50px;
+
+
+      }
+
+      .tab_button[data-tab="jungle"] {
+        @include font($font-monserrat, $font-size-xlarge, bold, $color-font-primary);
+        text-transform: uppercase;
+        background-color: $color-back-primary;
+        padding: 50px;
+
+      }
+
+      .tab_button[data-tab="marais"] {
+
+        @include font($font-monserrat, $font-size-xlarge, bold, $color-font-primary);
+        text-transform: uppercase;
+        background-color: $color-back-secondary;
+        padding: 50px;
+      }
+
+      .tab_button.active {
+        opacity: 1;
+      }
+
+      /*__ICI class JS*/
+      .content {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+
+        @include respond-to(desktop) {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+        }
+
+        @include respond-to(large) {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+        }
+
+        @include respond-to(xlarge) {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+
+    /**__ICI __ contenu de ID SAVANE**/
+    #savane {
+
+      background-color: $color-back-third;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 30px;
+
+      .onglet_savane_img {
+        width: 100vw;
+        height: 50vh;
+
+        background-image: url('../../assets/img/savane/adobestock_186907864.avif');
+        background-size: cover;
+        background-position: right 35% bottom 25%;
+        
+      }
+
+      .onglet_savane_txt {
+
+        margin: 30px 0 30px 0; //a voir
+        text-align: center;
+        
+        .img_texte_savane1 {
+
+          @include flex-column-center;
+        
+          p {
+            padding: 0 30px 0 30px;
+            @include font($font-monserrat, $font-size-small, 200, $color-font-third);
+          }
+
+          .img_savane_1 {
+            
+            margin: 20px;
+            
+            img {
+              width: 250px;
+              height: 250px;
+              border-radius: 62% 38% 48% 52% / 44% 63% 37% 56% ;
+            }
+
+          }
+
+          @include respond-to(desktop) {
+            @include flex-row-center ;
+          }
+          @include respond-to(large) {
+            
+            @include flex-row-center ;
+            .img_savane_1 {
+              margin: 20px;
+              img {
+                width: 300px;
+                height: 300px;
+                border-radius: 62% 38% 48% 52% / 44% 63% 37% 56% ;
+              }
+            }
+          }
+
+          @include respond-to(xlarge) {
+            margin-left: 5%;
+            margin-right: 5%;
+            @include flex-row-center;
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+            .img_savane_1{
+              margin: 20px;
+  
+              img{
+                width: 350px;
+                height: 350px;
+                border-radius: 71% 37% 63% / 54% 39% 61% 46% ;
+              }
+            }
+          }
+        }
+        
+        .img_texte_savane2 {
+
+          @include flex-column-center;
+          
+
+          p {
+            padding: 0 30px 0 30px;
+            @include font($font-monserrat, $font-size-small, 200, $color-font-third);
+          }
+          .img_savane_2{
+            margin: 20px;
+
+            img{
+              width: 250px;
+              height: 250px;
+              border-radius: 71% 37% 63% / 54% 39% 61% 46% ;
+            }
+          }
+
+          @include respond-to(desktop) {
+            @include flex-row-reverse-center;
+          }
+          @include respond-to(large) {
+            @include flex-row-reverse-center;
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+            .img_savane_2{
+              margin: 20px;
+  
+              img{
+                width: 300px;
+                height: 300px;
+                border-radius: 71% 37% 63% / 54% 39% 61% 46% ;
+              }
+            }
+          }
+          @include respond-to(xlarge) {
+            margin-left: 5%;
+            margin-right: 5%;
+            @include flex-row-reverse-center;
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+            .img_savane_2{
+              margin: 20px;
+  
+              img{
+                width: 350px;
+                height: 350px;
+                border-radius: 71% 37% 63% / 54% 39% 61% 46% ;
+              }
+            }
+          }
+        }
+
+        @include respond-to(desktop) {
+          margin: 30px 50px 30px 50px;
+        }
+        @include respond-to(large) {
+          margin: 30px 100px 30px 100px;
+        }
+        @include respond-to(xlarge) {
+          margin: 30px 150px 30px 150px;
+        }
+      }
+
+      .card_animal_savane {
+        width: 100%;
+        padding: 30px 0 30px 0;
+        background-color: $color-back-primary;
+        text-align: center;
+
+        h2 {
+          text-transform: uppercase;
+          @include font($font-monserrat, $font-size-regular, 400, $color-font-primary);
+          margin-bottom: 20px;
+        }
+
+        .card_container {
+
+          width: 100vw;
+
+          .card_carousel {
+
+            width: 100vw;
+            position: relative;
+
+            .btn_carousel_savane {
+              color: $color-font-third;
+              position: absolute;
+              background: none;
+              border: none;
+              outline: none;
+              font-size: 2.6rem;
+              z-index: 12;
+              cursor: pointer;
+              display: none;
+              transform: translateY(-50%);
+              top: 35.25%
+            }
+
+            #prev {
+              left: 5px;
+            }
+
+            #next {
+              right: 5px;
+            }
+
+            .slide_savane {
+
+              width: 100%;
+              opacity: 1;
+              transition: 0.5s ease-out;
+              display: none;
+
+              .card_fennec,
+              .card_girafe,
+              .card_rhinoceros,
+              .card_zebre,
+              .card_serval {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                  width: 250px;
+                  height: 250px;
+                  object-fit: cover;
+                  object-position: left;
+                  border-radius: 50%;
+                }
+
+                h3 {
+                  @include font($font-monserrat, $font-size-regular, 600, $color-font-primary);
+                  text-transform: uppercase;
+                  margin: 20px;
+                }
+
+                .card_text_savane {
+
+                  width: 100%;
+                  padding-bottom: 30px;
+                  background-color: $color-back-secondary;
+                  display: flex;
+                  flex-direction: column;
+
+                  .card_composant_animal {
+
+                    text-align: start;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 20px;
+
+                    h4 {
+                      @include font($font-monserrat, $font-size-xs, 400, $color-font-primary);
+                      text-transform: capitalize;
+                      text-decoration: underline;
+                      margin-bottom: 10px;
+                    }
+
+                    p {
+                      @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+                    }
+                  }
+
+                  .card_composant {
+
+                    text-align: start;
+                    margin: 20px;
+
+                    h4 {
+                      @include font($font-monserrat, $font-size-xs, 400, $color-font-primary);
+                      text-transform: capitalize;
+                      text-decoration: underline;
+                      margin-bottom: 10px;
+                    }
+
+                    p {
+                      @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+                      text-align: center;
+                    }
+                  }
+                }
+
+              }
+            }
+
+            .active2 {
+              display: block;
+            }
+          }
+        }
+      }
+
+    }
+
+
+    /*__ICI __ contenu de ID MARAIS*/
+    #marais {
+
+      background-color: $color-back-secondary;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 30px;
+
+      .onglet_marais_img {
+        width: 100vw;
+        height: 50vh;
+
+        background-image: url('../../assets/img/marais/adobestock_391231580.avif');
+        background-size: cover;
+        background-position: right 35% bottom 25%;
+        ;
+      }
+
+      .onglet_marais_txt {
+
+        margin: 30px 0 30px 0;
+        text-align: center;
+
+        .img_texte_marais1 {
+
+          @include flex-column-center;
+        
+          p {
+            padding: 0 30px 0 30px;
+            @include font($font-monserrat, $font-size-small, 200, $color-font-third);
+          }
+
+          .img_marais_1 {
+            
+            margin: 20px;
+            
+            .img_mar1 {
+              width: 250px;
+              height: 250px;
+              border-radius: 53% 47% 24% 76% / 70% 59% 41% 30% ;
+            }
+
+          }
+
+          @include respond-to(desktop) {
+            @include flex-row-center ;
+          }
+          @include respond-to(large) {
+            
+            @include flex-row-center ;
+            .img_marais_1 {
+              margin: 20px;
+              .img_mar1{
+                width: 300px;
+                height: 300px;
+                border-radius: 53% 47% 24% 76% / 70% 59% 41% 30% ;
+              }
+            }
+          }
+
+          @include respond-to(xlarge) {
+            margin-left: 5%;
+            margin-right: 5%;
+            @include flex-row-center;
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+            .img_marais_1{
+              margin: 20px;
+  
+              .img_mar1{
+                width: 350px;
+                height: 350px;
+                border-radius: 53% 47% 24% 76% / 70% 59% 41% 30%  ;
+              }
+            }
+          }
+        }
+        
+        .img_texte_marais2 {
+
+          @include flex-column-center;
+          
+
+          p {
+            padding: 0 30px 0 30px;
+            @include font($font-monserrat, $font-size-small, 200, $color-font-third);
+          }
+
+          .img_marais_2{
+            margin: 20px;
+
+            .img_mar2{
+              width: 250px;
+              height: 250px;
+              border-radius: 53% 47% 24% 76% / 70% 59% 41% 30%  ;
+            }
+          }
+
+          @include respond-to(desktop) {
+            @include flex-row-reverse-center;
+          }
+          @include respond-to(large) {
+            @include flex-row-reverse-center;
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+            .img_marais_2{
+              margin: 20px;
+  
+              .img_mar2{
+                width: 300px;
+                height: 300px;
+                border-radius: 53% 47% 24% 76% / 70% 59% 41% 30%  ;
+              }
+            }
+          }
+          @include respond-to(xlarge) {
+            margin-left: 5%;
+            margin-right: 5%;
+            @include flex-row-reverse-center;
+
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+
+            .img_marais_2{
+              margin: 20px;
+  
+              .img_mar2{
+                width: 350px;
+                height: 350px;
+                border-radius: 53% 47% 24% 76% / 70% 59% 41% 30% ;
+              }
+            }
+          }
+        }
+
+        @include respond-to(desktop) {
+          margin: 30px 50px 30px 50px;
+        }
+        @include respond-to(large) {
+          margin: 30px 100px 30px 100px;
+        }
+        @include respond-to(xlarge) {
+          margin: 30px 150px 30px 150px;
+        }
+
+      }
+
+      .card_animal_marais {
+
+        width: 100%;
+        padding: 30px 0 30px 0;
+        background-color: $color-back-primary;
+        text-align: center;
+
+        h2 {
+          text-transform: uppercase;
+          @include font($font-monserrat, $font-size-regular, 400, $color-font-primary);
+          margin-bottom: 20px;
+        }
+
+        .card_container {
+
+          width: 100%;
+
+          .card_carousel {
+
+            width: 100vw;
+            position: relative;
+
+            /**Ceci est le bouton du carousel pour les animaux**/
+            .btn_carousel_marais {
+
+              color: $color-font-third;
+              position: absolute;
+              background: none;
+              border: none;
+              outline: none;
+              font-size: 2.6rem;
+              z-index: 12;
+              cursor: pointer;
+              display: none;
+              transform: translateY(-50%);
+              top: 35.25%
+            }
+
+            #prev2 {
+              left: 5px;
+            }
+
+            #next2 {
+              right: 5px;
+            }
+
+            .slide_marais {
+
+              width: 100%;
+              opacity: 1;
+              transition: 0.5s ease-out;
+              display: none;
+
+              .card_caiman,
+              .card_rainette,
+              .card_salamandre {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                  width: 250px;
+                  height: 250px;
+                  object-fit: cover;
+                  object-position: left;
+                  border-radius: 50%;
+                }
+
+                h3 {
+                  @include font($font-monserrat, $font-size-regular, 600, $color-font-primary);
+                  text-transform: uppercase;
+                  margin: 20px;
+                }
+
+                .card_text_marais {
+
+                  width: 100%;
+                  padding-bottom: 30px;
+                  background-color: $color-back-secondary;
+                  display: flex;
+                  flex-direction: column;
+
+                  .card_composant_animal {
+
+                    text-align: start;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 20px;
+
+                    h4 {
+                      @include font($font-monserrat, $font-size-xs, 400, $color-font-primary);
+                      text-transform: capitalize;
+                      text-decoration: underline;
+                      margin-bottom: 10px;
+                    }
+
+                    p {
+                      @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+                    }
+                  }
+
+                  .card_composant {
+
+                    text-align: start;
+                    margin: 20px;
+
+                    h4 {
+                      @include font($font-monserrat, $font-size-xs, 400, $color-font-primary);
+                      text-transform: capitalize;
+                      text-decoration: underline;
+                      margin-bottom: 10px;
+                    }
+
+                    p {
+                      @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+                      text-align: center;
+                    }
+                  }
+                }
+
+              }
+
+            }
+
+            .active2 {
+              display: block;
+            }
+
+          }
+        }
+      }
+    }
+
+
+    /*__ICI __ contenu de ID JUNGLE*/
+    #jungle {
+
+      background-color: $color-back-primary;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 30px;
+
+      .onglet_jungle_img {
+        width: 100vw;
+        height: 50vh;
+
+        background-image: url('../../assets/img/jungle/AdobeStock_445496398.avif');
+        background-size: cover;
+        background-position: right 35% bottom 55%;
+        ;
+
+      }
+
+      .onglet_jungle_txt {
+
+        margin: 30px 0 30px 0;
+        text-align: center;
+
+        p {
+          padding: 0 30px 0 30px;
+          @include font($font-monserrat, $font-size-small, 200, $color-font-third);
+        }
+
+        .img_texte_jungle1 {
+
+          @include flex-column-center;
+        
+          p {
+            padding: 0 30px 0 30px;
+            @include font($font-monserrat, $font-size-small, 200, $color-font-third);
+          }
+
+          .img_jungle_1 {
+            
+            margin: 20px;
+            
+            .img_jung1 {
+              width: 250px;
+              height: 250px;
+              border-radius: 39% 61% 61% 39% / 63% 50% 50% 37%  ;
+            }
+
+          }
+
+          @include respond-to(desktop) {
+            @include flex-row-center ;
+          }
+          @include respond-to(large) {
+            
+            @include flex-row-center ;
+            .img_jungle_1 {
+              margin: 20px;
+              .img_jung1{
+                width: 300px;
+                height: 300px;
+                border-radius: 39% 61% 61% 39% / 63% 50% 50% 37% ;
+              }
+            }
+          }
+
+          @include respond-to(xlarge) {
+            margin-left: 5%;
+            margin-right: 5%;
+            @include flex-row-center;
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+            .img_jungle_1{
+              margin: 20px;
+  
+              .img_jung1{
+                width: 350px;
+                height: 350px;
+                border-radius: 39% 61% 61% 39% / 63% 50% 50% 37%   ;
+              }
+            }
+          }
+        }
+        
+        .img_texte_jungle2 {
+
+          @include flex-column-center;
+          
+
+          p {
+            padding: 0 30px 0 30px;
+            @include font($font-monserrat, $font-size-small, 200, $color-font-third);
+          }
+
+          .img_jungle_2{
+            margin: 20px;
+
+            .img_jung2{
+              width: 250px;
+              height: 250px;
+              border-radius: 16% 84% 72% 28% / 23% 41% 59% 77%  ;
+            }
+          }
+
+          @include respond-to(desktop) {
+            @include flex-row-reverse-center;
+          }
+          @include respond-to(large) {
+            @include flex-row-reverse-center;
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+            .img_jungle_2{
+              margin: 20px;
+  
+              .img_jung2{
+                width: 300px;
+                height: 300px;
+                border-radius: 16% 84% 72% 28% / 23% 41% 59% 77%  ;
+              }
+            }
+          }
+          @include respond-to(xlarge) {
+            margin-left: 5%;
+            margin-right: 5%;
+            @include flex-row-reverse-center;
+
+            p {
+              padding: 0 50px 0 50px;
+              font-size: $font-size-medium;
+            }
+
+            .img_jungle_2{
+              margin: 20px;
+  
+              .img_jung2{
+                width: 350px;
+                height: 350px;
+                border-radius: 16% 84% 72% 28% / 23% 41% 59% 77%  ;
+              }
+            }
+          }
+        }
+
+      }
+
+      .card_animal_jungle {
+
+        width: 100%;
+        padding: 30px 0 30px 0;
+        background-color: $color-back-third;
+        text-align: center;
+
+        h2 {
+          text-transform: uppercase;
+          @include font($font-monserrat, $font-size-regular, 400, $color-font-primary);
+          margin-bottom: 20px;
+        }
+
+        .card_container {
+
+          width: 100%;
+
+          .card_carousel {
+
+            width: 100vw;
+            position: relative;
+
+            .btn_carousel_jungle {
+
+              color: $color-font-third;
+              position: absolute;
+              background: none;
+              border: none;
+              outline: none;
+              font-size: 2.6rem;
+              z-index: 12;
+              cursor: pointer;
+              display: none;
+              transform: translateY(-50%);
+              top: 35.25%
+            }
+
+            #prev3 {
+              left: 5px;
+            }
+
+            #next3 {
+              right: 5px;
+            }
+
+            .slide_jungle {
+
+              width: 100%;
+              opacity: 1;
+              transition: 0.5s ease-out;
+              display: none;
+
+              .card_tapir,
+              .card_jaguar,
+              .card_toucan,
+              .card_ara {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                  width: 250px;
+                  height: 250px;
+                  object-fit: cover;
+                  object-position: left;
+                  border-radius: 50%;
+                }
+
+                h3 {
+                  @include font($font-monserrat, $font-size-regular, 600, $color-font-primary);
+                  text-transform: uppercase;
+                  margin: 20px;
+                }
+
+                .card_text_jungle {
+
+                  width: 100%;
+                  padding-bottom: 30px;
+                  background-color: $color-back-primary;
+                  display: flex;
+                  flex-direction: column;
+
+                  .card_composant_animal {
+
+                    text-align: start;
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 20px;
+
+                    h4 {
+                      @include font($font-monserrat, $font-size-xs, 400, $color-font-primary);
+                      text-transform: capitalize;
+                      text-decoration: underline;
+                      margin-bottom: 10px;
+                    }
+
+                    p {
+                      @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+                    }
+                  }
+
+                  .card_composant {
+
+                    text-align: start;
+                    margin: 20px;
+
+                    h4 {
+                      @include font($font-monserrat, $font-size-xs, 400, $color-font-primary);
+                      text-transform: capitalize;
+                      text-decoration: underline;
+                      margin-bottom: 10px;
+                    }
+
+                    p {
+                      @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+                      text-align: center;
+                    }
+                  }
+                }
+
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+    }
+
+
+
+
+    /**___===MEDIA QUERIES===___**/
+    @include respond-to(desktop) {
+
+      #savane {
+
+        .card_animal_savane {
+
+          .card_container {
+
+            .card_carousel {
+
+              .slide_savane {
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+                .card_fennec,
+                .card_girafe,
+                .card_rhinoceros,
+                .card_zebre,
+                .card_serval {
+
+                  .card_text_savane {
+                    display: none;
+                    margin-bottom: 20px;
+
+                    .card_flex_savane {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+
+      #marais {
+
+        .card_animal_marais {
+
+          .card_container {
+
+
+            .card_carousel {
+
+
+              .slide_marais {
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+                .card_caiman,
+                .card_rainette,
+                .card_salamandre {
+
+                  .card_text_marais {
+                    display: none;
+                    margin-bottom: 20px;
+
+                    .card_flex_marais {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+
+      #jungle {
+
+        .card_animal_jungle {
+
+          .card_container {
+
+
+            .card_carousel {
+
+
+              .slide_jungle {
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+
+                .card_tapir,
+                .card_jaguar,
+                .card_toucan,
+                .card_ara {
+
+                  .card_text_jungle {
+                    display: none;
+                    margin-bottom: 20px;
+
+                    .card_flex_jungle {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+    }
+
+    @include respond-to(large) {
+
+      #savane {
+
+        .card_animal_savane {
+
+          .card_container {
+
+
+            .card_carousel {
+              display: flex;
+              flex-wrap: wrap;
+              align-content: center;
+
+              .slide_savane {
+                width: 50%;
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+                .card_fennec,
+                .card_girafe,
+                .card_rhinoceros,
+                .card_zebre,
+                .card_serval {
+                  margin: 30px;
+
+                  .card_text_savane {
+                    display: none;
+                    border-radius: 15px;
+
+                    .card_flex_savane {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+
+      #marais {
+
+        .card_animal_marais {
+
+          .card_container {
+
+
+            .card_carousel {
+              display: flex;
+              flex-wrap: wrap;
+              align-content: center;
+
+              .slide_marais {
+                width: 50%;
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+                .card_caiman,
+                .card_rainette,
+                .card_salamandre {
+                  margin: 30px;
+
+                  .card_text_marais {
+                    display: none;
+                    border-radius: 15px;
+
+                    .card_flex_marais {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+
+      #jungle {
+
+        .card_animal_jungle {
+
+          .card_container {
+
+
+            .card_carousel {
+              display: flex;
+              flex-wrap: wrap;
+              align-content: center;
+
+              .slide_jungle {
+                width: 50%;
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+                .card_tapir,
+                .card_jaguar,
+                .card_toucan,
+                .card_ara {
+                  margin: 30px;
+
+                  .card_text_jungle {
+                    display: none;
+                    border-radius: 15px;
+
+                    .card_flex_jungle {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+
+    }
+
+    @include respond-to(xlarge) {
+
+      #savane {
+
+        .card_animal_savane {
+
+          .card_container {
+
+
+            .card_carousel {
+              display: flex;
+              flex-wrap: wrap;
+              align-content: center;
+              justify-content: center;
+
+              .slide_savane {
+                width: 30%;
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+
+                .card_fennec,
+                .card_girafe,
+                .card_rhinoceros,
+                .card_zebre,
+                .card_serval {
+                  margin: 30px;
+
+                  .card_text_savane {
+                    display: none;
+                    border-radius: 15px;
+
+                    .card_flex_savane {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+
+
+            }
+
+          }
+        }
+      }
+
+      #marais {
+
+        .card_animal_marais {
+
+          .card_container {
+
+
+            .card_carousel {
+              display: flex;
+              flex-wrap: wrap;
+              align-content: center;
+              justify-content: center;
+
+              .slide_marais {
+                width: 50%;
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+                .card_caiman,
+                .card_rainette,
+                .card_salamandre {
+                  margin: 30px;
+
+                  .card_text_marais {
+                    display: none;
+                    border-radius: 15px;
+
+                    .card_flex_marais {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+
+      #jungle {
+
+        .card_animal_jungle {
+
+          .card_container {
+
+
+            .card_carousel {
+              display: flex;
+              flex-wrap: wrap;
+              align-content: center;
+              justify-content: center;
+
+              .slide_jungle {
+                width: 30%;
+                position: relative;
+                top: 0;
+                left: 0;
+                opacity: 1;
+                transition: opacity 0.5s ease-out;
+
+
+
+                .card_tapir,
+                .card_jaguar,
+                .card_toucan,
+                .card_ara {
+                  margin: 30px;
+
+                  .card_text_jungle {
+                    display: none;
+                    border-radius: 15px;
+
+                    .card_flex_jungle {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                    }
+                  }
+                }
+              }
+            }
+
+            .active2 {
+              opacity: 1;
+            }
+
+          }
+        }
+      }
+
+    }
+
+
+
+  }
+}

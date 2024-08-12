@@ -1,0 +1,31 @@
+//Variables 
+
+$breakpoint-mobile : 320px;
+$breakpoint-tablet : 768px;
+$breakpoint-desktop : 992px;
+$breakpoint-large : 1200px;
+
+//#{} interpolation pour insérer les valeurs variable dna sle smedia queries on évite le chevauchement ajout + 1 
+
+@mixin respond-to($breakpoint) {
+  
+  @if $breakpoint == mobile {
+    @media screen and (max-width: #{$breakpoint-mobile}) { @content; }  
+  } //320
+  @else if $breakpoint == tablet {
+    @media screen and (min-width: #{$breakpoint-mobile + 1px}) and (max-width: #{$breakpoint-tablet}) { @content; }
+  }//321-768
+  @else if $breakpoint == desktop {
+    @media screen and (min-width: #{$breakpoint-tablet + 1px}) and (max-width: #{$breakpoint-desktop}) { @content; }
+  } //769-992
+  @else if $breakpoint == large {
+    @media screen and (min-width: #{$breakpoint-desktop + 1px}) and (max-width: 1199px) { @content; }
+  }//993-1199
+  @else if $breakpoint == xlarge {
+    @media screen and (min-width: $breakpoint-large ){ @content;}
+  }
+  
+}
+  
+
+

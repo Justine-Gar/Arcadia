@@ -1,0 +1,242 @@
+@use "../abstract/all" as *;
+
+
+/**_______COVER_CONTACT_______**/
+#cover_contact {
+
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+
+  /**__container contact__**/
+  .cover_contact_container {
+    position: relative;
+    width: 100%;
+    height: 775px;
+    background-color: $color-back-primary;
+  }
+
+/**__COVER_IMG_contact__**/
+  .cover_contact_img {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: 52vh;
+    overflow: hidden;
+
+    background-image: url('../../assets/img/jungle/paresseux/adobestock_279967025.avif');
+    background-size: cover;
+    background-position: bottom 25% right 11%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-back-primary-alpha;
+      pointer-events: none;
+    }
+  }
+
+  .cover_title_cercle {
+    position: relative;
+    top: 125px;
+    width: 100%;
+  }
+
+/**__COVER_SVG_contact__**/
+  .cover_contact_cercle {
+
+    position: absolute;
+    left: -40%;
+    top: 30%;
+    width: 100%;
+    
+    img{
+      width: 100vw;
+      height: 35vh;
+    }
+  }
+
+  .cover_title_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+  }
+  
+/**__COVER_TXT_contact__**/
+  .cover_contact_title {
+      
+
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    padding: 20px;
+    z-index: 12;
+    @include flex-algn-start-col;
+
+    h1 {
+      @include font ($font-dimsum, $font-size-xlarge, 300, $color-font-primary);
+      margin-bottom: 15px;
+    }
+    p {
+      width: 100%;
+      @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+      text-align: left;
+    }
+  }
+
+  .contact_form_container {
+
+    position: absolute;
+    top: 54%;
+    width: 100%;
+    background-color: $color-back-primary;
+
+    #contactForm {
+      
+      @include flex-wrap-center;
+      margin: 10px;
+  
+      input {
+        width: 100%;
+        padding: 7px 0;
+        margin: 7px 0;
+      }
+      textarea {
+        width: 100%;
+        resize : none;
+        padding: 7px 0;
+        margin: 7px 0;
+      }
+      .button_contact {
+        @include button;
+        margin: 7px 0;
+      }
+    }
+  }
+
+
+  @include respond-to(tablet) {
+
+    .cover_contact_container {
+      height: 775px;
+    }
+    .cover_contact_img {
+      height: 58vh;
+    }
+  
+  }
+  @include respond-to(desktop) {
+    .cover_contact_container {
+      height: 780px;
+    }
+    .cover_contact_img {
+      
+      height: 70vh;
+    }
+    .cover_title_cercle {
+      top: 150px;
+      margin-left: 50%;
+    }
+    
+    .cover_contact_cercle {
+
+      left: -50%;
+
+      img{
+
+        height: 30vh;
+      }
+    }
+    .cover_contact_title {
+      
+      top: 65px;
+
+    }
+
+  }
+  @include respond-to(large) {
+
+    .cover_contact_container {
+      height: 840px;
+    }
+    .cover_contact_img {
+      height: 115vh;
+    }
+    .cover_title_cercle {
+      top: 150px;
+      margin-left: 50%;
+    }
+    .cover_contact_cercle {
+
+      left: -50%;
+
+      img{
+
+        height: 30vh;
+      }
+    }
+    .cover_contact_title {
+      
+      top: 65px;
+      h1 {
+        font-size: $font-size-xxlarge;
+      }
+      p {
+        font-size: $font-size-regular;
+      };
+    }
+    .contact_form_container {
+      top: 50%;
+      width: 50%;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+  }
+  @include respond-to(xlarge) {
+
+    .cover_contact_container {
+      height: 1000px;
+    }
+    .cover_contact_img {
+      height: 115vh;
+    }
+    .cover_title_cercle {
+      top: 200px;
+      margin-left: 45%;
+    }
+    .cover_contact_cercle {
+
+      left: -50%;
+
+      img{
+
+        height: 30vh;
+      }
+    }
+    .cover_contact_title {
+      
+      top: 65px;
+      h1 {
+        font-size: $font-size-xxlarge;
+      }
+      p {
+        font-size: $font-size-regular;
+      };
+    }
+    .contact_form_container {
+      top: 50%;
+      width: 40%;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+}

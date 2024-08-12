@@ -1,0 +1,333 @@
+@use "../abstract/all" as *;
+@use "../base/font" as *;
+
+body.menu_open {
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  background-color: $color-back-primary;
+
+  position: fixed;
+  z-index: 1000;
+
+  .header_container {
+
+    display: flex;
+    align-items: center;
+
+    .logo_arcadia {
+
+      img {
+        width: 40%;
+        height: 100%;
+        margin: 15px;
+      }
+
+    }
+
+    .navbar {
+      z-index: 1000;
+      min-width: 100%;
+      min-height: 100%;
+      position: fixed;
+      top: 0;
+      height: 0;
+      visibility: hidden;
+      opacity: 0;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+      padding-bottom: 30px;
+
+      &.overlay {
+        visibility: visible;
+        opacity: 1;
+        padding-top: 100px;
+        background: $color-back-secondary;
+      }
+
+      #menu {
+
+        .menu_items {
+          color: $color-font-third;
+          font-size: $font-size-regular;
+          text-transform: uppercase;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+
+          li {
+            a {
+              color: $color-font-third;
+              text-transform: uppercase;
+              transition: all 0.5s ease-in-out;
+              position: relative;
+
+              &::after {
+                position: absolute;
+                content: "";
+                width: 0;
+                left: 0;
+                bottom: -5px;
+                background: $color-back-third;
+                height: 2px;
+                transition: 0.3s ease-in-out;
+              }
+
+              &::before {
+                content: attr(data-item);
+                transition: 0.5s;
+                color: $color-font-primary;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 0;
+                overflow: hidden;
+              }
+
+              &:hover {
+                &::after {
+                  width: 100%;
+                }
+
+                &::before {
+                  width: 100%;
+                  transition: all 0.5s ease-in-out;
+                }
+              }
+            }
+          }
+
+          &.mobile_open {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+
+
+    #burger_menu {
+      cursor: pointer;
+      height: 27px;
+      width: 27px;
+      margin: 30px;
+      right: 0px;
+      overflow: visible;
+      position: fixed;
+      z-index: 1001;
+  
+      span,
+      span:before,
+      span:after {
+        background: $color-font-primary;
+        display: block;
+        height: 2px;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-in-out;
+      }
+  
+      span:before,
+      span:after {
+        content: "";
+      }
+  
+      span:before {
+        left: 0px;
+        top: -10px;
+        width: 27px;
+      }
+  
+      span {
+        right: 0px;
+        top: 13px;
+        width: 27px;
+      }
+  
+      span:after {
+        left: 0px;
+        top: 10px;
+        width: 27px;
+      }
+  
+      &.close {
+        span:before {
+          top: 0px;
+          transform: rotate(90deg);
+          width: 27px;
+        }
+  
+        span {
+          transform: rotate(-45deg);
+          top: 13px;
+          width: 27px;
+        }
+  
+        span:after {
+          top: 0px;
+          left: 0;
+          transform: rotate(90deg);
+          opacity: 0;
+          width: 0;
+        }
+      }
+    }
+
+    /**     MEADIA QUERIES HEADER     **/
+
+    @include respond-to(tablet) {
+
+      
+      justify-content: center;
+
+      .logo_arcadia {
+
+        position: relative;
+        
+        img {
+          width: 40%;
+        }
+
+      }
+
+    
+    }
+    @include respond-to(desktop) {
+
+      align-items: flex-end;
+      justify-content: center;
+
+      .logo_arcadia {
+
+        position: relative;
+        
+        
+        img {
+          width: 40%;
+        }
+
+      }
+
+      .navbar {
+
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        min-width: 300px;
+        padding-bottom: 30px;
+
+        #menu {
+
+          margin-right: 80px;
+
+          .menu_items {
+            font-size: $font-size-small;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 30px;
+          }
+        }
+      }
+
+      #burger_menu {
+        display: none;
+      }
+    }
+    @include respond-to(large) {
+
+      align-items: flex-end;
+      justify-content: center;
+
+      .logo_aradia {
+
+        position: relative;
+        right: 0px;
+
+        img {
+
+          width: 50%;
+        }
+
+      }
+
+      .navbar {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        min-width: 300px;
+        padding-bottom: 30px;
+
+        #menu {
+
+          margin-right: 80px;
+
+          .menu_items {
+            font-size: $font-size-small;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 30px;
+          }
+        }
+      }
+
+      #burger_menu {
+        display: none;
+      }
+    }
+    @include respond-to(xlarge) {
+
+      align-items: flex-end;
+      justify-content: center;
+
+      .logo_aradia {
+
+        position: relative;
+        right: 0px;
+
+        img {
+
+          width: 50%;
+        }
+
+      }
+
+      .navbar {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        height: auto;
+        min-width: 300px;
+        padding-bottom: 30px;
+
+        #menu {
+
+          margin-right: 80px;
+
+          .menu_items {
+            font-size: $font-size-small;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 30px;
+          }
+        }
+      }
+
+      #burger_menu {
+        display: none;
+      }
+    }
+    
+  }
+
+}

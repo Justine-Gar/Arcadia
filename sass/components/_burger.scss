@@ -1,0 +1,56 @@
+@use '/sass/base/font' as *;
+
+$burger-color: $color-font-primary ;
+$burger-width: 30px;
+$burger-height: 3px;
+$burger-spacing: 5px;
+
+// Mixin pour le burger
+@mixin burger-bars {
+  
+  &::before,
+  &::after,
+  & {
+    content: '';
+    display: block;
+    background-color: $burger-color;
+    width: $burger-width;
+    height: $burger-height;
+    margin: $burger-spacing 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::before {
+    transform: translateY(-$burger-spacing);
+  }
+
+  &::after {
+    transform: translateY($burger-spacing);
+  }
+}
+
+// Styles pour le burger
+.burger {
+  width: $burger-width;
+  height: $burger-height;
+  position: relative;
+  cursor: pointer;
+
+  &.open {
+    .bar {
+      &::before {
+        transform: translateY(0) rotate(45deg);
+      }
+      &::after {
+        transform: translateY(0) rotate(-45deg);
+      }
+      & {
+        transform: scale(0);
+      }
+    }
+  }
+
+  .bar {
+    @include burger-bars;
+  }
+}

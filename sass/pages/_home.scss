@@ -1,0 +1,1908 @@
+@use "../abstract/all" as *;
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 4px;
+
+}
+::-webkit-scrollbar-track {
+    background: $color-back-secondary;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-thumb {
+    background: $color-font-primary;
+    border-radius: 25px;
+}
+
+/** ============= SECTION BIENVENUE ============ **/
+#bienvenue {
+
+    width: 100%;
+    height: auto;
+    background-color: $color-back-secondary;
+
+    /**____CAROUSEL____**/
+    .slider_container {
+
+        width: 100vw;
+        max-width: 100%;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+
+        .slides {
+            display: flex;
+            height: 100%;
+            animation: slider 10s ease-in-out;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center 25%;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    /**____CONTAINER____**/
+    .ligne_bienvenue {
+
+        width: 100%;
+        height: 55px;
+        background-color: $color-back-secondary;
+        position: relative;
+        clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+        bottom: 50px;
+    }
+
+    /**____BIENVENU____**/
+    .bienvenue_container {
+
+        padding: 0 30px 30px;
+        bottom: 20px;
+
+        /** Texte bienvenue **/
+        .bienvenue_text {
+
+            @include flex-center-column;
+            position: relative;
+            bottom: 20px;
+
+            h1 {
+
+                @include font ($font-dimsum, $font-size-xlarge, 0, $color-font-primary);
+                padding: 10px;
+                
+            }
+
+            p {
+                @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+                padding: 10px;
+                text-align: center;
+                line-height: 20px;
+            }
+        }
+        /** Img bienvenue**/
+        .bienvenue_img {
+            position: relative;
+            visibility: hidden;
+            display: none;
+
+            img {
+                width: 70%;
+                clip-path: circle(30% at 50% 50%);
+            }
+        }
+
+    }
+
+/**______MEDIAS BIENVENUE_____**/
+
+    @include respond-to(tablet) {
+
+        .slider_container{
+            height: 500px;
+
+            .slides {
+                height: 105%;
+            }
+        }
+
+        .ligne_container {
+            width: 100%;
+            height: 55px;
+            background-color: $color-back-secondary;
+            position: relative;
+            clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+            bottom: 50px;
+        }
+
+        .bienvenue_container {
+
+            max-width: 720px;
+            @include flex-column-center;
+            position: relative;
+            bottom: 10px;
+
+        }
+    }
+
+    @include respond-to(desktop) {
+
+        .slider_container {
+            max-width: 100%;
+            height: 605px;
+
+            .slides {
+                height: 110%;
+                img{
+                    height: 95%;
+                }
+            }
+        }
+
+        .ligne_container {
+            width: 100%;
+            height: 55px;
+            background-color: $color-back-secondary;
+            position: relative;
+            clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+            bottom: 50px;
+        }
+
+        .bienvenue_container {
+
+
+            max-width: 920px;
+            @include flex-column-center;
+        }
+    }
+
+    @include respond-to(large) {
+
+        .slider_container {
+            max-width: 100%;
+            height: 705px;
+            
+            .slides {
+
+                height: 195%;
+
+                img {
+                    height: 55%;
+                    object-position: center bottom;
+                }
+            }
+        }
+
+        .ligne_container {
+            width: 100%;
+            height: 55px;
+            background-color: $color-back-secondary;
+            position: relative;
+            clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+            bottom: 50px;
+        }
+
+        .bienvenue_container {
+
+            max-width: 1140px;
+            @include flex-column-center;
+            margin-left: auto;
+            margin-right: auto
+        }
+    }
+
+    @include respond-to(xlarge) {
+
+        .slider_container {
+            max-width: 100%;
+            height: 810px;
+            
+            .slides {
+
+                height: 185%;
+
+                img {
+                    height: 70%;
+                    object-position: center bottom;
+                }
+            }
+        }
+
+        .ligne_container {
+            width: 100%;
+            height: 55px;
+            background-color: $color-back-secondary;
+            position: relative;
+            clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+            bottom: 50px;
+        }
+
+        .bienvenue_container {
+
+            max-width: 1140px;
+            @include flex-column-center;
+            margin-left: auto;
+            margin-right: auto
+        }
+    }
+}
+
+/** ============= SECTION SERVICES ============ **/
+#home_services {
+
+    width: 100%;
+    height: auto;
+    background-color: $color-back-third;
+
+    .home_services_container {
+
+
+        padding: 30px;
+        @include flex-column-center;
+
+
+        h3 {
+
+            @include font($font-monserrat, $font-size-large, 500, $color-font-primary);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .home_services_groupe {
+
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .home_services_text {
+                
+                display: flex;
+                margin: 15px;
+                
+                p {
+
+                    @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+
+                }
+            }
+
+            .home_services_button {
+
+                display: flex;
+                flex-direction: column;
+
+
+                .home_button_r,
+                .home_button_v,
+                .home_button_t {
+
+                    @include flex-row-center-sp;
+                    gap: 30px;
+                    padding: 10px 0 10px 0;
+
+                    position: relative;
+                    overflow: hidden;
+
+                    a {
+                        color: $color-font-third;
+                        font-weight: bolder;
+                        font-size: $font-size-regular;
+                        text-transform: uppercase;
+                        transition: all 0.5s ease-in-out;
+                        position: relative;
+
+                        &::before {
+                            content: attr(data-text);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 0;
+                            color: $color-font-primary;
+                            overflow: hidden;
+                            transition: width 0.5s ease-in-out;
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -2px;
+                            left: 0;
+                            width: 0;
+                            height: 2px;
+                            background-color: $color-back-third;
+                            transition: width 0.3s ease-in-out;
+                        }
+
+                        &:hover {
+                            &::before {
+                                width: 100%;
+                            }
+
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+
+                    svg {
+
+                        width: 30px;
+                        height: 30px;
+                        color: $color-font-third;
+                        min-width: 30px;
+                        display: inline-block;
+                        transition: transform 0.8s ease-in-out;
+                    }
+
+                    &:hover {
+                        svg {
+                            transform: translateX(2px);
+                            color: $color-font-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+/**______MEDIAS SERVICES_____**/
+
+    @include respond-to(tablet) {
+
+        .home_services_container {
+
+            max-width: 720px;
+            @include flex-center;
+
+        }
+    }
+
+    @include respond-to(desktop) {
+
+        .home_services_container {
+
+            max-width: 920px;
+            @include flex-center;
+
+            .home_services_groupe {
+
+                flex-direction: row;
+                gap: 50px;
+            }
+        }
+
+
+    }
+
+    @include respond-to(large) {
+
+
+        .home_services_container {
+
+            max-width: 1140px;
+
+            @include flex-center;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            .home_services_groupe {
+
+                flex-direction: row;
+            }
+        }
+
+    }
+
+    @include respond-to(xlarge) {
+
+        .home_services_container {
+
+            max-width: 1140px;
+
+            @include flex-center;
+
+            margin-left: auto;
+            margin-right: auto;
+
+            .home_services_groupe {
+
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+/** ============= SECTION HABITATS ============ **/
+#home_habitats {
+
+    width: 100%;
+    height: auto;
+
+    .home_card {
+
+        width: 100%;
+        height: 1080px;
+        display: flex;
+        flex-direction: column;
+
+/**_____SAVANE_____**/
+        .home_habitat_savane {
+
+            height: 100%;
+            flex: 1;
+            @include flex-center;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: flex 0.5s ease-in-out;
+
+            &:hover {
+                .home_title {
+                    top: 50px;
+    
+                }
+            }
+
+    /**___TITLE SAVANE____**/
+            .home_title {
+
+                position: absolute;
+                z-index: 5;
+                @include font ($font-monserrat, $font-size-xlarge, bolder, $color-font-third);
+                text-transform: uppercase;
+                padding: 5px;
+
+                transition: top 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.3s ease;
+                transform: scale(1);
+            
+            }
+            
+    /**___IMG SAVANE____**/
+            img {
+
+                width: 100%;
+                height: 100%;
+                position: relative;
+                object-fit: cover;
+            }
+    /**___TEXTE SAVANE____**/
+            .home_savane_txt_hover {
+
+                max-width: 250px;
+                height: 250px;
+                position: absolute;
+                top: 150px;
+                /* left: 50px; */
+                z-index: 5;
+                @include font ($font-monserrat, $font-size-xs, 0, $color-font-third);
+                background-color: $color-back-primary-alpha;
+                border-radius: 12px;
+                padding: 21px;
+
+                @include flex-column-sp;
+                
+                /*Animation JS*/
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
+                transition-delay: 0.3s;
+                
+                /*  VISIBILITY JS   */
+                .home_visibility {
+
+                    visibility: visible;
+                }
+
+                .home_savane_button {
+
+                    text-align: center;
+                    position: relative;
+                    top: 30px;
+
+                    a {
+                        @include button; 
+                    }
+                }
+                
+            }
+    /**___TITLE MARAIS____**/
+            .home_savane_mobile {
+
+                max-width: 250px;
+                position: absolute;
+                top: 480px;
+                @include font ($font-monserrat, $font-size-xs, 0, $color-font-third);
+                background-color: $color-back-primary-alpha;
+                border-radius: 12px;
+                padding: 21px;
+                /*Ici on cache ceci en tablet -> large */
+                
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
+                transition-delay: 0.5s;
+                
+                
+                .home_mobile_button {
+
+                    text-align: center;
+                    position: relative;
+                    top: 30px;
+
+                    a {
+                        @include button
+                    }    
+                }
+
+                .home_visibility {
+                    visibility: visible;
+                }
+
+                
+            }
+    /**___ANIMAUX____**/
+            .home_savane_animaux {
+                /*Animation JS*/
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+        
+        /**____GIRAFE____**/
+                .home_savane_girafe {
+                            
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_girafe {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 20;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                    }
+                    .home_girafe_button {
+
+                        visibility: visible;
+                        position: relative;
+                        right: -45px;
+
+                        a {
+                            @include button;
+                            padding-right: 120px;
+                        }
+                    }
+
+                }
+
+        /**____FENEC____**/
+                .home_savane_fenec {
+                            
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_fenec {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 20;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                    }
+                    .home_fenec_button {
+
+                        visibility: visible;
+                        position: relative;
+                        right: -45px;
+
+                        a {
+                            @include button;
+                            padding-right: 130px;
+                        }
+                    }
+
+                    
+                }
+
+        /**____RHINOCEROS____**/
+                .home_savane_rhinoceros {
+                            
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_rhinoceros {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 20;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                    }
+                    .home_rhinoceros_button {
+
+                        visibility: visible;
+                        position: relative;
+                        right: -45px;
+
+                        a {
+                            @include button;
+                            padding-right: 60px;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+        
+
+/**_____MARAIS_____**/
+        .home_habitat_marais {
+
+            height: 100%;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: flex 0.5s ease-in-out;
+
+            &:hover {
+                .home_title {
+                    top: 50px;
+                    transform: scale(1.05);
+                }
+            }
+
+    /**___TITLE MARAIS____**/
+            .home_title {
+
+                position: absolute;
+                z-index: 5;
+                @include font ($font-monserrat, $font-size-xlarge, bolder, $color-font-third);
+                text-transform: uppercase;
+                padding: 5px;
+
+                /*Animation du Titre en Mobile*/
+                transition: top 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.3s ease;
+                transform: scale(1);
+            }
+    /**___IMG MARAIS____**/
+            img {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                object-fit: cover;
+            }
+    /**___TEXTE MAIRAIS____**/
+            .home_marais_txt_hover {
+
+                
+                max-width: 250px;
+                height: 250px;
+                position: absolute;
+                top: 150px;
+                /* left: 50px; */
+                z-index: 5;
+
+                @include font ($font-monserrat, $font-size-xs, 0, $color-font-third);
+                background-color: $color-back-primary-alpha;
+                border-radius: 12px;
+                padding: 21px;
+
+                @include flex-column-sp;
+
+                /*Animation en JS*/
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
+                transition-delay: 0.5s;
+
+                /*  Visibility JS  */
+                .home_visibility {
+                    visibility: visible;
+                }
+
+                .home_marais_button {
+
+                    text-align: center;
+                    position: relative;
+                    top: 30px;
+
+                    a {
+                        @include button; 
+                    }
+                }
+            }
+    /**___MOBILE____**/
+            .home_marais_mobile {
+
+                max-width: 250px;
+                position: absolute;
+                top: 480px;
+                @include font ($font-monserrat, $font-size-xs, 0, $color-font-third);
+                background-color: $color-back-primary-alpha;
+                border-radius: 12px;
+                padding: 21px;
+                /*Ici on cache ceci en tablet -> large */
+                
+
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
+                transition-delay: 0.5s;
+                
+                .home_mobile_button {
+
+                    text-align: center;
+                    position: relative;
+                    top: 30px;
+
+                    a {
+                        @include button; 
+                    }
+                }
+                /*  Visibility JS  */
+                .home_visibility {
+                    visibility: visible;
+                }
+            }
+    /**___ANIMAUX____**/
+            .home_marais_animaux {
+
+                /*Animation JS*/
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+
+        /**____CAIMAM____**/
+                .home_marais_caiman {
+                            
+                    position: absolute;
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_caiman {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 20;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                    }
+                    .home_caiman_button {
+
+                        visibility: visible;
+                        position: relative;
+                        right: -45px;
+
+                        a {
+                            @include button;
+                            padding-right: 110px;
+                        }
+                    }
+
+
+                    
+                }
+
+        /**____RENETTE____**/
+                .home_marais_renette {
+                            
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_renette {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 20;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                    }
+                    .home_renette_button {
+
+                        visibility: visible;
+                        position: relative;
+                        right: -45px;
+
+                        a {
+                            @include button;
+                            padding-right: 105px;
+                        }
+                    }
+
+                    
+                }
+
+        /**____SALAMANDRE____**/
+                .home_marais_salamandre {
+                            
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_salamandre {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 20;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                    }
+                    .home_salamanbre_button {
+
+                        visibility: visible;
+                        position: relative;
+                        right: -45px;
+
+                        a {
+                            @include button;
+                            padding-right: 50px;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+
+
+/**____JUGNLE_____**/
+        .home_habitat_jungle {
+
+            height: 100%;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: flex 0.5s ease-in-out;
+
+            &:hover {
+                .home_title {
+                    top: 40px;
+                    transform: scale(1.05);
+                }
+            }
+    /**___TITLE JUNGLE____**/
+            .home_title {
+
+                position: absolute;
+                z-index: 5;
+                @include font ($font-monserrat, $font-size-xlarge, bolder, $color-font-third);
+                text-transform: uppercase;
+                padding: 5px;
+
+                transition: top 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.3s ease;
+                transform: scale(1);
+            }
+    /**___IMG JUNGLE____**/
+            img {
+
+                width: 100%;
+                height: 100%;
+                position: relative;
+                object-fit: cover;
+            }
+    /**___TEXTE JUNGLE____**/
+            .home_jungle_txt_hover {
+
+                max-width: 250px;
+                height: 250px;
+                position: absolute;
+                top: 150px;
+                /* left: 50px; */
+                z-index: 5;
+                @include font ($font-monserrat, $font-size-xs, 0, $color-font-third);
+                background-color: $color-back-primary-alpha;
+                border-radius: 12px;
+                padding: 21px;
+                @include flex-column-sp;
+
+                /*Animation JS*/
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
+                transition-delay: 0.5s;
+
+                /*  Visibility JS  */
+                .home_visibility {
+                    visibility: visible;
+                }
+
+                .home_jungle_button {
+
+                    text-align: center;
+                    position: relative;
+                    top: 30px;
+
+                    a {
+                        @include button; 
+                    }
+                }
+            }
+    /**___MOBILE____**/
+            .home_jungle_mobile {
+
+                max-width: 250px;
+                position: absolute;
+                top: 480px;
+                @include font ($font-monserrat, $font-size-xs, 0, $color-font-third);
+                background-color: $color-back-primary-alpha;
+                border-radius: 12px;
+                padding: 21px;
+                /*Ici on cache ceci en tablet -> large */
+                
+
+                opacity: 0;
+                transition: opacity 0.5s ease-in;
+                transition-delay: 0.5s;
+                
+                .home_mobile_button {
+
+                    text-align: center;
+                    position: relative;
+                    top: 30px;
+
+                    a {
+                    
+                        @include button;
+                    }
+                }
+                /*  Visibility JS  */
+                .home_visibility {
+                    visibility: visible;
+                }
+            }
+    /**___ANIMAUX____**/
+            .home_jungle_animaux {
+                /*ANIMATION js*/
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+
+        /**____PARESSEUX____**/
+                .home_jungle_paresseux {
+                    
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_paresseux {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        z-index: 20;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                    }
+                    .home_paresseux_button {
+    
+                        visibility: visible;
+                        position: relative;
+                        right: -45px;
+
+                        a {
+                            @include button;
+                            padding-right: 50px;
+                        }
+                    }
+
+                    
+                }
+
+        /**____TOUCAN____**/
+                .home_jungle_toucan {
+
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_toucan {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        z-index: 15;
+                        visibility: visible;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        
+                    }
+                    .home_toucan_button {
+    
+                        visibility: visible;
+                        position: relative;
+                        right: -10px;
+
+                        a {
+                            @include button;
+                            padding-right: 50px;
+                        }
+                    }
+
+                    
+                }
+
+        /**____JAGUAR____**/
+                .home_jungle_jaguar {
+                    position: absolute;
+                    display: flex;
+                    
+                    
+                    flex-direction: row-reverse;
+                    align-items: center;
+
+                    .home_img_jaguar {
+
+                        width: 150px;
+                        height: 150px;
+                        border: 2px solid $color-font-primary;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        z-index: 15;
+                        visibility: visible;
+    
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                        
+                        
+                    }
+                    .home_jaguar_button {
+    
+                        visibility: visible;
+                        position: relative;
+                        right: -10px;
+
+                        a {
+                            @include button;
+                            padding-right: 50px;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+
+/**______MEDIAS HABITATS_____**/
+
+    @include respond-to(tablet) {
+
+        .home_card{
+
+            height: 1080px;
+            
+            
+
+            .home_habitat_savane,
+            .home_habitat_marais,
+            .home_habitat_jungle {
+
+                
+        
+
+                .home_savane_mobile,
+                .home_marais_mobile,
+                .home_jungle_mobile {
+                    
+                    top: 500px;
+                    
+                }
+
+                .home_mobile_animaux {
+                    visibility: hidden;
+                }
+            }
+        }
+
+    }
+
+    @include respond-to(desktop){
+
+        
+        .home_card{
+            height: 600px;
+            flex-direction: row;
+
+            .home_habitat_savane,
+            .home_habitat_marais,
+            .home_habitat_jungle {
+
+                .home_title {
+
+                    text-align: center;
+                    transform: rotate(-90deg);
+                    transition: transform 0.5s ease;
+    
+                    &:hover{
+                        transform: rotate(0deg);
+                    }
+                }
+
+                .home_savane_txt_hover,
+                .home_marais_txt_hover,
+                .home_jungle_txt_hover {
+
+                    left: 60px;
+                }
+
+                .home_savane_mobile,
+                .home_marais_mobile,
+                .home_jungle_mobile {
+                    
+                    top: 450px;
+                    right: 70px;
+                }
+            
+    
+            }
+        }
+    }
+
+    @include respond-to(large){
+
+        .home_card{
+            height: 600px;
+            flex-direction: row;
+
+            .home_habitat_savane {
+
+                .home_title {
+
+                    text-align: center;
+                
+                }
+                .home_savane_txt_hover {
+
+                    left: 70px; 
+                    
+                    .home_mobile_animaux {
+                        visibility: hidden;
+                    }
+    
+                }   
+
+                .home_savane_mobile {
+                    display: none;
+                }
+
+                .home_savane_animaux {
+                    
+
+                    .home_savane_girafe {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        bottom: 40px;
+                    }
+                    .home_savane_fennec {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 95px;
+                    }
+                    .home_savane_rhinoceros {
+                        
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 250px;
+                    }
+                }
+            }
+
+            .home_habitat_marais {
+
+                .home_title {
+
+                    text-align: center;
+                
+                }
+
+                .home_marais_txt_hover {
+
+                    left: 70px; 
+                
+                    .home_mobile_animaux {
+                        visibility: hidden;
+                    }
+    
+                }  
+
+                .home_marais_mobile {
+
+                    display: none;
+                }
+                
+                .home_marais_animaux {
+                    
+
+                    .home_marais_caiman {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        bottom: 40px;
+                    }
+
+                    .home_marais_renette {
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 95px;
+                    }
+                    .home_marais_salamandre {
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 250px;
+                    }
+                }
+                
+            }
+
+            .home_habitat_jungle {
+
+                .home_title {
+
+                    text-align: center;
+                
+                }
+
+                .home_jungle_txt_hover {
+
+                    left: 50px; 
+                
+                    .home_mobile_animaux {
+                        visibility: hidden;
+                    }
+    
+                }  
+
+                .home_jungle_mobile {
+
+                    display: none;
+                }
+                
+                .home_jungle_animaux {
+                    
+
+                    .home_jungle_jaguar {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        bottom: 40px;
+                    }
+
+                    .home_jungle_paresseux {
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 95px;
+                    }
+                    .home_jungle_toucan {
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 250px;
+                    }
+                }
+                
+            }
+        }
+        
+    }
+
+    @include respond-to(xlarge) {
+
+        
+        .home_card{
+            height: 600px;
+            flex-direction: row;
+
+            .home_habitat_savane {
+
+                &:hover {
+
+                    .home_title {
+                        top: auto;
+            
+                    }
+                }
+                .home_savane_txt_hover {
+
+                    left: 140px; 
+                    
+                    
+                
+                    .home_mobile_animaux {
+                        visibility: hidden;
+                    }
+                }
+
+                .home_savane_mobile {
+                    display: none;
+                }
+                .home_savane_animaux {
+                    
+                
+                    
+                    .home_savane_girafe {
+                        visibility: visible;
+                        right: 50px;
+                        z-index: 20;
+                        top: 55px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    .home_savane_fenec {
+
+                        visibility: visible;
+                        right: 50px;
+                        z-index: 20;
+                        top: 220px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    .home_savane_rhinoceros {
+
+                        visibility: visible;
+                        right: 50px;
+                        z-index: 20;
+                        bottom: 55px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    
+                }
+            }
+
+            .home_habitat_marais {
+
+                &:hover {
+
+                    .home_title {
+                        top: auto;
+            
+                    }
+                }
+                .home_marais_txt_hover {
+
+                    left: 140px; 
+                    
+                    
+                
+                    .home_mobile_animaux {
+                        visibility: hidden;
+                    }
+                }
+
+                .home_marais_mobile {
+                    display: none;
+                }
+                
+                .home_marais_animaux {
+                    
+                    .home_marais_renette {
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 55px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    
+                    .home_marais_salamandre {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 220px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    .home_marais_caiman {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        bottom: 55px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    
+                }
+            }
+            
+            .home_habitat_jungle {
+
+                &:hover {
+
+                    .home_title {
+                        top: auto;
+            
+                    }
+                }
+
+                .home_jungle_txt_hover {
+
+                    left: 140px; 
+                
+                    .home_mobile_animaux {
+                        visibility: hidden;
+                    }
+    
+                }  
+
+                .home_jungle_mobile {
+
+                    display: none;
+                }
+                
+                .home_jungle_animaux {
+                    
+                    .home_jungle_paresseux {
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 55px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    
+                    .home_jungle_toucan {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        top: 220px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+                    .home_jungle_jaguar  {
+
+                        visibility: visible;
+                        right: 30px;
+                        z-index: 20;
+                        bottom: 55px;
+
+                        &:hover {
+                            transform: translateX(-50px);
+                        }
+                    }
+
+                }
+                
+            }
+            
+        }
+    }
+}
+
+/** ============= SECTION AVIS ============ **/
+#avis {
+
+    width: 100%;
+    height: auto;
+    
+
+    .avis_container {
+
+        background-color:  $color-back-third;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 22;
+        padding: 20px;
+        @include flex-column-center;
+
+        h2 {
+            @include font($font-monserrat, $font-size-large, 500, $color-font-primary);
+            text-transform: uppercase;
+        }
+        
+
+        .avis_slider {
+
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+
+            #avis_container_text {
+
+                display: flex;
+                gap: 20px;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                padding-bottom: 10px;
+
+                .avis_item {
+                    max-width: 280px;
+                    scroll-snap-align: center;    
+                    flex: 0 0 100%; 
+                    
+                    box-sizing: border-box;
+            
+                    .avis_header {
+    
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        
+    
+                        
+                        padding: 20px;
+                        border-radius: 8px 8px 0px 0px;
+                        background-color: $color-back-primary;
+            
+                        h5 {
+                            @include font($font-monserrat, $font-size-small, 500, $color-font-primary);
+                            text-transform: uppercase;
+                        }
+    
+                        .rating {
+                            display: flex;
+                            flex-direction: row-reverse;
+                
+                            .star {
+                                color: $color-font-third;
+                                font-size: $font-size-small;
+                
+                                &.filled {
+                                    color: $color-font-primary;
+                                }
+                            }
+                        }
+                    }
+            
+                    .avis_text {
+                        
+                        height: 100px;
+                        display: flex;
+                        align-items: center;
+    
+                        padding: 20px;
+                        background-color: $color-font-third;
+                        border-radius: 0px 0px 8px 8px;
+    
+                        p {
+                            @include font($font-monserrat, $font-size-xs, 400, $color-back-primary)
+                        }
+                    }
+                }
+            }
+            #btnGauche {
+
+                position: absolute;
+                @include button;
+                left: 0px;
+                bottom: 100px;
+            }
+            #btnDroite {
+
+                position: absolute;
+                @include button;
+                right: 0px;
+                bottom: 100px;
+            }
+        }
+        #avis_form {
+
+            margin-bottom: 40px;
+            display: none;
+
+            input,
+            select,
+            #clientText,
+            .clientBtn {
+                width: 100%;
+                margin: 10px 0;
+                padding: 10px;
+                border: 1px solid $color-back-primary;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+            #clientText {
+                height: 100px;
+                resize: vertical;
+            }
+
+            .clientBtn {
+
+                @include button;
+            }
+        }
+        #btnAvisForm {
+
+            @include button;
+
+            margin: 20px;
+        }
+    }
+
+    .ligne_avis {
+        width: 100%;
+        height: 55px;
+        background-color: $color-back-third;
+        position: absolute;
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+        z-index: 24;
+    }
+
+    .avis_background {
+
+        width: 100%;
+        height: 205px;
+        max-height: 800px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(to bottom, rgba(0,0,0,0.7) 15%, rgba(0,0,0,0) 50%),
+                linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 20%),
+                url('../../assets/img/jungle/panthèrenoir/adobestock_328526890.avif');
+            background-size: cover;
+            background-position: right 10% top;
+            opacity: 1; // Ajustez l'opacité selon vos préférences
+            z-index: -1;
+        }
+
+    }
+    
+/**______MEDIAS HABITATS_____**/
+
+    @include respond-to(tablet){
+        .avis_container {
+
+            .avis_slider {
+
+                max-width: 355px;
+
+                #avis_container_text {
+
+                    .avis_item {
+
+                        max-width: 354px;
+                        flex: 0 0 100%;
+
+                    }
+                }
+            }
+        }
+        .avis_background {
+
+            height: 265px;
+            &::before {
+                top: -20px;
+        
+            }
+    
+        }
+    }
+
+    @include respond-to(desktop){
+        .avis_container {
+
+            .avis_slider {
+
+                max-width: 730px;
+
+                #avis_container_text {
+
+                    .avis_item {
+
+                        max-width: 354px;
+                        flex: 0 0 50%;
+
+                    }
+                }
+            }
+        }
+        .avis_background {
+
+            height: 305px;
+
+            &::before {
+                top: -40px;
+        
+            }
+        }
+        
+    }
+
+    @include respond-to(large){
+        .avis_container {
+
+            .avis_slider {
+
+                max-width: 730px;
+
+                #avis_container_text {
+
+                    .avis_item {
+
+                        max-width: 354px;
+                        flex: 0 0 50%;
+
+                    }
+                }
+            }
+        }
+        .avis_background {
+
+            height: 365px;
+
+            &::before {
+                top: -100px;
+        
+            }
+        }
+        
+    }
+
+    @include respond-to(xlarge){
+        .avis_container {
+
+            .avis_slider {
+
+                max-width: 730px;
+
+                #avis_container_text {
+
+                    .avis_item {
+
+                        max-width: 354px;
+                        flex: 0 0 50%;
+
+                    }
+                }
+            }
+        }
+        .avis_background {
+
+            height: 405px;
+
+            &::before {
+                top: -205px;
+        
+            }
+        }
+    }
+}
+
+

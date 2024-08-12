@@ -1,0 +1,516 @@
+@use "../abstract/all" as *;
+
+
+/**_______COVER_SERVICES_______**/
+#cover_services {
+
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+
+  /**__container services__**/
+  .cover_services_container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: $color-back-primary;
+  }
+
+/**__COVER_IMG_services__**/
+  .cover_services_img {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+
+    background-image: url('../../assets/img/marais/salamandre/adobestock_325983454.avif');
+    background-size: cover;
+    background-position: bottom 25% right 45%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-back-primary-alpha;
+      pointer-events: none;
+    }
+  }
+
+/**__COVER_SVG_services__**/
+  .cover_services_cercle {
+
+    position: absolute;
+    left: -35%;
+    top: 30%;
+    width: 100%;
+    
+    img{
+      width: 100vw;
+      height: 35vh;
+    }
+  }
+
+/**__COVER_TXT_services__**/
+  .cover_services_title {
+      
+
+    position: absolute;
+    top: 45%;
+    padding: 20px;
+    z-index: 12;
+    @include flex-algn-start-col;
+
+    h1 {
+      @include font ($font-dimsum, $font-size-xlarge, 300, $color-font-primary);
+      margin-bottom: 15px;
+    }
+    p {
+      width: 100%;
+      @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+      text-align: left;
+    }
+  }
+  
+  @include respond-to(tablet) {
+    .cover_services_container {
+      height: 515px;
+    }
+    .cover_services_img {
+      
+      height: 75vh;
+    }
+    .cover_services_cercle {
+
+      left: -30%;
+      top: 35%;
+    }
+    .cover_services_title {
+
+      top: 50%;
+      left: 4%;
+      
+    }
+  }
+  @include respond-to(desktop) {
+    .cover_services_container {
+      height: 515px;
+    }
+    .cover_services_img {
+      
+      height: 90vh;
+    }
+    .cover_services_cercle {
+
+      left: -30%;
+      top: 35%;
+    }
+    .cover_services_title {
+
+      top: 50%;
+      left: 17%;
+
+
+      h1 {
+        @include font ($font-dimsum, $font-size-xlarge, 400, $color-font-primary);
+      }
+      p {
+
+        @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+      }
+    }
+  }
+  @include respond-to(large) {
+    .cover_services_container {
+      height: 535px;
+    }
+    .cover_services_img {
+      
+      height: 90vh;
+    }
+    .cover_services_cercle {
+
+      left: -26%;
+      top: 39%;
+
+      img{
+
+        height: 35vh;
+      }
+    }
+    .cover_services_title {
+
+      top: 55%;
+      left: 22%;
+      
+
+      h1 {
+        @include font ($font-dimsum, $font-size-xlarge, 400, $color-font-primary);
+      }
+      p {
+        @include font ($font-monserrat, $font-size-xs, 300, $color-font-third);
+      }
+    }
+  }
+  @include respond-to(xlarge) {
+
+    .cover_services_container {
+      height: 800px;
+    }
+    .cover_services_img {
+      
+      height: 130vh;
+    }
+    .cover_services_cercle {
+
+      left: -22%;
+      top: 39%;
+
+      img{
+
+        height: 42vh;
+      }
+    }
+    .cover_services_title {
+
+      top: 52%;
+      left: 30%;
+
+      
+  
+      h1 {
+        @include font ($font-dimsum, $font-size-xxlarge, 500, $color-font-primary);
+
+      }
+      p {
+        @include font ($font-monserrat, $font-size-medium, 300, $color-font-third);
+
+      }
+    }
+  }
+}
+
+/**_____SERVICES____**/
+.services_container {
+  width: 100%;
+  height: auto;
+  /*SECTION RESTAURANT*/
+    .restauration {
+
+      background-color: $color-back-third;
+      @include flex-column-sp;
+  
+      .restauration_text {
+        padding: 20px;
+        text-align: center;
+
+        h2 {
+          @include font($font-monserrat, $font-size-medium, 400, $color-font-primary);
+          padding-bottom: 15px
+        }
+  
+        p {
+          @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+          padding-bottom: 10px;
+        }
+      }
+  
+      .restauration_img {
+  
+        text-align: center;
+
+        img {
+          width: 100%;
+          height: 300px;
+          /*border-radius: 50%;*/
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  
+    /*SECTION GUIDE*/
+    .guide {
+
+      background-color: $color-back-secondary;
+      @include flex-column-sp;
+  
+      .guide_text {
+        padding: 20px;
+        text-align: center;
+        h2 {
+          @include font($font-monserrat, $font-size-medium, 400, $color-font-primary);
+          padding-bottom: 15px
+        }
+  
+        p {
+          @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+          padding-bottom: 10px;
+        }
+      }
+  
+      .guide_img {
+  
+        text-align: center;
+
+  
+        img {
+          width: 100%;
+          height: 300px;
+          /*border-radius: 50%;*/
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  
+    /*SECTION TRAIN*/
+    .train {
+
+      background-color: $color-back-third;
+      @include flex-column-sp;
+  
+      .train_text {
+        padding: 20px;
+        text-align: center;
+        h2 {
+          @include font($font-monserrat, $font-size-medium, 400, $color-font-primary);
+          padding-bottom: 15px
+        }
+  
+        p {
+          @include font($font-monserrat, $font-size-xs, 200, $color-font-third);
+          padding-bottom: 10px;
+        }
+      }
+  
+      .train_img {
+  
+        text-align: center;
+
+  
+        img {
+          width: 100%;
+          height: 300px;
+          /*border-radius: 50%;*/
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+
+
+    /**MEDIA QUERIES SERVICES**/
+    @include respond-to(desktop) {
+
+      .restauration {
+        padding: 30px;
+
+        @include flex-center-row;
+
+        .restauration_text {
+          width: 50%;
+          text-align: left;
+          
+        }
+        .restauration_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+      .guide {
+        
+        padding: 30px;
+
+        @include flex-row-rev-center;
+
+        .guide_text {
+          width: 50%;
+          text-align: left;
+        }
+        .guide_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+      .train {
+        padding: 30px;
+
+        @include flex-center-row;
+
+        .train_text {
+          width: 50%;
+          text-align: left;
+        }
+        .train_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+    @include respond-to(large) {
+  
+      .restauration {
+        padding: 30px;
+
+        @include flex-center-row;
+
+        .restauration_text {
+          width: 50%;
+          text-align: left;
+          
+        }
+        .restauration_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+      .guide {
+        
+        padding: 30px;
+
+        @include flex-row-rev-center;
+
+        .guide_text {
+          width: 50%;
+          text-align: left;
+        }
+        .guide_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+      .train {
+        padding: 30px;
+
+        @include flex-center-row;
+
+        .train_text {
+          width: 50%;
+          text-align: left;
+        }
+        .train_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+    @include respond-to(xlarge) {
+
+      
+      .restauration {
+        padding: 30px;
+
+        @include flex-center-row;
+
+        .restauration_text {
+          width: 800px;
+          text-align: left;
+
+          h2 {
+            font-size: $font-size-regular;
+          }
+          p{
+            font-size: $font-size-small;
+          }
+        }
+        .restauration_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+      .guide {
+        
+        padding: 30px;
+
+        @include flex-row-rev-center;
+
+        .guide_text {
+          width: 800px;
+          text-align: left;
+
+          h2 {
+            font-size: $font-size-regular;
+          }
+          p{
+            font-size: $font-size-small;
+          }
+        }
+        .guide_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+      .train {
+        padding: 30px;
+
+        @include flex-center-row;
+
+        .train_text {
+          width: 800px;
+          text-align: left;
+
+          h2 {
+            font-size: $font-size-regular;
+          }
+          p{
+            font-size: $font-size-small;
+          }
+        }
+        .train_img {
+
+          img {
+            width: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+}

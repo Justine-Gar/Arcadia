@@ -1,0 +1,200 @@
+@use "../abstract/all" as *;
+
+
+.mainFaq {
+
+  width: 100%;
+  height: auto;
+  
+
+  .faq_title_img {
+
+    width: 100%;
+    min-height: 400px;
+
+    background-image: url('../../assets/img/savane/zèbre/adobestock_343763723.avif');
+    background-size: cover;
+    background-position: bottom 25% right 11%;
+
+    @include flex-row-center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 400px;
+      background-color: $color-back-primary-alpha;
+      pointer-events: none;
+    }
+
+    .faq_title{
+      position: relative;
+      z-index: 14;
+      margin: 20px;
+      h1 {
+        @include font($font-dimsum, $font-size-xlarge, 500, $color-font-primary);
+      }
+    }
+
+    @include respond-to(tablet) {
+
+      min-height: 500px;
+      justify-content: center;
+      &::before {
+        min-height: 500px;
+      }
+
+      .faq_title {
+        top: 50px;
+      }
+    }
+    @include respond-to(desktop) {
+
+      min-height: 550px;
+      justify-content: center;
+      &::before {
+        min-height: 550px;
+      }
+
+      .faq_title {
+        top: 50px;
+      }
+    }
+    @include respond-to(large) {
+
+      min-height: 600px;
+      justify-content: center;
+      &::before {
+        min-height: 600px;
+      }
+
+      .faq_title {
+        top: 50px;
+
+        h1 {
+        
+          font-size: $font-size-xxlarge;
+        }
+      }
+    }
+    @include respond-to(xlarge) {
+
+      min-height: 650px;
+      justify-content: center;
+      &::before {
+        min-height: 650px;
+      }
+
+      .faq_title {
+        top: 50px;
+
+        h1 {
+        
+          font-size: $font-size-xxlarge;
+        }
+      }
+    }
+  }
+  
+
+  .faq_container {
+
+    background-color: $color-back-primary;
+    @include flex-algn-start-col;
+
+    #prepare, #qui, #communication {
+
+      display: flex;
+      flex-direction: column;
+      width: 85vw;
+      margin: 20px;
+      
+      h2 {
+        @include font($font-dimsum, $font-size-regular, 500, $color-font-primary);
+      }
+      .half {
+        float: none;
+        padding: 20px 0px;
+        width: 100%;
+
+        .tab {
+          position: relative;
+          width: 100%;
+          color: $color-back-primary;
+          overflow: hidden;
+          
+          
+          summary {
+            position: relative;
+
+            padding: 10px;
+            background:$color-font-primary;
+            font-weight: bold;
+
+            cursor: pointer;
+            margin: 5px;
+          }
+          .tab-content {
+            color: $color-font-third;
+            padding: 15px;
+          }
+        }
+      }
+    }
+
+    @include respond-to(tablet) {
+      align-items: center;
+
+      #prepare, #qui, #communication {
+
+        width: 80vw;
+
+        h2 {
+          font-size: $font-size-regular;
+          margin: 20px;
+        }
+      }
+    }
+    @include respond-to(desktop) {
+      align-items: center;
+
+      #prepare, #qui, #communication {
+
+        width: 80vw;
+        h2 {
+          font-size: $font-size-large;
+          margin: 20px;
+        }
+      }
+    } 
+    @include respond-to(large) {
+      align-items: center;
+
+      #prepare, #qui, #communication {
+
+        width: 70vw;
+
+        h2 {
+          font-size: $font-size-xlarge;
+          margin: 20px;
+        }
+      }
+    }
+    @include respond-to(xlarge) {
+      align-items: center;
+
+      #prepare, #qui, #communication {
+
+        width: 60vw;
+        h2 {
+          font-size: $font-size-xlarge;
+          margin: 20px;
+        }
+      }
+    } 
+  }
+
+
+}

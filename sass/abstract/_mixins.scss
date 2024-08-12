@@ -1,0 +1,40 @@
+/**_____FONT_____**/
+
+/*mixin*/
+@mixin font ($family, $size, $weight, $color) {
+
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+
+}
+
+/**_____BUTTON_____**/
+
+/*variable*/
+$color-button-primary: #FFE888;
+$color-button-texte: #182828;
+$font-button-monserrat: 'Montserrat';
+
+
+/*mixin*/
+@mixin button ($font-f: $font-button-monserrat ,$bg-color: $color-button-primary , $text-color: $color-button-texte, $padding: 10px, $border-radius: 10px) {
+
+  font-family: $font-f;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: $bg-color;
+  color: $text-color;
+  text-transform: uppercase;
+  padding: $padding;
+  border-radius: $border-radius;
+
+  &:hover {
+
+    background-color: $text-color;
+    color: $bg-color;
+  }
+}
+
+
