@@ -36,12 +36,50 @@ class Router
         //je parcours toutes les routes enregistrer
         foreach ($this->routes as $route)
         {
-            //je vérifie si method HTTP correspond à URL (chemin de la route)
-            if ($route['method'] === $method && $this->matchRoute($route['path'], $url, $params))
-            {
-                
+            //Vérifie si la method HTTP correspond et si URL correspond au chemin de la route
+            if ($route['method'] === $method && $this->matchRoute($route['path'], $url, $params)) {
+                // Sépare le nom du contrôleur et de la méthode
+                list($controller, $action) = explode('@', $route['handler']);
+                // Ajoute le namespace complet au nom du contrôleur
+                $controller = "App\\Controllers\\" . $controller;
+
+                // Crée une instance du contrôleur
+                $controllerInstance = new $controller($GLOBALS['dbConnection']);
+                // Appelle la méthode du contrôleur avec les paramètres extraits de l'URI
+                $result = call_user_func_array([$controllerInstance, $action], $params);
+
+                // Gère le résultat retourné par le contrôleur
+                if ($result instanceof Response) {
+                    // Si c'est déjà un objet Response, on l'utilise tel quel
+                    $response = $result;
+                } else {
+                    // Sinon, on définit le contenu de la réponse avec le résultat
+                    $response->setContent($result);
+                }
+
+                // Envoie la réponse au client
+                $response->send();
+                return;
             }
         }
     }
 
+    //Method pour faire correspondre les route à url
+    private function matchRoute($routePath, $url, &$params)
+    {
+        //Convertir les params de la route en expression réguliere
+        $routePath = preg_replace('/{(\w+)}/', '(?P<\1>[^/]+)', $routePath);
+        //Ajouter les délimiteur début et fin à l'expresion reguliere
+        $routePath = "#^" . $routePath . "$#";
+
+        //On fait correspondre L url à la route
+        if (preg_match($routePath, $url, $matches))
+        {
+            //Extrait les param de l'url
+            $params = array_filter($matches, 'is_string', ARRAY_FILTER_USE_KEY);
+            return true;
+        }
+
+        return false;
+    }
 }
