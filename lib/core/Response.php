@@ -2,7 +2,7 @@
 
 namespace lib\core;
 
-class Responce
+class Response
 {
     private $headers = [];
     private $content = '';

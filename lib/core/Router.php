@@ -3,6 +3,7 @@
 namespace lib\core;
 
 use lib\config\database;
+use Exception;
 
 class Router
 {   
@@ -31,11 +32,14 @@ class Router
         //Récupere la methode HTTP de requete actuelle
         $method = $_SERVER['REQUEST_METHOD'];
         //Je crée un objet Response pour générer la réponse HTTP
-        $response = new Responce();
+        $response = new Response();
+
+        error_log("Handling request for URL: " . $url . " with method: " . $method);
 
         //je parcours toutes les routes enregistrer
         foreach ($this->routes as $route)
-        {
+        {   
+            error_log("Checking route: " . $route['path']);
             //Vérifie si la method HTTP correspond et si URL correspond au chemin de la route
             if ($route['method'] === $method && $this->matchRoute($route['path'], $url, $params)) {
                 // Sépare le nom du contrôleur et de la méthode
@@ -43,13 +47,33 @@ class Router
                 // Ajoute le namespace complet au nom du contrôleur
                 $controller = "App\\Controllers\\" . $controller;
 
+                error_log("Matched route. Controller: " . $controller . ", Action: " . $action);
+
+                if (!class_exists($controller)) {
+                    error_log("Controller class does not exist: " . $controller);
+                    throw new Exception("Controller not found: " . $controller);
+                }
+
+
                 // Crée une instance du contrôleur
-                $controllerInstance = new $controller($GLOBALS['dbConnection']);
+                $controllerInstance = new $controller($this->dbConnection);
+
+                if (!method_exists($controllerInstance, $action)) {
+                    error_log("Action does not exist in controller: " . $action);
+                    throw new Exception("Action not found: " . $action);
+                }
+
+
                 // Appelle la méthode du contrôleur avec les paramètres extraits de l'URI
-                $result = call_user_func_array([$controllerInstance, $action], $params);
+                try {
+                    $result = call_user_func_array([$controllerInstance, $action], $params);
+                } catch (Exception $e) {
+                    error_log("Exception occurred in controller action: " . $e->getMessage());
+                    throw $e;
+                }
 
                 // Gère le résultat retourné par le contrôleur
-                if ($result instanceof Responce) {
+                if ($result instanceof Response) {
                     // Si c'est déjà un objet Response, on l'utilise tel quel
                     $response = $result;
                 } else {
@@ -62,6 +86,11 @@ class Router
                 return;
             }
         }
+
+        error_log("No matching route found for URL: " . $url);
+        $response->setStatusCode(404);
+        $response->setContent("404 Not Found");
+        $response->send();
     }
 
     //Method pour faire correspondre les route à url
