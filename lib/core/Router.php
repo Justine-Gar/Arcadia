@@ -3,8 +3,10 @@
 namespace lib\core;
 
 class Router
-{
+{   
+    
     private $routes = [];
+
 
     public function addRoute($url, $controller, $action)
     {
