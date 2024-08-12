@@ -15,7 +15,7 @@
 
   <main>
 
-    <?= $content ?? '';?>
+    <?=$content;?>
 
   </main>
 

@@ -1,0 +1,500 @@
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: / with method: GET
+[12-Aug-2024 19:36:31 UTC] Matched route. Controller: App\Controllers\HomeController, Action: index
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: App\Controllers\HomeController
+[12-Aug-2024 19:36:31 UTC] Prefix: App\Controllers\, Relative class: HomeController
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/HomeController.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: App\Controllers\Controllers
+[12-Aug-2024 19:36:31 UTC] Prefix: App\Controllers\, Relative class: Controllers
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/Controllers.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/Controllers.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/HomeController.php
+[12-Aug-2024 19:36:31 UTC] Calling controller action
+[12-Aug-2024 19:36:31 UTC] Render method called with view: home
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Response object created and returned
+[12-Aug-2024 19:36:31 UTC] Controller action returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Returning response from Router
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/Fichier%202.png
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/Fichier%202.png with method: GET
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/Fichier%202.png
+[12-Aug-2024 19:36:31 UTC] Processing URL: /public/css/style.css
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /public/css/style.css with method: GET
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /public/css/style.css
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/savane/girafe/adobestock_319699532.avif
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/savane/girafe/adobestock_319699532.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/savane/girafe/adobestock_319699532.avif
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/jungle/jaguar/adobestock_161417940.avif
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/jungle/jaguar/adobestock_161417940.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/jungle/jaguar/adobestock_161417940.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/marais/caiman/adobestock_391231321.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/marais/caiman/adobestock_391231321.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/marais/caiman/adobestock_391231321.avif
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/savane/phacoch%C3%A8re/adobestock_502594250.avif
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/savane/phacoch%C3%A8re/adobestock_502594250.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/savane/phacoch%C3%A8re/adobestock_502594250.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/savane/girafe/adobestock_248371516.avif
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/savane/girafe/adobestock_248371516.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/savane/girafe/adobestock_248371516.avif
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/savane/girafe/adobestock_122134380.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/savane/girafe/adobestock_122134380.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/savane/girafe/adobestock_122134380.avif
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/savane/adobestock_183380256.avif
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/savane/adobestock_183380256.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/savane/adobestock_183380256.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/savane/fenec/adobestock_509938682.avif
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/savane/fenec/adobestock_509938682.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/savane/fenec/adobestock_509938682.avif
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/marais/adobestock_391231580.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/marais/adobestock_391231580.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/marais/adobestock_391231580.avif
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/marais/caiman/adobestock_118815674.avif
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/marais/caiman/adobestock_118815674.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/marais/caiman/adobestock_118815674.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/marais/rainetteVerte/adobestock_651948841.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/marais/rainetteVerte/adobestock_651948841.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/marais/rainetteVerte/adobestock_651948841.avif
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/savane/rhinoc%C3%A9ros/adobestock_328499140.avif
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/savane/rhinoc%C3%A9ros/adobestock_328499140.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/savane/rhinoc%C3%A9ros/adobestock_328499140.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/jungle/AdobeStock_445496398.avif
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/jungle/AdobeStock_445496398.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/jungle/AdobeStock_445496398.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/jungle/paresseux/adobestock_445939941.avif
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/jungle/paresseux/adobestock_445939941.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/jungle/paresseux/adobestock_445939941.avif
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/jungle/toucanToco/adobestock_448140248.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/jungle/toucanToco/adobestock_448140248.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/jungle/toucanToco/adobestock_448140248.avif
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/marais/salamandre/adobestock_443143263.avif
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/marais/salamandre/adobestock_443143263.avif with method: GET
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/marais/salamandre/adobestock_443143263.avif
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/icon/fb.png
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/icon/fb.png with method: GET
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/icon/fb.png
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/icon/youtube.png
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/icon/youtube.png with method: GET
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/icon/youtube.png
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/icon/insta.png
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/icon/insta.png with method: GET
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/icon/insta.png
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Script started
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/icon/x.png
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/icon/x.png with method: GET
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/icon/x.png
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Processing URL: /assets/img/Fichier%202.png
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Handling request for URL: /assets/img/Fichier%202.png with method: GET
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] No matching route found for URL: /assets/img/Fichier%202.png
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:31 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:31 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:31 UTC] Router->handleRequest returned. Response type: object
+[12-Aug-2024 19:36:31 UTC] Sending response
+[12-Aug-2024 19:36:33 UTC] Script started
+[12-Aug-2024 19:36:33 UTC] Attempting to autoload class: lib\config\Database
+[12-Aug-2024 19:36:33 UTC] Prefix: lib\config\, Relative class: Database
+[12-Aug-2024 19:36:33 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:33 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/config/Database.php
+[12-Aug-2024 19:36:33 UTC] Attempting to autoload class: lib\core\Router
+[12-Aug-2024 19:36:33 UTC] Prefix: lib\core\, Relative class: Router
+[12-Aug-2024 19:36:33 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:33 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Router.php
+[12-Aug-2024 19:36:33 UTC] Processing URL: /habitats
+[12-Aug-2024 19:36:33 UTC] Calling Router->handleRequest
+[12-Aug-2024 19:36:33 UTC] Handling request for URL: /habitats with method: GET
+[12-Aug-2024 19:36:33 UTC] Matched route. Controller: App\Controllers\HabitatController, Action: index
+[12-Aug-2024 19:36:33 UTC] Attempting to autoload class: App\Controllers\HabitatController
+[12-Aug-2024 19:36:33 UTC] Prefix: App\Controllers\, Relative class: HabitatController
+[12-Aug-2024 19:36:33 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/HabitatController.php
+[12-Aug-2024 19:36:33 UTC] Attempting to autoload class: App\Controllers\Controllers
+[12-Aug-2024 19:36:33 UTC] Prefix: App\Controllers\, Relative class: Controllers
+[12-Aug-2024 19:36:33 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/Controllers.php
+[12-Aug-2024 19:36:33 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/Controllers.php
+[12-Aug-2024 19:36:33 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//src/controllers/HabitatController.php
+[12-Aug-2024 19:36:33 UTC] Calling controller action
+[12-Aug-2024 19:36:33 UTC] Render method called with view: habitats
+[12-Aug-2024 19:36:33 UTC] Attempting to autoload class: lib\core\Response
+[12-Aug-2024 19:36:33 UTC] Prefix: lib\core\, Relative class: Response
+[12-Aug-2024 19:36:33 UTC] Attempting to load file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:33 UTC] Successfully loaded file: D:\ENV\wamp64\www\Arcadia\lib\core/../..//lib/core/Response.php
+[12-Aug-2024 19:36:33 UTC] Response object created and returned
+[12-Aug-2024 19:36:33 UTC] Controller action returned. Response type: NULL
+[12-Aug-2024 19:36:33 UTC] Controller did not return a Response object. Actual type: NULL
+[12-Aug-2024 19:36:33 UTC] Error occurred: Controller did not return a Response object

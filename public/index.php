@@ -1,6 +1,9 @@
 <?php
-error_reporting(E_ALL);
 ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+ini_set('error_log', 'D:/ENV/wamp64/www/Arcadia/php_errors.log');
+error_log("Script started");
 
 //Chemin d'acces
 define('BASE_PATH', dirname(__DIR__));
@@ -49,14 +52,23 @@ $url = str_replace('/arcadia', '', $url);
 error_log("Processing URL: " . $url);
 
 try {
+  error_log("Calling Router->handleRequest");
+  $response= $router->handleRequest($url);
+  error_log("Router->handleRequest returned. Response type: " . gettype($response));
   
-  $router->handleRequest($url);
+  if (!($response instanceof \lib\core\Response)) {
+    error_log("Router did not return a Response object. Actual type: " . gettype($response));
+    throw new Exception("Router did not return a Response object");
+  }
+
+  error_log("Sending response");
+  $response->send();
 
 } catch (Exception $e)
 {
   //Gérer les erreurs
+  error_log("Error occurred: " . $e->getMessage());
   // Ajouter un log pour voir l'URL traitée
-  error_log("Processing URL: " . $url);
   $response = new \lib\core\Response();
   $response->setStatusCode(500);
   $response->json(['error' => 'Une erreur interne est survenue: ' . $e->getMessage()]);

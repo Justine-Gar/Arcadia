@@ -25,22 +25,12 @@ class Response
 
     public function send()
     {   
-        // Capturer la sortie existante
-        $output = ob_get_clean();
-
-        // Définir le code de statut
+        
         http_response_code($this->statusCode);
-
-        // Définir les en-têtes par défaut pour la sécurité
-        $this->setDefaultSecurityHeaders();
-
-        // Envoyer tous les en-têtes
         foreach ($this->headers as $name => $value) {
             header("$name: $value");
         }
-
-        // Envoyer le contenu capturé et le contenu de la réponse
-        echo $output . $this->content;
+        echo $this->content;
     }
 
     private function setDefaultSecurityHeaders()
