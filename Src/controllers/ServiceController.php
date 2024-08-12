@@ -7,8 +7,10 @@ class ServiceController extends Controllers
 {
     public function index()
     {
-        $this->render('services', [
+        $data = [
             'title' => 'Services',
-        ]);
+        ];
+        
+        return $this->render('services', $data);
     }
 }

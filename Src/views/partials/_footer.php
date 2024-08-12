@@ -17,10 +17,10 @@
       </div>
 
       <nav class="footer_nav">
-        <a href="#">Accueil</a>
-        <a href="#">Services</a>
-        <a href="#">Habitats</a>
-        <a href="#">FAQ</a>
+        <a href="/">Accueil</a>
+        <a href="/services">Services</a>
+        <a href="/habitats">Habitats</a>
+        <a href="/faq">FAQ</a>
         <a href="#">Connexion</a>
       </nav>
 
