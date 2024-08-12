@@ -33,7 +33,7 @@ $dbConnection = lib\config\Database::getConnection();
 $routes = require BASE_PATH . '/lib/config/routes.php';
 
 //Initialiser le Router
-$router = new Lib\core\Router($routes);
+$router = new lib\core\Router($routes);
 
 
 // Gérer la requête
