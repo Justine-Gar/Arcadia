@@ -1,3 +1,4652 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+menu, ol, ul, a {
+  list-style: none;
+  text-decoration: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**_____FONT_____**/
+/*mixin*/
+/**_____BUTTON_____**/
+/*variable*/
+/*mixin*/
+/**VARIABLE COLOR**/
+/** VARIABLE FONT **/
+/** VARIABLE SIZE **/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #254040;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFE888;
+  border-radius: 25px;
+}
+
+/** ============= SECTION BIENVENUE ============ **/
+#bienvenue {
+  width: 100%;
+  height: auto;
+  background-color: #254040;
+  /**____CAROUSEL____**/
+  /**____CONTAINER____**/
+  /**____BIENVENU____**/
+  /**______MEDIAS BIENVENUE_____**/
+}
+#bienvenue .slider_container {
+  width: 100vw;
+  max-width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+#bienvenue .slider_container .slides {
+  display: flex;
+  height: 100%;
+  animation: slider 10s ease-in-out;
+}
+#bienvenue .slider_container .slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  flex-shrink: 0;
+}
+#bienvenue .ligne_bienvenue {
+  width: 100%;
+  height: 55px;
+  background-color: #254040;
+  position: relative;
+  clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+  bottom: 50px;
+}
+#bienvenue .bienvenue_container {
+  padding: 0 30px 30px;
+  bottom: 20px;
+  /** Texte bienvenue **/
+  /** Img bienvenue**/
+}
+#bienvenue .bienvenue_container .bienvenue_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 20px;
+}
+#bienvenue .bienvenue_container .bienvenue_text h1 {
+  font-family: "Dimsum Week";
+  font-size: 2.75rem;
+  font-weight: 0;
+  color: #FFE888;
+  padding: 10px;
+}
+#bienvenue .bienvenue_container .bienvenue_text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #f1f0f2;
+  padding: 10px;
+  text-align: center;
+  line-height: 20px;
+}
+#bienvenue .bienvenue_container .bienvenue_img {
+  position: relative;
+  visibility: hidden;
+  display: none;
+}
+#bienvenue .bienvenue_container .bienvenue_img img {
+  width: 70%;
+  clip-path: circle(30% at 50% 50%);
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  #bienvenue .slider_container {
+    height: 500px;
+  }
+  #bienvenue .slider_container .slides {
+    height: 105%;
+  }
+  #bienvenue .ligne_container {
+    width: 100%;
+    height: 55px;
+    background-color: #254040;
+    position: relative;
+    clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+    bottom: 50px;
+  }
+  #bienvenue .bienvenue_container {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 10px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #bienvenue .slider_container {
+    max-width: 100%;
+    height: 605px;
+  }
+  #bienvenue .slider_container .slides {
+    height: 110%;
+  }
+  #bienvenue .slider_container .slides img {
+    height: 95%;
+  }
+  #bienvenue .ligne_container {
+    width: 100%;
+    height: 55px;
+    background-color: #254040;
+    position: relative;
+    clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+    bottom: 50px;
+  }
+  #bienvenue .bienvenue_container {
+    max-width: 920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #bienvenue .slider_container {
+    max-width: 100%;
+    height: 705px;
+  }
+  #bienvenue .slider_container .slides {
+    height: 195%;
+  }
+  #bienvenue .slider_container .slides img {
+    height: 55%;
+    object-position: center bottom;
+  }
+  #bienvenue .ligne_container {
+    width: 100%;
+    height: 55px;
+    background-color: #254040;
+    position: relative;
+    clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+    bottom: 50px;
+  }
+  #bienvenue .bienvenue_container {
+    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #bienvenue .slider_container {
+    max-width: 100%;
+    height: 810px;
+  }
+  #bienvenue .slider_container .slides {
+    height: 185%;
+  }
+  #bienvenue .slider_container .slides img {
+    height: 70%;
+    object-position: center bottom;
+  }
+  #bienvenue .ligne_container {
+    width: 100%;
+    height: 55px;
+    background-color: #254040;
+    position: relative;
+    clip-path: polygon(0 0, 100% 60%, 100% 100%, 0% 100%);
+    bottom: 50px;
+  }
+  #bienvenue .bienvenue_container {
+    max-width: 1140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/** ============= SECTION SERVICES ============ **/
+#home_services {
+  width: 100%;
+  height: auto;
+  background-color: #5a7064;
+  /**______MEDIAS SERVICES_____**/
+}
+#home_services .home_services_container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#home_services .home_services_container h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #FFE888;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+#home_services .home_services_container .home_services_groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+#home_services .home_services_container .home_services_groupe .home_services_text {
+  display: flex;
+  margin: 15px;
+}
+#home_services .home_services_container .home_services_groupe .home_services_text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #f1f0f2;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button {
+  display: flex;
+  flex-direction: column;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 10px 0 10px 0;
+  position: relative;
+  overflow: hidden;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r a,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v a,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t a {
+  color: #f1f0f2;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r a::before,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v a::before,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t a::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  color: #FFE888;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r a::after,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v a::after,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #5a7064;
+  transition: width 0.3s ease-in-out;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r a:hover::before,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v a:hover::before,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t a:hover::before {
+  width: 100%;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r a:hover::after,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v a:hover::after,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t a:hover::after {
+  width: 100%;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r svg,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v svg,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t svg {
+  width: 30px;
+  height: 30px;
+  color: #f1f0f2;
+  min-width: 30px;
+  display: inline-block;
+  transition: transform 0.8s ease-in-out;
+}
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_r:hover svg,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_v:hover svg,
+#home_services .home_services_container .home_services_groupe .home_services_button .home_button_t:hover svg {
+  transform: translateX(2px);
+  color: #FFE888;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  #home_services .home_services_container {
+    max-width: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #home_services .home_services_container {
+    max-width: 920px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #home_services .home_services_container .home_services_groupe {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #home_services .home_services_container {
+    max-width: 1140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #home_services .home_services_container .home_services_groupe {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #home_services .home_services_container {
+    max-width: 1140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #home_services .home_services_container .home_services_groupe {
+    flex-direction: row;
+  }
+}
+
+/** ============= SECTION HABITATS ============ **/
+#home_habitats {
+  width: 100%;
+  height: auto;
+  /**______MEDIAS HABITATS_____**/
+}
+#home_habitats .home_card {
+  width: 100%;
+  height: 1080px;
+  display: flex;
+  flex-direction: column;
+  /**_____SAVANE_____**/
+  /**_____MARAIS_____**/
+  /**____JUGNLE_____**/
+}
+#home_habitats .home_card .home_habitat_savane {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: flex 0.5s ease-in-out;
+  /**___TITLE SAVANE____**/
+  /**___IMG SAVANE____**/
+  /**___TEXTE SAVANE____**/
+  /**___TITLE MARAIS____**/
+  /**___ANIMAUX____**/
+}
+#home_habitats .home_card .home_habitat_savane:hover .home_title {
+  top: 50px;
+}
+#home_habitats .home_card .home_habitat_savane .home_title {
+  position: absolute;
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bolder;
+  color: #f1f0f2;
+  text-transform: uppercase;
+  padding: 5px;
+  transition: top 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.3s ease;
+  transform: scale(1);
+}
+#home_habitats .home_card .home_habitat_savane img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_txt_hover {
+  max-width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 150px;
+  /* left: 50px; */
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 0;
+  color: #f1f0f2;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  border-radius: 12px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*Animation JS*/
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 0.3s;
+  /*  VISIBILITY JS   */
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_txt_hover .home_visibility {
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_txt_hover .home_savane_button {
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_txt_hover .home_savane_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_txt_hover .home_savane_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_mobile {
+  max-width: 250px;
+  position: absolute;
+  top: 480px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 0;
+  color: #f1f0f2;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  border-radius: 12px;
+  padding: 21px;
+  /*Ici on cache ceci en tablet -> large */
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 0.5s;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_mobile .home_mobile_button {
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_mobile .home_mobile_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_mobile .home_mobile_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_mobile .home_visibility {
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux {
+  /*Animation JS*/
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  /**____GIRAFE____**/
+  /**____FENEC____**/
+  /**____RHINOCEROS____**/
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe .home_img_girafe {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe .home_img_girafe img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe .home_girafe_button {
+  visibility: visible;
+  position: relative;
+  right: -45px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe .home_girafe_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 120px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe .home_girafe_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec .home_img_fenec {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec .home_img_fenec img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec .home_fenec_button {
+  visibility: visible;
+  position: relative;
+  right: -45px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec .home_fenec_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 130px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec .home_fenec_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros .home_img_rhinoceros {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros .home_img_rhinoceros img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros .home_rhinoceros_button {
+  visibility: visible;
+  position: relative;
+  right: -45px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros .home_rhinoceros_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 60px;
+}
+#home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros .home_rhinoceros_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_marais {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: flex 0.5s ease-in-out;
+  /**___TITLE MARAIS____**/
+  /**___IMG MARAIS____**/
+  /**___TEXTE MAIRAIS____**/
+  /**___MOBILE____**/
+  /**___ANIMAUX____**/
+}
+#home_habitats .home_card .home_habitat_marais:hover .home_title {
+  top: 50px;
+  transform: scale(1.05);
+}
+#home_habitats .home_card .home_habitat_marais .home_title {
+  position: absolute;
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bolder;
+  color: #f1f0f2;
+  text-transform: uppercase;
+  padding: 5px;
+  /*Animation du Titre en Mobile*/
+  transition: top 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.3s ease;
+  transform: scale(1);
+}
+#home_habitats .home_card .home_habitat_marais img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_txt_hover {
+  max-width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 150px;
+  /* left: 50px; */
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 0;
+  color: #f1f0f2;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  border-radius: 12px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*Animation en JS*/
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 0.5s;
+  /*  Visibility JS  */
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_txt_hover .home_visibility {
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_txt_hover .home_marais_button {
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_txt_hover .home_marais_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_txt_hover .home_marais_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_mobile {
+  max-width: 250px;
+  position: absolute;
+  top: 480px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 0;
+  color: #f1f0f2;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  border-radius: 12px;
+  padding: 21px;
+  /*Ici on cache ceci en tablet -> large */
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 0.5s;
+  /*  Visibility JS  */
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_mobile .home_mobile_button {
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_mobile .home_mobile_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_mobile .home_mobile_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_mobile .home_visibility {
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux {
+  /*Animation JS*/
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  /**____CAIMAM____**/
+  /**____RENETTE____**/
+  /**____SALAMANDRE____**/
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman .home_img_caiman {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman .home_img_caiman img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman .home_caiman_button {
+  visibility: visible;
+  position: relative;
+  right: -45px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman .home_caiman_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 110px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman .home_caiman_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette .home_img_renette {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette .home_img_renette img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette .home_renette_button {
+  visibility: visible;
+  position: relative;
+  right: -45px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette .home_renette_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 105px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette .home_renette_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre .home_img_salamandre {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre .home_img_salamandre img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre .home_salamanbre_button {
+  visibility: visible;
+  position: relative;
+  right: -45px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre .home_salamanbre_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 50px;
+}
+#home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre .home_salamanbre_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_jungle {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: flex 0.5s ease-in-out;
+  /**___TITLE JUNGLE____**/
+  /**___IMG JUNGLE____**/
+  /**___TEXTE JUNGLE____**/
+  /**___MOBILE____**/
+  /**___ANIMAUX____**/
+}
+#home_habitats .home_card .home_habitat_jungle:hover .home_title {
+  top: 40px;
+  transform: scale(1.05);
+}
+#home_habitats .home_card .home_habitat_jungle .home_title {
+  position: absolute;
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bolder;
+  color: #f1f0f2;
+  text-transform: uppercase;
+  padding: 5px;
+  transition: top 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), transform 0.3s ease;
+  transform: scale(1);
+}
+#home_habitats .home_card .home_habitat_jungle img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover {
+  max-width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 150px;
+  /* left: 50px; */
+  z-index: 5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 0;
+  color: #f1f0f2;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  border-radius: 12px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*Animation JS*/
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 0.5s;
+  /*  Visibility JS  */
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover .home_visibility {
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover .home_jungle_button {
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover .home_jungle_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover .home_jungle_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_mobile {
+  max-width: 250px;
+  position: absolute;
+  top: 480px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 0;
+  color: #f1f0f2;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  border-radius: 12px;
+  padding: 21px;
+  /*Ici on cache ceci en tablet -> large */
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+  transition-delay: 0.5s;
+  /*  Visibility JS  */
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_mobile .home_mobile_button {
+  text-align: center;
+  position: relative;
+  top: 30px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_mobile .home_mobile_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_mobile .home_mobile_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_mobile .home_visibility {
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux {
+  /*ANIMATION js*/
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  /**____PARESSEUX____**/
+  /**____TOUCAN____**/
+  /**____JAGUAR____**/
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux .home_img_paresseux {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux .home_img_paresseux img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux .home_paresseux_button {
+  visibility: visible;
+  position: relative;
+  right: -45px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux .home_paresseux_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 50px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux .home_paresseux_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan .home_img_toucan {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 15;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan .home_img_toucan img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan .home_toucan_button {
+  visibility: visible;
+  position: relative;
+  right: -10px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan .home_toucan_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 50px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan .home_toucan_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar {
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar .home_img_jaguar {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFE888;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 15;
+  visibility: visible;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar .home_img_jaguar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar .home_jaguar_button {
+  visibility: visible;
+  position: relative;
+  right: -10px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar .home_jaguar_button a {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  padding-right: 50px;
+}
+#home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar .home_jaguar_button a:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  #home_habitats .home_card {
+    height: 1080px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_mobile,
+  #home_habitats .home_card .home_habitat_savane .home_marais_mobile,
+  #home_habitats .home_card .home_habitat_savane .home_jungle_mobile,
+  #home_habitats .home_card .home_habitat_marais .home_savane_mobile,
+  #home_habitats .home_card .home_habitat_marais .home_marais_mobile,
+  #home_habitats .home_card .home_habitat_marais .home_jungle_mobile,
+  #home_habitats .home_card .home_habitat_jungle .home_savane_mobile,
+  #home_habitats .home_card .home_habitat_jungle .home_marais_mobile,
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_mobile {
+    top: 500px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_mobile_animaux,
+  #home_habitats .home_card .home_habitat_marais .home_mobile_animaux,
+  #home_habitats .home_card .home_habitat_jungle .home_mobile_animaux {
+    visibility: hidden;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #home_habitats .home_card {
+    height: 600px;
+    flex-direction: row;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_title,
+  #home_habitats .home_card .home_habitat_marais .home_title,
+  #home_habitats .home_card .home_habitat_jungle .home_title {
+    text-align: center;
+    transform: rotate(-90deg);
+    transition: transform 0.5s ease;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_title:hover,
+  #home_habitats .home_card .home_habitat_marais .home_title:hover,
+  #home_habitats .home_card .home_habitat_jungle .home_title:hover {
+    transform: rotate(0deg);
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_txt_hover,
+  #home_habitats .home_card .home_habitat_savane .home_marais_txt_hover,
+  #home_habitats .home_card .home_habitat_savane .home_jungle_txt_hover,
+  #home_habitats .home_card .home_habitat_marais .home_savane_txt_hover,
+  #home_habitats .home_card .home_habitat_marais .home_marais_txt_hover,
+  #home_habitats .home_card .home_habitat_marais .home_jungle_txt_hover,
+  #home_habitats .home_card .home_habitat_jungle .home_savane_txt_hover,
+  #home_habitats .home_card .home_habitat_jungle .home_marais_txt_hover,
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover {
+    left: 60px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_mobile,
+  #home_habitats .home_card .home_habitat_savane .home_marais_mobile,
+  #home_habitats .home_card .home_habitat_savane .home_jungle_mobile,
+  #home_habitats .home_card .home_habitat_marais .home_savane_mobile,
+  #home_habitats .home_card .home_habitat_marais .home_marais_mobile,
+  #home_habitats .home_card .home_habitat_marais .home_jungle_mobile,
+  #home_habitats .home_card .home_habitat_jungle .home_savane_mobile,
+  #home_habitats .home_card .home_habitat_jungle .home_marais_mobile,
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_mobile {
+    top: 450px;
+    right: 70px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #home_habitats .home_card {
+    height: 600px;
+    flex-direction: row;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_title {
+    text-align: center;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_txt_hover {
+    left: 70px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_txt_hover .home_mobile_animaux {
+    visibility: hidden;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_mobile {
+    display: none;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    bottom: 40px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fennec {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 95px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 250px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_title {
+    text-align: center;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_txt_hover {
+    left: 70px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_txt_hover .home_mobile_animaux {
+    visibility: hidden;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_mobile {
+    display: none;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    bottom: 40px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 95px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 250px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_title {
+    text-align: center;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover {
+    left: 50px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover .home_mobile_animaux {
+    visibility: hidden;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_mobile {
+    display: none;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    bottom: 40px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 95px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 250px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #home_habitats .home_card {
+    height: 600px;
+    flex-direction: row;
+  }
+  #home_habitats .home_card .home_habitat_savane:hover .home_title {
+    top: auto;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_txt_hover {
+    left: 140px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_txt_hover .home_mobile_animaux {
+    visibility: hidden;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_mobile {
+    display: none;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe {
+    visibility: visible;
+    right: 50px;
+    z-index: 20;
+    top: 55px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_girafe:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec {
+    visibility: visible;
+    right: 50px;
+    z-index: 20;
+    top: 220px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_fenec:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros {
+    visibility: visible;
+    right: 50px;
+    z-index: 20;
+    bottom: 55px;
+  }
+  #home_habitats .home_card .home_habitat_savane .home_savane_animaux .home_savane_rhinoceros:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_marais:hover .home_title {
+    top: auto;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_txt_hover {
+    left: 140px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_txt_hover .home_mobile_animaux {
+    visibility: hidden;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_mobile {
+    display: none;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 55px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_renette:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 220px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_salamandre:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    bottom: 55px;
+  }
+  #home_habitats .home_card .home_habitat_marais .home_marais_animaux .home_marais_caiman:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_jungle:hover .home_title {
+    top: auto;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover {
+    left: 140px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_txt_hover .home_mobile_animaux {
+    visibility: hidden;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_mobile {
+    display: none;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 55px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_paresseux:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    top: 220px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_toucan:hover {
+    transform: translateX(-50px);
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar {
+    visibility: visible;
+    right: 30px;
+    z-index: 20;
+    bottom: 55px;
+  }
+  #home_habitats .home_card .home_habitat_jungle .home_jungle_animaux .home_jungle_jaguar:hover {
+    transform: translateX(-50px);
+  }
+}
+
+/** ============= SECTION AVIS ============ **/
+#avis {
+  width: 100%;
+  height: auto;
+  /**______MEDIAS HABITATS_____**/
+}
+#avis .avis_container {
+  background-color: #5a7064;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 22;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#avis .avis_container h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #FFE888;
+  text-transform: uppercase;
+}
+#avis .avis_container .avis_slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+#avis .avis_container .avis_slider #avis_container_text {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item {
+  max-width: 280px;
+  scroll-snap-align: center;
+  flex: 0 0 100%;
+  box-sizing: border-box;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item .avis_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px 8px 0px 0px;
+  background-color: #182828;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item .avis_header h5 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #FFE888;
+  text-transform: uppercase;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item .avis_header .rating {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item .avis_header .rating .star {
+  color: #f1f0f2;
+  font-size: 1rem;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item .avis_header .rating .star.filled {
+  color: #FFE888;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item .avis_text {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #f1f0f2;
+  border-radius: 0px 0px 8px 8px;
+}
+#avis .avis_container .avis_slider #avis_container_text .avis_item .avis_text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #182828;
+}
+#avis .avis_container .avis_slider #btnGauche {
+  position: absolute;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  left: 0px;
+  bottom: 100px;
+}
+#avis .avis_container .avis_slider #btnGauche:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#avis .avis_container .avis_slider #btnDroite {
+  position: absolute;
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  right: 0px;
+  bottom: 100px;
+}
+#avis .avis_container .avis_slider #btnDroite:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#avis .avis_container #avis_form {
+  margin-bottom: 40px;
+  display: none;
+}
+#avis .avis_container #avis_form input,
+#avis .avis_container #avis_form select,
+#avis .avis_container #avis_form #clientText,
+#avis .avis_container #avis_form .clientBtn {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #182828;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#avis .avis_container #avis_form #clientText {
+  height: 100px;
+  resize: vertical;
+}
+#avis .avis_container #avis_form .clientBtn {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+}
+#avis .avis_container #avis_form .clientBtn:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#avis .avis_container #btnAvisForm {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px;
+}
+#avis .avis_container #btnAvisForm:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+#avis .ligne_avis {
+  width: 100%;
+  height: 55px;
+  background-color: #5a7064;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+  z-index: 24;
+}
+#avis .avis_background {
+  width: 100%;
+  height: 205px;
+  max-height: 800px;
+  position: relative;
+  overflow: hidden;
+}
+#avis .avis_background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0) 50%), linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 20%), url("../../assets/img/jungle/panthèrenoir/adobestock_328526890.avif");
+  background-size: cover;
+  background-position: right 10% top;
+  opacity: 1;
+  z-index: -1;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  #avis .avis_container .avis_slider {
+    max-width: 355px;
+  }
+  #avis .avis_container .avis_slider #avis_container_text .avis_item {
+    max-width: 354px;
+    flex: 0 0 100%;
+  }
+  #avis .avis_background {
+    height: 265px;
+  }
+  #avis .avis_background::before {
+    top: -20px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #avis .avis_container .avis_slider {
+    max-width: 730px;
+  }
+  #avis .avis_container .avis_slider #avis_container_text .avis_item {
+    max-width: 354px;
+    flex: 0 0 50%;
+  }
+  #avis .avis_background {
+    height: 305px;
+  }
+  #avis .avis_background::before {
+    top: -40px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #avis .avis_container .avis_slider {
+    max-width: 730px;
+  }
+  #avis .avis_container .avis_slider #avis_container_text .avis_item {
+    max-width: 354px;
+    flex: 0 0 50%;
+  }
+  #avis .avis_background {
+    height: 365px;
+  }
+  #avis .avis_background::before {
+    top: -100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #avis .avis_container .avis_slider {
+    max-width: 730px;
+  }
+  #avis .avis_container .avis_slider #avis_container_text .avis_item {
+    max-width: 354px;
+    flex: 0 0 50%;
+  }
+  #avis .avis_background {
+    height: 405px;
+  }
+  #avis .avis_background::before {
+    top: -205px;
+  }
+}
+
+/**_______COVER_SERVICES_______**/
+#cover_services {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  /**__container services__**/
+  /**__COVER_IMG_services__**/
+  /**__COVER_SVG_services__**/
+  /**__COVER_TXT_services__**/
+}
+#cover_services .cover_services_container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-color: #182828;
+}
+#cover_services .cover_services_img {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  overflow: hidden;
+  background-image: url("../../assets/img/marais/salamandre/adobestock_325983454.avif");
+  background-size: cover;
+  background-position: bottom 25% right 45%;
+}
+#cover_services .cover_services_img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  pointer-events: none;
+}
+#cover_services .cover_services_cercle {
+  position: absolute;
+  left: -35%;
+  top: 30%;
+  width: 100%;
+}
+#cover_services .cover_services_cercle img {
+  width: 100vw;
+  height: 35vh;
+}
+#cover_services .cover_services_title {
+  position: absolute;
+  top: 45%;
+  padding: 20px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#cover_services .cover_services_title h1 {
+  font-family: "Dimsum Week";
+  font-size: 2.75rem;
+  font-weight: 300;
+  color: #FFE888;
+  margin-bottom: 15px;
+}
+#cover_services .cover_services_title p {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #f1f0f2;
+  text-align: left;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  #cover_services .cover_services_container {
+    height: 515px;
+  }
+  #cover_services .cover_services_img {
+    height: 75vh;
+  }
+  #cover_services .cover_services_cercle {
+    left: -30%;
+    top: 35%;
+  }
+  #cover_services .cover_services_title {
+    top: 50%;
+    left: 4%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #cover_services .cover_services_container {
+    height: 515px;
+  }
+  #cover_services .cover_services_img {
+    height: 90vh;
+  }
+  #cover_services .cover_services_cercle {
+    left: -30%;
+    top: 35%;
+  }
+  #cover_services .cover_services_title {
+    top: 50%;
+    left: 17%;
+  }
+  #cover_services .cover_services_title h1 {
+    font-family: "Dimsum Week";
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: #FFE888;
+  }
+  #cover_services .cover_services_title p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #f1f0f2;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #cover_services .cover_services_container {
+    height: 535px;
+  }
+  #cover_services .cover_services_img {
+    height: 90vh;
+  }
+  #cover_services .cover_services_cercle {
+    left: -26%;
+    top: 39%;
+  }
+  #cover_services .cover_services_cercle img {
+    height: 35vh;
+  }
+  #cover_services .cover_services_title {
+    top: 55%;
+    left: 22%;
+  }
+  #cover_services .cover_services_title h1 {
+    font-family: "Dimsum Week";
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: #FFE888;
+  }
+  #cover_services .cover_services_title p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #f1f0f2;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #cover_services .cover_services_container {
+    height: 800px;
+  }
+  #cover_services .cover_services_img {
+    height: 130vh;
+  }
+  #cover_services .cover_services_cercle {
+    left: -22%;
+    top: 39%;
+  }
+  #cover_services .cover_services_cercle img {
+    height: 42vh;
+  }
+  #cover_services .cover_services_title {
+    top: 52%;
+    left: 30%;
+  }
+  #cover_services .cover_services_title h1 {
+    font-family: "Dimsum Week";
+    font-size: 5rem;
+    font-weight: 500;
+    color: #FFE888;
+  }
+  #cover_services .cover_services_title p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #f1f0f2;
+  }
+}
+
+/**_____SERVICES____**/
+.services_container {
+  width: 100%;
+  height: auto;
+  /*SECTION RESTAURANT*/
+  /*SECTION GUIDE*/
+  /*SECTION TRAIN*/
+  /**MEDIA QUERIES SERVICES**/
+}
+.services_container .restauration {
+  background-color: #5a7064;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services_container .restauration .restauration_text {
+  padding: 20px;
+  text-align: center;
+}
+.services_container .restauration .restauration_text h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #FFE888;
+  padding-bottom: 15px;
+}
+.services_container .restauration .restauration_text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+  padding-bottom: 10px;
+}
+.services_container .restauration .restauration_img {
+  text-align: center;
+}
+.services_container .restauration .restauration_img img {
+  width: 100%;
+  height: 300px;
+  /*border-radius: 50%;*/
+  object-fit: cover;
+  object-position: center;
+}
+.services_container .guide {
+  background-color: #254040;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services_container .guide .guide_text {
+  padding: 20px;
+  text-align: center;
+}
+.services_container .guide .guide_text h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #FFE888;
+  padding-bottom: 15px;
+}
+.services_container .guide .guide_text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+  padding-bottom: 10px;
+}
+.services_container .guide .guide_img {
+  text-align: center;
+}
+.services_container .guide .guide_img img {
+  width: 100%;
+  height: 300px;
+  /*border-radius: 50%;*/
+  object-fit: cover;
+  object-position: center;
+}
+.services_container .train {
+  background-color: #5a7064;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.services_container .train .train_text {
+  padding: 20px;
+  text-align: center;
+}
+.services_container .train .train_text h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #FFE888;
+  padding-bottom: 15px;
+}
+.services_container .train .train_text p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+  padding-bottom: 10px;
+}
+.services_container .train .train_img {
+  text-align: center;
+}
+.services_container .train .train_img img {
+  width: 100%;
+  height: 300px;
+  /*border-radius: 50%;*/
+  object-fit: cover;
+  object-position: center;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .services_container .restauration {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .restauration .restauration_text {
+    width: 50%;
+    text-align: left;
+  }
+  .services_container .restauration .restauration_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .services_container .guide {
+    padding: 30px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .guide .guide_text {
+    width: 50%;
+    text-align: left;
+  }
+  .services_container .guide .guide_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .services_container .train {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .train .train_text {
+    width: 50%;
+    text-align: left;
+  }
+  .services_container .train .train_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .services_container .restauration {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .restauration .restauration_text {
+    width: 50%;
+    text-align: left;
+  }
+  .services_container .restauration .restauration_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .services_container .guide {
+    padding: 30px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .guide .guide_text {
+    width: 50%;
+    text-align: left;
+  }
+  .services_container .guide .guide_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .services_container .train {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .train .train_text {
+    width: 50%;
+    text-align: left;
+  }
+  .services_container .train .train_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .services_container .restauration {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .restauration .restauration_text {
+    width: 800px;
+    text-align: left;
+  }
+  .services_container .restauration .restauration_text h2 {
+    font-size: 1.5rem;
+  }
+  .services_container .restauration .restauration_text p {
+    font-size: 1rem;
+  }
+  .services_container .restauration .restauration_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .services_container .guide {
+    padding: 30px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .guide .guide_text {
+    width: 800px;
+    text-align: left;
+  }
+  .services_container .guide .guide_text h2 {
+    font-size: 1.5rem;
+  }
+  .services_container .guide .guide_text p {
+    font-size: 1rem;
+  }
+  .services_container .guide .guide_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .services_container .train {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .services_container .train .train_text {
+    width: 800px;
+    text-align: left;
+  }
+  .services_container .train .train_text h2 {
+    font-size: 1.5rem;
+  }
+  .services_container .train .train_text p {
+    font-size: 1rem;
+  }
+  .services_container .train .train_img img {
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/**_______COVER_HABITAT_______**/
+#cover_habitat {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  /**__container services__**/
+  /**__COVER_IMG_services__**/
+  /**__COVER_SVG_habitat__**/
+  /**__COVER_TXT_habitat__**/
+}
+#cover_habitat .cover_habitat_container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  background-color: #182828;
+}
+#cover_habitat .cover_habitat_img {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100vw;
+  height: 55vh;
+  overflow: hidden;
+  background-image: url("../../assets/img/jungle/araRouge/adobestock-43097757.avif");
+  background-size: cover;
+  background-position: bottom 100% right 45%;
+}
+#cover_habitat .cover_habitat_img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  pointer-events: none;
+}
+#cover_habitat .cover_habitat_cercle {
+  position: absolute;
+  left: -35%;
+  top: 30%;
+  width: 100%;
+}
+#cover_habitat .cover_habitat_cercle img {
+  width: 100vw;
+  height: 35vh;
+}
+#cover_habitat .cover_habitat_title {
+  position: absolute;
+  top: 45%;
+  padding: 20px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#cover_habitat .cover_habitat_title h1 {
+  font-family: "Dimsum Week";
+  font-size: 2.75rem;
+  font-weight: 300;
+  color: #FFE888;
+  margin-bottom: 15px;
+}
+#cover_habitat .cover_habitat_title p {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #f1f0f2;
+  text-align: left;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  #cover_habitat .cover_habitat_container {
+    height: 515px;
+  }
+  #cover_habitat .cover_habitat_img {
+    height: 75vh;
+  }
+  #cover_habitat .cover_habitat_cercle {
+    left: -30%;
+    top: 35%;
+  }
+  #cover_habitat .cover_habitat_title {
+    top: 50%;
+    left: 4%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #cover_habitat .cover_habitat_container {
+    height: 515px;
+  }
+  #cover_habitat .cover_habitat_img {
+    height: 90vh;
+  }
+  #cover_habitat .cover_habitat_cercle {
+    left: -30%;
+    top: 35%;
+  }
+  #cover_habitat .cover_habitat_title {
+    top: 50%;
+    left: 17%;
+  }
+  #cover_habitat .cover_habitat_title h1 {
+    font-family: "Dimsum Week";
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: #FFE888;
+  }
+  #cover_habitat .cover_habitat_title p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #f1f0f2;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #cover_habitat .cover_habitat_container {
+    height: 535px;
+  }
+  #cover_habitat .cover_habitat_img {
+    height: 90vh;
+  }
+  #cover_habitat .cover_habitat_cercle {
+    left: -26%;
+    top: 39%;
+  }
+  #cover_habitat .cover_habitat_cercle img {
+    height: 35vh;
+  }
+  #cover_habitat .cover_habitat_title {
+    top: 55%;
+    left: 22%;
+  }
+  #cover_habitat .cover_habitat_title h1 {
+    font-family: "Dimsum Week";
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: #FFE888;
+  }
+  #cover_habitat .cover_habitat_title p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #f1f0f2;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #cover_habitat .cover_habitat_container {
+    height: 800px;
+  }
+  #cover_habitat .cover_habitat_img {
+    height: 130vh;
+  }
+  #cover_habitat .cover_habitat_cercle {
+    left: -22%;
+    top: 39%;
+  }
+  #cover_habitat .cover_habitat_cercle img {
+    height: 42vh;
+  }
+  #cover_habitat .cover_habitat_title {
+    top: 52%;
+    left: 30%;
+  }
+  #cover_habitat .cover_habitat_title h1 {
+    font-family: "Dimsum Week";
+    font-size: 5rem;
+    font-weight: 500;
+    color: #FFE888;
+  }
+  #cover_habitat .cover_habitat_title p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #f1f0f2;
+  }
+}
+
+/**_______ONGLET_______**/
+#onglet {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#onglet .tab_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #182828;
+  /**__ICI __ contenu de ID SAVANE**/
+  /*__ICI __ contenu de ID MARAIS*/
+  /*__ICI __ contenu de ID JUNGLE*/
+  /**___===MEDIA QUERIES===___**/
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container {
+    min-height: 401vh;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container {
+    height: 360vh;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container {
+    height: 262vh;
+  }
+}
+#onglet .tab_container .tabs {
+  width: 100%;
+  position: relative;
+  /*Ceci est le button de l'onglet*/
+  /*__ICI class JS*/
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container .tabs {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container .tabs {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container .tabs {
+    display: flex;
+    flex-direction: row;
+  }
+}
+#onglet .tab_container .tabs .onglet_savane,
+#onglet .tab_container .tabs .onglet_marais,
+#onglet .tab_container .tabs .onglet_jungle {
+  width: 100%;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container .tabs .onglet_savane,
+  #onglet .tab_container .tabs .onglet_marais,
+  #onglet .tab_container .tabs .onglet_jungle {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container .tabs .onglet_savane,
+  #onglet .tab_container .tabs .onglet_marais,
+  #onglet .tab_container .tabs .onglet_jungle {
+    flex: 1;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container .tabs .onglet_savane,
+  #onglet .tab_container .tabs .onglet_marais,
+  #onglet .tab_container .tabs .onglet_jungle {
+    flex: 1;
+  }
+}
+#onglet .tab_container .tabs .tab_button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  width: 100%;
+}
+#onglet .tab_container .tabs .tab_button:hover {
+  opacity: 1;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container .tabs .tab_button {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container .tabs .tab_button {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container .tabs .tab_button {
+    width: 100%;
+  }
+}
+#onglet .tab_container .tabs .tab_button[data-tab=savane] {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: #FFE888;
+  text-transform: uppercase;
+  background-color: #5a7064;
+  padding: 50px;
+}
+#onglet .tab_container .tabs .tab_button[data-tab=jungle] {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: #FFE888;
+  text-transform: uppercase;
+  background-color: #182828;
+  padding: 50px;
+}
+#onglet .tab_container .tabs .tab_button[data-tab=marais] {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.75rem;
+  font-weight: bold;
+  color: #FFE888;
+  text-transform: uppercase;
+  background-color: #254040;
+  padding: 50px;
+}
+#onglet .tab_container .tabs .tab_button.active {
+  opacity: 1;
+}
+#onglet .tab_container .tabs .content {
+  display: none;
+}
+#onglet .tab_container .tabs .content.active {
+  display: block;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container .tabs .content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container .tabs .content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container .tabs .content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
+#onglet .tab_container #savane {
+  background-color: #5a7064;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 30px;
+}
+#onglet .tab_container #savane .onglet_savane_img {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("../../assets/img/savane/adobestock_186907864.avif");
+  background-size: cover;
+  background-position: right 35% bottom 25%;
+}
+#onglet .tab_container #savane .onglet_savane_txt {
+  margin: 30px 0 30px 0;
+  text-align: center;
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 p {
+  padding: 0 30px 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 .img_savane_1 {
+  margin: 20px;
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 .img_savane_1 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 62% 38% 48% 52%/44% 63% 37% 56%;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 .img_savane_1 {
+    margin: 20px;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 .img_savane_1 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 62% 38% 48% 52%/44% 63% 37% 56%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 .img_savane_1 {
+    margin: 20px;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane1 .img_savane_1 img {
+    width: 350px;
+    height: 350px;
+    border-radius: 71% 37% 63%/54% 39% 61% 46%;
+  }
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 p {
+  padding: 0 30px 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 .img_savane_2 {
+  margin: 20px;
+}
+#onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 .img_savane_2 img {
+  width: 250px;
+  height: 250px;
+  border-radius: 71% 37% 63%/54% 39% 61% 46%;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 .img_savane_2 {
+    margin: 20px;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 .img_savane_2 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 71% 37% 63%/54% 39% 61% 46%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 .img_savane_2 {
+    margin: 20px;
+  }
+  #onglet .tab_container #savane .onglet_savane_txt .img_texte_savane2 .img_savane_2 img {
+    width: 350px;
+    height: 350px;
+    border-radius: 71% 37% 63%/54% 39% 61% 46%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #savane .onglet_savane_txt {
+    margin: 30px 50px 30px 50px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #savane .onglet_savane_txt {
+    margin: 30px 100px 30px 100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #savane .onglet_savane_txt {
+    margin: 30px 150px 30px 150px;
+  }
+}
+#onglet .tab_container #savane .card_animal_savane {
+  width: 100%;
+  padding: 30px 0 30px 0;
+  background-color: #182828;
+  text-align: center;
+}
+#onglet .tab_container #savane .card_animal_savane h2 {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #FFE888;
+  margin-bottom: 20px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container {
+  width: 100vw;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel {
+  width: 100vw;
+  position: relative;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .btn_carousel_savane {
+  color: #f1f0f2;
+  position: absolute;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 2.6rem;
+  z-index: 12;
+  cursor: pointer;
+  display: none;
+  transform: translateY(-50%);
+  top: 35.25%;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel #prev {
+  left: 5px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel #next {
+  right: 5px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane {
+  width: 100%;
+  opacity: 1;
+  transition: 0.5s ease-out;
+  display: none;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec img,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe img,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros img,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre img,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 50%;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec h3,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe h3,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros h3,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre h3,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFE888;
+  text-transform: uppercase;
+  margin: 20px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane {
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #254040;
+  display: flex;
+  flex-direction: column;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_composant_animal,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_composant_animal,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_composant_animal,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_composant_animal,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_composant_animal {
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_composant_animal h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_composant_animal h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_composant_animal h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_composant_animal h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_composant_animal h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #FFE888;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_composant_animal p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_composant_animal p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_composant_animal p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_composant_animal p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_composant_animal p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_composant,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_composant,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_composant,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_composant,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_composant {
+  text-align: start;
+  margin: 20px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_composant h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_composant h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_composant h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_composant h4,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_composant h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #FFE888;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_composant p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_composant p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_composant p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_composant p,
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_composant p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+  text-align: center;
+}
+#onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .active2 {
+  display: block;
+}
+#onglet .tab_container #marais {
+  background-color: #254040;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 30px;
+}
+#onglet .tab_container #marais .onglet_marais_img {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("../../assets/img/marais/adobestock_391231580.avif");
+  background-size: cover;
+  background-position: right 35% bottom 25%;
+}
+#onglet .tab_container #marais .onglet_marais_txt {
+  margin: 30px 0 30px 0;
+  text-align: center;
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 p {
+  padding: 0 30px 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 .img_marais_1 {
+  margin: 20px;
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 .img_marais_1 .img_mar1 {
+  width: 250px;
+  height: 250px;
+  border-radius: 53% 47% 24% 76%/70% 59% 41% 30%;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 .img_marais_1 {
+    margin: 20px;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 .img_marais_1 .img_mar1 {
+    width: 300px;
+    height: 300px;
+    border-radius: 53% 47% 24% 76%/70% 59% 41% 30%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 .img_marais_1 {
+    margin: 20px;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais1 .img_marais_1 .img_mar1 {
+    width: 350px;
+    height: 350px;
+    border-radius: 53% 47% 24% 76%/70% 59% 41% 30%;
+  }
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 p {
+  padding: 0 30px 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 .img_marais_2 {
+  margin: 20px;
+}
+#onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 .img_marais_2 .img_mar2 {
+  width: 250px;
+  height: 250px;
+  border-radius: 53% 47% 24% 76%/70% 59% 41% 30%;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 .img_marais_2 {
+    margin: 20px;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 .img_marais_2 .img_mar2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 53% 47% 24% 76%/70% 59% 41% 30%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 .img_marais_2 {
+    margin: 20px;
+  }
+  #onglet .tab_container #marais .onglet_marais_txt .img_texte_marais2 .img_marais_2 .img_mar2 {
+    width: 350px;
+    height: 350px;
+    border-radius: 53% 47% 24% 76%/70% 59% 41% 30%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #marais .onglet_marais_txt {
+    margin: 30px 50px 30px 50px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #marais .onglet_marais_txt {
+    margin: 30px 100px 30px 100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #marais .onglet_marais_txt {
+    margin: 30px 150px 30px 150px;
+  }
+}
+#onglet .tab_container #marais .card_animal_marais {
+  width: 100%;
+  padding: 30px 0 30px 0;
+  background-color: #182828;
+  text-align: center;
+}
+#onglet .tab_container #marais .card_animal_marais h2 {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #FFE888;
+  margin-bottom: 20px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container {
+  width: 100%;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel {
+  width: 100vw;
+  position: relative;
+  /**Ceci est le bouton du carousel pour les animaux**/
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .btn_carousel_marais {
+  color: #f1f0f2;
+  position: absolute;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 2.6rem;
+  z-index: 12;
+  cursor: pointer;
+  display: none;
+  transform: translateY(-50%);
+  top: 35.25%;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel #prev2 {
+  left: 5px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel #next2 {
+  right: 5px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais {
+  width: 100%;
+  opacity: 1;
+  transition: 0.5s ease-out;
+  display: none;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman img,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette img,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 50%;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman h3,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette h3,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFE888;
+  text-transform: uppercase;
+  margin: 20px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais {
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #254040;
+  display: flex;
+  flex-direction: column;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_composant_animal,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_composant_animal,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_composant_animal {
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_composant_animal h4,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_composant_animal h4,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_composant_animal h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #FFE888;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_composant_animal p,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_composant_animal p,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_composant_animal p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_composant,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_composant,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_composant {
+  text-align: start;
+  margin: 20px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_composant h4,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_composant h4,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_composant h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #FFE888;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_composant p,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_composant p,
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_composant p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+  text-align: center;
+}
+#onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .active2 {
+  display: block;
+}
+#onglet .tab_container #jungle {
+  background-color: #182828;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 30px;
+}
+#onglet .tab_container #jungle .onglet_jungle_img {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("../../assets/img/jungle/AdobeStock_445496398.avif");
+  background-size: cover;
+  background-position: right 35% bottom 55%;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt {
+  margin: 30px 0 30px 0;
+  text-align: center;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt p {
+  padding: 0 30px 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 p {
+  padding: 0 30px 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 .img_jungle_1 {
+  margin: 20px;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 .img_jungle_1 .img_jung1 {
+  width: 250px;
+  height: 250px;
+  border-radius: 39% 61% 61% 39%/63% 50% 50% 37%;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 .img_jungle_1 {
+    margin: 20px;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 .img_jungle_1 .img_jung1 {
+    width: 300px;
+    height: 300px;
+    border-radius: 39% 61% 61% 39%/63% 50% 50% 37%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 .img_jungle_1 {
+    margin: 20px;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle1 .img_jungle_1 .img_jung1 {
+    width: 350px;
+    height: 350px;
+    border-radius: 39% 61% 61% 39%/63% 50% 50% 37%;
+  }
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 p {
+  padding: 0 30px 0 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 .img_jungle_2 {
+  margin: 20px;
+}
+#onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 .img_jungle_2 .img_jung2 {
+  width: 250px;
+  height: 250px;
+  border-radius: 16% 84% 72% 28%/23% 41% 59% 77%;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 .img_jungle_2 {
+    margin: 20px;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 .img_jungle_2 .img_jung2 {
+    width: 300px;
+    height: 300px;
+    border-radius: 16% 84% 72% 28%/23% 41% 59% 77%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 p {
+    padding: 0 50px 0 50px;
+    font-size: 1.2rem;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 .img_jungle_2 {
+    margin: 20px;
+  }
+  #onglet .tab_container #jungle .onglet_jungle_txt .img_texte_jungle2 .img_jungle_2 .img_jung2 {
+    width: 350px;
+    height: 350px;
+    border-radius: 16% 84% 72% 28%/23% 41% 59% 77%;
+  }
+}
+#onglet .tab_container #jungle .card_animal_jungle {
+  width: 100%;
+  padding: 30px 0 30px 0;
+  background-color: #5a7064;
+  text-align: center;
+}
+#onglet .tab_container #jungle .card_animal_jungle h2 {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #FFE888;
+  margin-bottom: 20px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container {
+  width: 100%;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel {
+  width: 100vw;
+  position: relative;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .btn_carousel_jungle {
+  color: #f1f0f2;
+  position: absolute;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 2.6rem;
+  z-index: 12;
+  cursor: pointer;
+  display: none;
+  transform: translateY(-50%);
+  top: 35.25%;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel #prev3 {
+  left: 5px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel #next3 {
+  right: 5px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle {
+  width: 100%;
+  opacity: 1;
+  transition: 0.5s ease-out;
+  display: none;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir img,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar img,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan img,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 50%;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir h3,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar h3,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan h3,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #FFE888;
+  text-transform: uppercase;
+  margin: 20px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle {
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #182828;
+  display: flex;
+  flex-direction: column;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_composant_animal,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_composant_animal,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_composant_animal,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_composant_animal {
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_composant_animal h4,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_composant_animal h4,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_composant_animal h4,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_composant_animal h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #FFE888;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_composant_animal p,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_composant_animal p,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_composant_animal p,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_composant_animal p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_composant,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_composant,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_composant,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_composant {
+  text-align: start;
+  margin: 20px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_composant h4,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_composant h4,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_composant h4,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_composant h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #FFE888;
+  text-transform: capitalize;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_composant p,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_composant p,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_composant p,
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_composant p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f1f0f2;
+  text-align: center;
+}
+#onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .active2 {
+  opacity: 1;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane {
+    display: none;
+    margin-bottom: 20px;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_flex_savane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .active2 {
+    opacity: 1;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais {
+    display: none;
+    margin-bottom: 20px;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_flex_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_flex_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_flex_marais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .active2 {
+    opacity: 1;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle {
+    display: none;
+    margin-bottom: 20px;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_flex_jungle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .active2 {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane {
+    width: 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval {
+    margin: 30px;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane {
+    display: none;
+    border-radius: 15px;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_flex_savane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .active2 {
+    opacity: 1;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais {
+    width: 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre {
+    margin: 30px;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais {
+    display: none;
+    border-radius: 15px;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_flex_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_flex_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_flex_marais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .active2 {
+    opacity: 1;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle {
+    width: 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara {
+    margin: 30px;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle {
+    display: none;
+    border-radius: 15px;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_flex_jungle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .active2 {
+    opacity: 1;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane {
+    width: 30%;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval {
+    margin: 30px;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane {
+    display: none;
+    border-radius: 15px;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_fennec .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_girafe .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_rhinoceros .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_zebre .card_text_savane .card_flex_savane,
+  #onglet .tab_container #savane .card_animal_savane .card_container .card_carousel .slide_savane .card_serval .card_text_savane .card_flex_savane {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #savane .card_animal_savane .card_container .active2 {
+    opacity: 1;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais {
+    width: 50%;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre {
+    margin: 30px;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais {
+    display: none;
+    border-radius: 15px;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_caiman .card_text_marais .card_flex_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_rainette .card_text_marais .card_flex_marais,
+  #onglet .tab_container #marais .card_animal_marais .card_container .card_carousel .slide_marais .card_salamandre .card_text_marais .card_flex_marais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #marais .card_animal_marais .card_container .active2 {
+    opacity: 1;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle {
+    width: 30%;
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara {
+    margin: 30px;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle {
+    display: none;
+    border-radius: 15px;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_tapir .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_jaguar .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_toucan .card_text_jungle .card_flex_jungle,
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .card_carousel .slide_jungle .card_ara .card_text_jungle .card_flex_jungle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #onglet .tab_container #jungle .card_animal_jungle .card_container .active2 {
+    opacity: 1;
+  }
+}
+
+/**_______COVER_CONTACT_______**/
+#cover_contact {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  /**__container contact__**/
+  /**__COVER_IMG_contact__**/
+  /**__COVER_SVG_contact__**/
+  /**__COVER_TXT_contact__**/
+}
+#cover_contact .cover_contact_container {
+  position: relative;
+  width: 100%;
+  height: 775px;
+  background-color: #182828;
+}
+#cover_contact .cover_contact_img {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100vw;
+  height: 52vh;
+  overflow: hidden;
+  background-image: url("../../assets/img/jungle/paresseux/adobestock_279967025.avif");
+  background-size: cover;
+  background-position: bottom 25% right 11%;
+}
+#cover_contact .cover_contact_img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  pointer-events: none;
+}
+#cover_contact .cover_title_cercle {
+  position: relative;
+  top: 125px;
+  width: 100%;
+}
+#cover_contact .cover_contact_cercle {
+  position: absolute;
+  left: -40%;
+  top: 30%;
+  width: 100%;
+}
+#cover_contact .cover_contact_cercle img {
+  width: 100vw;
+  height: 35vh;
+}
+#cover_contact .cover_title_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#cover_contact .cover_contact_title {
+  position: absolute;
+  top: 85px;
+  left: 15px;
+  padding: 20px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#cover_contact .cover_contact_title h1 {
+  font-family: "Dimsum Week";
+  font-size: 2.75rem;
+  font-weight: 300;
+  color: #FFE888;
+  margin-bottom: 15px;
+}
+#cover_contact .cover_contact_title p {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #f1f0f2;
+  text-align: left;
+}
+#cover_contact .contact_form_container {
+  position: absolute;
+  top: 54%;
+  width: 100%;
+  background-color: #182828;
+}
+#cover_contact .contact_form_container #contactForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+}
+#cover_contact .contact_form_container #contactForm input {
+  width: 100%;
+  padding: 7px 0;
+  margin: 7px 0;
+}
+#cover_contact .contact_form_container #contactForm textarea {
+  width: 100%;
+  resize: none;
+  padding: 7px 0;
+  margin: 7px 0;
+}
+#cover_contact .contact_form_container #contactForm .button_contact {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 7px 0;
+}
+#cover_contact .contact_form_container #contactForm .button_contact:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  #cover_contact .cover_contact_container {
+    height: 775px;
+  }
+  #cover_contact .cover_contact_img {
+    height: 58vh;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  #cover_contact .cover_contact_container {
+    height: 780px;
+  }
+  #cover_contact .cover_contact_img {
+    height: 70vh;
+  }
+  #cover_contact .cover_title_cercle {
+    top: 150px;
+    margin-left: 50%;
+  }
+  #cover_contact .cover_contact_cercle {
+    left: -50%;
+  }
+  #cover_contact .cover_contact_cercle img {
+    height: 30vh;
+  }
+  #cover_contact .cover_contact_title {
+    top: 65px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  #cover_contact .cover_contact_container {
+    height: 840px;
+  }
+  #cover_contact .cover_contact_img {
+    height: 115vh;
+  }
+  #cover_contact .cover_title_cercle {
+    top: 150px;
+    margin-left: 50%;
+  }
+  #cover_contact .cover_contact_cercle {
+    left: -50%;
+  }
+  #cover_contact .cover_contact_cercle img {
+    height: 30vh;
+  }
+  #cover_contact .cover_contact_title {
+    top: 65px;
+  }
+  #cover_contact .cover_contact_title h1 {
+    font-size: 5rem;
+  }
+  #cover_contact .cover_contact_title p {
+    font-size: 1.5rem;
+  }
+  #cover_contact .contact_form_container {
+    top: 50%;
+    width: 50%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #cover_contact .cover_contact_container {
+    height: 1000px;
+  }
+  #cover_contact .cover_contact_img {
+    height: 115vh;
+  }
+  #cover_contact .cover_title_cercle {
+    top: 200px;
+    margin-left: 45%;
+  }
+  #cover_contact .cover_contact_cercle {
+    left: -50%;
+  }
+  #cover_contact .cover_contact_cercle img {
+    height: 30vh;
+  }
+  #cover_contact .cover_contact_title {
+    top: 65px;
+  }
+  #cover_contact .cover_contact_title h1 {
+    font-size: 5rem;
+  }
+  #cover_contact .cover_contact_title p {
+    font-size: 1.5rem;
+  }
+  #cover_contact .contact_form_container {
+    top: 50%;
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
+.mainFaq {
+  width: 100%;
+  height: auto;
+}
+.mainFaq .faq_title_img {
+  width: 100%;
+  min-height: 400px;
+  background-image: url("../../assets/img/savane/zèbre/adobestock_343763723.avif");
+  background-size: cover;
+  background-position: bottom 25% right 11%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mainFaq .faq_title_img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 400px;
+  background-color: rgba(37, 64, 64, 0.7490196078);
+  pointer-events: none;
+}
+.mainFaq .faq_title_img .faq_title {
+  position: relative;
+  z-index: 14;
+  margin: 20px;
+}
+.mainFaq .faq_title_img .faq_title h1 {
+  font-family: "Dimsum Week";
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: #FFE888;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .mainFaq .faq_title_img {
+    min-height: 500px;
+    justify-content: center;
+  }
+  .mainFaq .faq_title_img::before {
+    min-height: 500px;
+  }
+  .mainFaq .faq_title_img .faq_title {
+    top: 50px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .mainFaq .faq_title_img {
+    min-height: 550px;
+    justify-content: center;
+  }
+  .mainFaq .faq_title_img::before {
+    min-height: 550px;
+  }
+  .mainFaq .faq_title_img .faq_title {
+    top: 50px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .mainFaq .faq_title_img {
+    min-height: 600px;
+    justify-content: center;
+  }
+  .mainFaq .faq_title_img::before {
+    min-height: 600px;
+  }
+  .mainFaq .faq_title_img .faq_title {
+    top: 50px;
+  }
+  .mainFaq .faq_title_img .faq_title h1 {
+    font-size: 5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainFaq .faq_title_img {
+    min-height: 650px;
+    justify-content: center;
+  }
+  .mainFaq .faq_title_img::before {
+    min-height: 650px;
+  }
+  .mainFaq .faq_title_img .faq_title {
+    top: 50px;
+  }
+  .mainFaq .faq_title_img .faq_title h1 {
+    font-size: 5rem;
+  }
+}
+.mainFaq .faq_container {
+  background-color: #182828;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.mainFaq .faq_container #prepare, .mainFaq .faq_container #qui, .mainFaq .faq_container #communication {
+  display: flex;
+  flex-direction: column;
+  width: 85vw;
+  margin: 20px;
+}
+.mainFaq .faq_container #prepare h2, .mainFaq .faq_container #qui h2, .mainFaq .faq_container #communication h2 {
+  font-family: "Dimsum Week";
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #FFE888;
+}
+.mainFaq .faq_container #prepare .half, .mainFaq .faq_container #qui .half, .mainFaq .faq_container #communication .half {
+  float: none;
+  padding: 20px 0px;
+  width: 100%;
+}
+.mainFaq .faq_container #prepare .half .tab, .mainFaq .faq_container #qui .half .tab, .mainFaq .faq_container #communication .half .tab {
+  position: relative;
+  width: 100%;
+  color: #182828;
+  overflow: hidden;
+}
+.mainFaq .faq_container #prepare .half .tab summary, .mainFaq .faq_container #qui .half .tab summary, .mainFaq .faq_container #communication .half .tab summary {
+  position: relative;
+  padding: 10px;
+  background: #FFE888;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+}
+.mainFaq .faq_container #prepare .half .tab .tab-content, .mainFaq .faq_container #qui .half .tab .tab-content, .mainFaq .faq_container #communication .half .tab .tab-content {
+  color: #f1f0f2;
+  padding: 15px;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .mainFaq .faq_container {
+    align-items: center;
+  }
+  .mainFaq .faq_container #prepare, .mainFaq .faq_container #qui, .mainFaq .faq_container #communication {
+    width: 80vw;
+  }
+  .mainFaq .faq_container #prepare h2, .mainFaq .faq_container #qui h2, .mainFaq .faq_container #communication h2 {
+    font-size: 1.5rem;
+    margin: 20px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .mainFaq .faq_container {
+    align-items: center;
+  }
+  .mainFaq .faq_container #prepare, .mainFaq .faq_container #qui, .mainFaq .faq_container #communication {
+    width: 80vw;
+  }
+  .mainFaq .faq_container #prepare h2, .mainFaq .faq_container #qui h2, .mainFaq .faq_container #communication h2 {
+    font-size: 2rem;
+    margin: 20px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .mainFaq .faq_container {
+    align-items: center;
+  }
+  .mainFaq .faq_container #prepare, .mainFaq .faq_container #qui, .mainFaq .faq_container #communication {
+    width: 70vw;
+  }
+  .mainFaq .faq_container #prepare h2, .mainFaq .faq_container #qui h2, .mainFaq .faq_container #communication h2 {
+    font-size: 2.75rem;
+    margin: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainFaq .faq_container {
+    align-items: center;
+  }
+  .mainFaq .faq_container #prepare, .mainFaq .faq_container #qui, .mainFaq .faq_container #communication {
+    width: 60vw;
+  }
+  .mainFaq .faq_container #prepare h2, .mainFaq .faq_container #qui h2, .mainFaq .faq_container #communication h2 {
+    font-size: 2.75rem;
+    margin: 20px;
+  }
+}
+
+@font-face {
+  font-family: "Dimsum Week";
+  src: url("../../assets/font/Dimsum Week.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+body.menu_open {
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  background-color: #182828;
+  position: fixed;
+  z-index: 1000;
+}
+header .header_container {
+  display: flex;
+  align-items: center;
+  /**     MEADIA QUERIES HEADER     **/
+}
+header .header_container .logo_arcadia img {
+  width: 40%;
+  height: 100%;
+  margin: 15px;
+}
+header .header_container .navbar {
+  z-index: 1000;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  padding-bottom: 30px;
+}
+header .header_container .navbar.overlay {
+  visibility: visible;
+  opacity: 1;
+  padding-top: 100px;
+  background: #254040;
+}
+header .header_container .navbar #menu .menu_items {
+  color: #f1f0f2;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+header .header_container .navbar #menu .menu_items li a {
+  color: #f1f0f2;
+  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+}
+header .header_container .navbar #menu .menu_items li a::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  background: #5a7064;
+  height: 2px;
+  transition: 0.3s ease-in-out;
+}
+header .header_container .navbar #menu .menu_items li a::before {
+  content: attr(data-item);
+  transition: 0.5s;
+  color: #FFE888;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+}
+header .header_container .navbar #menu .menu_items li a:hover::after {
+  width: 100%;
+}
+header .header_container .navbar #menu .menu_items li a:hover::before {
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+header .header_container .navbar #menu .menu_items.mobile_open {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header_container #burger_menu {
+  cursor: pointer;
+  height: 27px;
+  width: 27px;
+  margin: 30px;
+  right: 0px;
+  overflow: visible;
+  position: fixed;
+  z-index: 1001;
+}
+header .header_container #burger_menu span,
+header .header_container #burger_menu span:before,
+header .header_container #burger_menu span:after {
+  background: #FFE888;
+  display: block;
+  height: 2px;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+header .header_container #burger_menu span:before,
+header .header_container #burger_menu span:after {
+  content: "";
+}
+header .header_container #burger_menu span:before {
+  left: 0px;
+  top: -10px;
+  width: 27px;
+}
+header .header_container #burger_menu span {
+  right: 0px;
+  top: 13px;
+  width: 27px;
+}
+header .header_container #burger_menu span:after {
+  left: 0px;
+  top: 10px;
+  width: 27px;
+}
+header .header_container #burger_menu.close span:before {
+  top: 0px;
+  transform: rotate(90deg);
+  width: 27px;
+}
+header .header_container #burger_menu.close span {
+  transform: rotate(-45deg);
+  top: 13px;
+  width: 27px;
+}
+header .header_container #burger_menu.close span:after {
+  top: 0px;
+  left: 0;
+  transform: rotate(90deg);
+  opacity: 0;
+  width: 0;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  header .header_container {
+    justify-content: center;
+  }
+  header .header_container .logo_arcadia {
+    position: relative;
+  }
+  header .header_container .logo_arcadia img {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  header .header_container {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  header .header_container .logo_arcadia {
+    position: relative;
+  }
+  header .header_container .logo_arcadia img {
+    width: 40%;
+  }
+  header .header_container .navbar {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    min-width: 300px;
+    padding-bottom: 30px;
+  }
+  header .header_container .navbar #menu {
+    margin-right: 80px;
+  }
+  header .header_container .navbar #menu .menu_items {
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+  header .header_container #burger_menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  header .header_container {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  header .header_container .logo_aradia {
+    position: relative;
+    right: 0px;
+  }
+  header .header_container .logo_aradia img {
+    width: 50%;
+  }
+  header .header_container .navbar {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    min-width: 300px;
+    padding-bottom: 30px;
+  }
+  header .header_container .navbar #menu {
+    margin-right: 80px;
+  }
+  header .header_container .navbar #menu .menu_items {
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+  header .header_container #burger_menu {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  header .header_container {
+    align-items: flex-end;
+    justify-content: center;
+  }
+  header .header_container .logo_aradia {
+    position: relative;
+    right: 0px;
+  }
+  header .header_container .logo_aradia img {
+    width: 50%;
+  }
+  header .header_container .navbar {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+    min-width: 300px;
+    padding-bottom: 30px;
+  }
+  header .header_container .navbar #menu {
+    margin-right: 80px;
+  }
+  header .header_container .navbar #menu .menu_items {
+    font-size: 1rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+  header .header_container #burger_menu {
+    display: none;
+  }
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  background-color: #182828;
+  font-family: "Montserrat", sans-serif;
+  /** MEDIA QUERIE FOOTER**/
+}
+.footer_container {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+  position: relative;
+  z-index: 999;
+}
+.footer_contact_nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
+.footer_contact h2 {
+  color: #FFE888;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+.footer_contact p {
+  color: #f1f0f2;
+  line-height: 30px;
+}
+.footer_nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.footer_nav a {
+  color: #FFE888;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.footer_nav a:hover {
+  text-decoration: underline;
+}
+.footer_heures_img {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
+.footer_horaire {
+  display: flex;
+  flex-direction: column;
+}
+.footer_horaire h2 {
+  color: #FFE888;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+.footer_horaire p {
+  color: #f1f0f2;
+  line-height: 30px;
+}
+.footer_horaire .footer_jours_heures {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px;
+}
+.footer_horaire .heures_footer {
+  display: flex;
+  flex-direction: row;
+}
+.footer_img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.footer_img .footer_logo {
+  display: flex;
+  justify-content: center;
+}
+.footer_img .footer_logo img {
+  width: 16em;
+}
+.footer_reseaux {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.footer_reseaux .footer_icon a img {
+  width: 50px;
+  height: 50px;
+}
+.footer_mention {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.footer_mention p {
+  color: #f1f0f2;
+  font-weight: lighter;
+  font-size: 0.6rem;
+}
+.footer_mention a {
+  color: #f1f0f2;
+}
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer_contact_nav {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .footer_heures_img {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer_img .footer_logo img {
+    width: 16em;
+  }
+  .footer_reseaux .footer_icon a img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .footer_container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer_contact_nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer_nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer_heures_img {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer_img {
+    gap: 70px;
+  }
+  .footer_img .footer_logo img {
+    width: 16em;
+  }
+  .footer_reseaux .footer_icon a img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer_container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer_contact_nav {
+    flex-direction: row;
+  }
+  .footer_nav {
+    flex-direction: column;
+  }
+  .footer_heures_img {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer_img {
+    gap: 20px;
+  }
+  .footer_img .footer_logo img {
+    width: 16em;
+  }
+  .footer_reseaux .footer_icon a img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer_container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer_contact_nav {
+    flex-direction: row;
+  }
+  .footer_nav {
+    flex-direction: column;
+  }
+  .footer_heures_img {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer_img {
+    gap: 20px;
+  }
+  .footer_img .footer_logo img {
+    width: 17em;
+  }
+  .footer_reseaux .footer_icon a img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+  font-family: "Dimsum";
+}
 
 /*# sourceMappingURL=main.css.map */

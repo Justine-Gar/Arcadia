@@ -1,3 +1,8 @@
+<?php
+function asset($path) {
+    return '/public/' . ltrim($path, '/');
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,7 +11,7 @@
   <!--====  REMIXIONS ====-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
   <!--====  CSS ====-->
-  <link rel="stylesheet" href="../public/css/style.css"/>
+  <link rel="stylesheet" href="<?= asset('css/main.css') ?>"/>
   <title><?= $title ?? 'Arcadia';?></title>
 </head>
 <body>

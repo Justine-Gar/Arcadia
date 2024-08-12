@@ -8,7 +8,7 @@ class HomeController extends Controllers
     public function index()
     {
         $data = [
-            'title' => 'Acceuil',
+            'title' => 'Accueil',
         ];
 
         return $this->render('home', $data);
