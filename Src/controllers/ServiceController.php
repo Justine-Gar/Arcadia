@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Controllers\Controllers;
 
 class ServiceController extends Controllers
 {
