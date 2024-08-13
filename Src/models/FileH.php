@@ -1,5 +1,5 @@
 <?php
-namespace src\models;
+namespace App\models;
 
 use InvalidArgumentException;
 
