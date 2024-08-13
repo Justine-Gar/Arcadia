@@ -11,7 +11,7 @@ class FileS {
   private ?int $id_fileS;
   private string $file_name;
   private string $file_path;
-  private ?Service $service = null;
+  private int $serviceId;
 
   /** Constructeur de la classe File
    * 
@@ -20,12 +20,12 @@ class FileS {
    * @param string $file_path le chemin de l'image
    * @param ?int $id_animal l'identifiant de l'animal
    */
-  public function __construct(?int $id_fileS, string $file_name, string $file_path, ?Service $service = null)
+  public function __construct(?int $id_fileS, string $file_name, string $file_path, int $serviceId)
   {
     $this->setIdFileS($id_fileS);
     $this->setFileName($file_name);
     $this->setFilePath($file_path);
-    $this->setService($service);
+    $this->setServiceId($serviceId);
   }
 
   //GETTERS
@@ -52,7 +52,7 @@ class FileS {
    * 
    * @return int
    */
-  public function getService(): ?Service { return $this->service;}
+  public function getServiceId(): int { return $this->serviceId;}
 
 
   //SETTERS
@@ -110,8 +110,8 @@ class FileS {
    * @param int id_habitat de table habitat
    * @throws InvalidArgumentException
    */
-  public function setService(Service $service): void
+  public function setServiceId(int $serviceId): void
   {
-    $this->service = $service;
+    $this->serviceId = $serviceId;
   }
 }

@@ -11,7 +11,7 @@ class FileH {
   private ?int $id_fileH;
   private string $file_name;
   private string $file_path;
-  private ?Habitat $habitat = null;
+  private int $habitatId;
 
   /** Constructeur de la classe FileH
    * 
@@ -20,12 +20,12 @@ class FileH {
    * @param string $file_path le chemin de l'image
    * @param ?int $id_habitat l'identifiant de l'habitat
    */
-  public function __construct(?int $id_fileH, string $file_name, string $file_path, ?Habitat $habitat = null)
+  public function __construct(?int $id_fileH, string $file_name, string $file_path, int $habitatId)
   {
     $this->setIdFileH($id_fileH);
     $this->setFileName($file_name);
     $this->setFilePath($file_path);
-    $this->setIdHabitat($habitat);
+    $this->setHabitatId($habitatId);
   }
 
   //GETTERS
@@ -52,7 +52,7 @@ class FileH {
    * 
    * @return int
    */
-  public function getIdHabitat(): ?Habitat { return $this->habitat;}
+  public function getHabitatId(): int { return $this->habitatId;}
 
 
   //SETTERS
@@ -110,8 +110,8 @@ class FileH {
    * @param int id_habitat de table habitat
    * @throws InvalidArgumentException
    */
-  public function setIdHabitat(Habitat $habitat): void
+  public function setHabitatId(int $habitatId): void
   {
-    $this->habitat = $habitat;
+    $this->habitatId = $habitatId;
   }
 }

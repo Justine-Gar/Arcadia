@@ -11,7 +11,7 @@ class FileA {
   private ?int $id_fileA;
   private string $file_name;
   private string $file_path;
-  private Animal $animal;
+  private int $animalId;
 
   /** Constructeur de la classe FileA
    * 
@@ -20,12 +20,12 @@ class FileA {
    * @param string $file_path le chemin de l'image
    * @param ?int $id_animal l'identifiant de l'animal
    */
-  public function __construct(?int $id_fileA, string $file_name, string $file_path, Animal $animal)
+  public function __construct(?int $id_fileA, string $file_name, string $file_path, int $animalId)
   {
     $this->setIdFileA($id_fileA);
     $this->setFileName($file_name);
     $this->setFilePath($file_path);
-    $this->setAnimal($animal);
+    $this->setAnimalId($animalId);
   }
 
   //GETTERS
@@ -52,7 +52,7 @@ class FileA {
    * 
    * @return int
    */
-  public function getAnimal(): Animal { return $this->animal;}
+  public function getAnimalId(): int { return $this->animalId;}
 
 
   //SETTERS
@@ -105,13 +105,15 @@ class FileA {
     $this->file_path = $file_path;
   }
 
-  /** Defini l'id_habitat de l'animal
+  /** Defini l'id_animal de l'animal
    * 
    * @param int id_habitat de table habitat
    * @throws InvalidArgumentException
    */
-  public function setAnimal(Animal $animal): void
+  public function setAnimalId(int $animalId): void
   {
-    $this->animal = $animal;
+    $this->animalId = $animalId;
   }
+
+
 }
