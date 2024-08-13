@@ -8,10 +8,10 @@ use InvalidArgumentException;
  */
 class FileA {
 
-  private ?int $id_fileH;
+  private ?int $id_fileA;
   private string $file_name;
   private string $file_path;
-  private ?Animal $animal = null;
+  private Animal $animal;
 
   /** Constructeur de la classe FileA
    * 
@@ -20,9 +20,9 @@ class FileA {
    * @param string $file_path le chemin de l'image
    * @param ?int $id_animal l'identifiant de l'animal
    */
-  public function __construct(?int $id_fileH, string $file_name, string $file_path, ?Animal $animal = null)
+  public function __construct(?int $id_fileA, string $file_name, string $file_path, Animal $animal)
   {
-    $this->setIdFileA($id_fileH);
+    $this->setIdFileA($id_fileA);
     $this->setFileName($file_name);
     $this->setFilePath($file_path);
     $this->setAnimal($animal);
@@ -34,7 +34,7 @@ class FileA {
    * 
    * @return ?int
    */
-  public function getIdFileA(): ?int { return $this->id_fileH;}
+  public function getIdFileA(): ?int { return $this->id_fileA;}
 
   /** Obtient le nom du file
    * 
@@ -48,11 +48,11 @@ class FileA {
    */
   public function getFilePath(): string { return $this->file_path;}
 
-  /** Obtient l'identifiant habitat du file
+  /** Obtient l'identifiant animal du file
    * 
    * @return int
    */
-  public function getAnimal(): ?Animal { return $this->animal;}
+  public function getAnimal(): Animal { return $this->animal;}
 
 
   //SETTERS
@@ -62,13 +62,13 @@ class FileA {
    * @param ?int le nouveau identifiant
    * @throws InvalidArgumentException
    */
-  public function setIdFileA(?int $id_fileH): void
+  public function setIdFileA(?int $id_fileA): void
   {
-    if ($id_fileH !== null && $id_fileH <= 0)
+    if ($id_fileA !== null && $id_fileA <= 0)
     {
       throw new InvalidArgumentException("L'id doit un etre un entier positif");
     }
-    $this->id_fileH = $id_fileH;
+    $this->id_fileA = $id_fileA;
   }
 
   /** Defini le nom ddu file
