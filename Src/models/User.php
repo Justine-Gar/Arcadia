@@ -2,7 +2,7 @@
 namespace App\models;
 
 use InvalidArgumentException;
-use src\utils\PasswordHasher;
+use App\utils\PasswordHasher;
 
 /**
  * Class représentant un user dans le systeme
@@ -10,8 +10,8 @@ use src\utils\PasswordHasher;
 class User {
 
     private ?int $id_user;
-    private string $email_user;
-    private string $password_user;
+    private string $email;
+    private string $password;
     private int $role;
 
     /** Constructeur de la class User
@@ -21,11 +21,11 @@ class User {
      * @param string $password_user le mdp de l'user
      * @param int $role le role de l'utilisateur
      */
-    public function __construct(?int $id_user, string $email_user, string $password_user, int $role) 
+    public function __construct(?int $id_user, string $email, string $password, int $role) 
     {
         $this->setIdUser($id_user);
-        $this->setEmailUser($email_user);
-        $this->setPasswordUser($password_user);
+        $this->setEmailUser($email);
+        $this->setPasswordUser($password);
         $this->setRole($role);
     }
 
@@ -41,13 +41,13 @@ class User {
      * 
      * @return string $email_user l'email_user de l'user
      */
-    public function getEmailUser(): string { return $this->email_user;}
+    public function getEmailUser(): string { return $this->email;}
 
     /** Obtient le mdp de l'user
      * 
      * @return string $password_user le mdp de l'user
      */
-    public function getPasswordUser(): string { return $this->password_user;}
+    public function getPasswordUser(): string { return $this->password;}
 
     /** Obtient le role de l'user
      * 
@@ -77,12 +77,12 @@ class User {
      * @param string $email_user
      * @throws InvalidArgumentException
      */
-    public function setEmailUser(string $email_user): void 
+    public function setEmailUser(string $email): void 
     {   
-        if (!filter_var($email_user, FILTER_VALIDATE_EMAIL)) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new InvalidArgumentException("Format d'email_user invalide");
         }
-        $this->email_user = $email_user;
+        $this->email = $email;
     }
 
     /** Defini le mot de passe de l'user
@@ -90,12 +90,12 @@ class User {
      * @param string $password_user
      * @throws InvalideArgumentException
      */
-    public function setPasswordUser(string $password_user): void 
+    public function setPasswordUser(string $password): void 
     {   
-        if (strlen($password_user) <= 8) {
+        if (strlen($password) <= 8) {
             throw new InvalidArgumentException("Le mot de passe doit contenir au moin 8 caractères");
         }
-        $this->password_user = (new PasswordHasher())->hashPassword($password_user);
+        $this->password = (new PasswordHasher())->hashPassword($password);
     }
 
     /** Defini le role de l'user

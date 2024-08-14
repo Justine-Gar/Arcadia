@@ -31,7 +31,7 @@ class Router
     {
         //Récupere la methode HTTP de requete actuelle
         $method = $_SERVER['REQUEST_METHOD'];
-        error_log("Handling request for URL: " . $url . " with method: " . $method);
+        //error_log("Handling request for URL: " . $url . " with method: " . $method);
 
         //je parcours toutes les routes enregistrer
         foreach ($this->routes as $route)
@@ -48,7 +48,7 @@ class Router
                 error_log("Matched route. Controller: " . $controller . ", Action: " . $action);
 
                 if (!class_exists($controller)) {
-                    error_log("Controller class does not exist: " . $controller);
+                    //error_log("Controller class does not exist: " . $controller);
                     throw new Exception("Controller not found: " . $controller);
                 }
 
@@ -56,26 +56,26 @@ class Router
                 $controllerInstance = new $controller($this->dbConnection);
 
                 if (!method_exists($controllerInstance, $action)) {
-                    error_log("Action does not exist in controller: " . $action);
+                    //error_log("Action does not exist in controller: " . $action);
                     throw new Exception("Action not found: " . $action);
                 }
 
-                error_log("Calling controller action");
+                //error_log("Calling controller action");
                 // Appelle la méthode du contrôleur avec les paramètres extraits de l'URI
                 $response = call_user_func_array([$controllerInstance, $action], $params ?? []);
                 
-                error_log("Controller action returned. Response type: " . gettype($response));
+                //error_log("Controller action returned. Response type: " . gettype($response));
                 // Gère le résultat retourné par le contrôleur
                 if (!($response instanceof Response)) {
                     // Si c'est déjà un objet Response, on l'utilise tel quel
-                    error_log("Controller did not return a Response object. Actual type: " . gettype($response));
+                    //error_log("Controller did not return a Response object. Actual type: " . gettype($response));
                     throw new Exception("Controller did not return a Response object");
                 } 
-                error_log("Returning response from Router");
+                //error_log("Returning response from Router");
                 return $response;
             }
         }
-        error_log("No matching route found for URL: " . $url);
+        //error_log("No matching route found for URL: " . $url);
         // Si aucune route ne correspond, retournez une réponse 404
         $response = new Response();
         $response->setStatusCode(404);
