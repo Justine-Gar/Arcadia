@@ -13,7 +13,7 @@ use PDOException;
  * Repository pour la gestion des images Habitat
  * 
  */
-class FileARepository
+class FileHRepository
 {
   private PDO $db;
 
@@ -29,7 +29,7 @@ class FileARepository
    * @return FileH
    * @throws PDOException
    */
-  protected function insertImageToAnimal(FileH $file): FileH
+  public function insertImageToHabitat(FileH $file): FileH
   {
     try {
       $query = "INSERT INTO `fileH` (`fileName`, `filePath`, `id_habitat`) VALUES (:fileName, :filePath, :id_habitat)";

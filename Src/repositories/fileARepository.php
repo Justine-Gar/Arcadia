@@ -29,7 +29,7 @@ class FileARepository
    * @return FileA
    * @throws PDOException
    */
-  protected function insertImageToAnimal(FileA $file): FileA
+  public function insertImageToAnimal(FileA $file): FileA
   {
     try {
       $query = "INSERT INTO `fileA` (`fileName`, `filePath`, `id_animal`) VALUES (:fileName, :filePath, :id_animal)";

@@ -44,6 +44,7 @@ class Router
                 // Ajoute le namespace complet au nom du contrôleur
                 $controller = "App\\Controllers\\" . $controller;
 
+                
                 error_log("Matched route. Controller: " . $controller . ", Action: " . $action);
 
                 if (!class_exists($controller)) {
