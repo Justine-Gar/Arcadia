@@ -29,7 +29,7 @@ $font-button-monserrat: 'Montserrat';
   text-transform: uppercase;
   padding: $padding;
   border-radius: $border-radius;
-
+  cursor: pointer;
   &:hover {
 
     background-color: $text-color;
