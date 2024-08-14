@@ -29,38 +29,47 @@ class AuthController
    */
   public function login(string $email, string $password)
   {
-    $user = $this->userRepository->authentificate($email, $password);
-    
-    //vérifier si authentificate résussit
-    if ($user) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $email = $_POST['email'] ?? '';
+      $password = $_POST['password'] ?? '';
 
-      //demarer la session
-      session_start();
+      $user = $this->userRepository->authentificate($email, $password);
+  
+      if ($user) {
+          // Démarrer la session
+          session_start();
 
-      $_SESSION['id_user'] = $user->getIdUser();
-      $_SESSION['email'] = $user->getEmailUser();
-      $_SESSION['role'] = $user->getRole();
+          $_SESSION['id_user'] = $user->getIdUser();
+          $_SESSION['email'] = $user->getEmailUser();
+          $_SESSION['role'] = $user->getRole();
 
-      //redirection en function du role
-      switch ($user->getRole()) {
-        case 1:
-          header("Location: /admin");
-          break;
-        
-        case 2:
-          header("Location: /employee");
-          break;
-        
-        case 3:
-          header("Location: /veterinaire");
-          break;
+          // Redirection en fonction du rôle
+          switch ($user->getRole()) {
+              case 1:
+                  header("Location: /admin");
+                  break;
+              case 2:
+                  header("Location: /employee");
+                  break;
+              case 3:
+                  header("Location: /veterinaire");
+                  break;
+              default:
+                  header("Location: /");
+                  break;
+          }
+          exit;
+      } else {
+          // Échec de l'authentification
+          // Rediriger vers la page précédente avec un message d'erreur
+          $_SESSION['login_error'] = 'Échec de l\'authentification';
+          header("Location: " . $_SERVER['HTTP_REFERER']);
+          exit;
       }
-      exit;
-    } else {
-      //Echec de l'authentification
-      return "Echec de l'authentification";
     }
   }
+
+
 
   /** Deconnecter l'utilisateur actuel
    * 
