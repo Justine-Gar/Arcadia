@@ -11,7 +11,7 @@
           <li><a href="/services" data-item="Services">services</a></li>
           <li><a href="/habitats" data-item="Habitats">habitat</a></li>
           <li><a href="/contact" data-item="Contact">contact</a></li>
-          <li><a href="#" data-item="Connexion">connexion</a></li>
+          <li><a href="#" data-item="Connexion" id="btnLogin">connexion</a></li>
         </ul>
       </nav>
     </div>
@@ -20,4 +20,5 @@
     </div>
   </div>
 </header>
+
 <!--==== END HEADER ====-->

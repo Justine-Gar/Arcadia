@@ -25,5 +25,6 @@
   <script src="js/homes.js"></script>
   <script src="js/avis.js"></script>
   <script src="js/habitat.js"></script>
+  <script src="js/modal.js"></script>
 </body>
 </html>
