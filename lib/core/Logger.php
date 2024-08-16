@@ -12,14 +12,26 @@ class Logger
     private static $baseLogDir;
     //Chemin complet vers le fichier de log actuel
     private static $logFile;
+    //Stocker le fuseau horaire
+    private static $timezone;
+
+    // Définition des codes de couleur ANSI
+    private static $colors = [
+        'INFO' => "\033[0;32m", // Vert
+        'WARNING' => "\033[1;33m", // Jaune
+        'ERROR' => "\033[0;31m", // Rouge
+        'RESET' => "\033[0m", // Réinitialisation
+    ];
 
     /** Initialise du systeme de logging
      * 
-     * @param string string $baseLogDir Répertoire de base pour les logs
+     * @param string $baseLogDir Répertoire de base pour les logs
+     * @param string $timezone Fuseau horaire français
      */
-    public static function init($baseLogDir)
+    public static function init($baseLogDir, $timezone = 'Europe/Paris')
     {
         self::$baseLogDir = rtrim($baseLogDir, '/');
+        self::$timezone = new \DateTimeZone($timezone);
         self::updateLogFile();
     }
 
@@ -30,7 +42,7 @@ class Logger
      */
     private static function updateLogFile()
     {
-        $today = date('Y-m-d');
+        $today = self::getDate('Y-m-d');
         $todayLogDir = self::$baseLogDir . '/' . $today;
 
         //Créer un répertoire du jours s'il n'existe pas
@@ -65,14 +77,20 @@ class Logger
         }
 
         //vérifions si on est dans le bon dossier(chargement du jour)
-        $currentDate = date('Y-m-d');
+        $currentDate = self::getDate('Y-m-d');
         if (dirname(self::$logFile) !== self::$baseLogDir . '/' . $currentDate)
         {
             self::updateLogFile();
         }
 
-        $timestamp = date('Y-m-d H:i:s');
-        $logMessage = "[$timestamp] [$level] $message" . PHP_EOL;
+        $timestamp = self::getDate('Y-m-d H:i:s');
+        $colorStart = self::$colors[$level] ?? self::$colors['INFO'];
+        $colorEnd = self::$colors['RESET'];
+         // Message coloré pour le terminal
+        $coloredMessage = "$colorStart[$timestamp] [$level] $message$colorEnd" . PHP_EOL;
+
+         // Message sans couleur pour le fichier
+        $plainMessage = "[$timestamp] [$level] $message" . PHP_EOL;
 
         $file = fopen(self::$logFile, 'a');
         if ($file === false)
@@ -82,13 +100,23 @@ class Logger
 
         // Utilise un verrou exclusif pour éviter les conflits d'écriture
         if (flock($file, LOCK_EX)) {
-            fwrite($file, $logMessage);
+            fwrite($file, $plainMessage);
             flock($file, LOCK_UN);
+
+            // Affichage coloré dans le terminal
+            echo $coloredMessage;
         } else {
             throw new \RuntimeException("Impossible de verrouiller le fichier de log : " . self::$logFile);
         }
 
         fclose($file);
+    }
+
+    //Methode qui utilise le fuseau horaire défini dans le DATETIME
+    private static function getDate($format)
+    {
+        $date = new \DateTime('now', self::$timezone);
+        return $date->format($format);
     }
 
     // Méthodes de commodité pour différents niveaux de log
