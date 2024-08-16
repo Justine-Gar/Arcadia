@@ -8,7 +8,7 @@ class Autoloader
   private static $namespaces = [
     'App\\Controllers\\' => '/src/controllers/',
     'App\\Models\\' => '/src/models/',
-    'App\\Repository\\' => '/src/repository/',
+    'App\\Repositories\\' => '/src/repositories/',
     'App\\Utils\\' => '/src/utils/',
     'lib\\core\\' => '/lib/core/',
     'lib\\config\\' => '/lib/config/'

@@ -87,10 +87,9 @@ class Logger
         $colorStart = self::$colors[$level] ?? self::$colors['INFO'];
         $colorEnd = self::$colors['RESET'];
          // Message coloré pour le terminal
-        $coloredMessage = "$colorStart[$timestamp] [$level] $message$colorEnd" . PHP_EOL;
-
+        $coloredMessage = "{$colorStart}[{$timestamp}] [{$level}] {$message}{$colorEnd}" . PHP_EOL;
          // Message sans couleur pour le fichier
-        $plainMessage = "[$timestamp] [$level] $message" . PHP_EOL;
+        $plainMessage = "[{$timestamp}] [{$level}] {$message}" . PHP_EOL;
 
         $file = fopen(self::$logFile, 'a');
         if ($file === false)
