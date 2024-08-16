@@ -4,7 +4,7 @@ namespace App\utils;
 
 class PasswordHasher
 {
-    public function hashPassword($password)
+    public function hashPassword(string $password): string
     {
         $options = [
             'memory_cost' => 65536, // 64 MiB
@@ -14,7 +14,7 @@ class PasswordHasher
         return password_hash($password, PASSWORD_ARGON2ID, $options);
     }
 
-    public function verifyPassword($password, $hash)
+    public function verifyPassword(string $password, string $hash): bool
     {
         return password_verify($password, $hash);
     }

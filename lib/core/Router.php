@@ -9,20 +9,13 @@ class Router
 {   
     
     private $routes = [];
-    private $dbConnection;
+    private $db;
 
     //le constructeur accepte un tableau de route optionnel et la connection a la Base
     public function __construct(array $routes = [])
     {
         $this->routes = $routes;
-        $this->dbConnection = database::getInstance();
-    }
-
-    //Methode pour ajouter une nouvelle route
-    public function addRoute($route, $handler)
-    {
-        //Ajoute une route et son gestionnaire au tableau 
-        $this->routes[$route] = $handler;
+        $this->db = database::getInstance();
     }
 
 
@@ -45,15 +38,15 @@ class Router
                 $controller = "App\\Controllers\\" . $controller;
 
                 
-                error_log("Matched route. Controller: " . $controller . ", Action: " . $action);
+                //error_log("Matched route. Controller: " . $controller . ", Action: " . $action);
 
                 if (!class_exists($controller)) {
                     //error_log("Controller class does not exist: " . $controller);
-                    throw new Exception("Controller not found: " . $controller);
+                    throw new Exception("Controller pas trouvé: " . $controller);
                 }
 
                 // Crée une instance du contrôleur
-                $controllerInstance = new $controller($this->dbConnection);
+                $controllerInstance = new $controller();
 
                 if (!method_exists($controllerInstance, $action)) {
                     //error_log("Action does not exist in controller: " . $action);

@@ -103,7 +103,7 @@ class Logger
             flock($file, LOCK_UN);
 
             // Affichage coloré dans le terminal
-            echo $coloredMessage;
+            //echo $coloredMessage;
         } else {
             throw new \RuntimeException("Impossible de verrouiller le fichier de log : " . self::$logFile);
         }

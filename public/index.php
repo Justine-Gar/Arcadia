@@ -58,9 +58,7 @@ $url = str_replace('/arcadia', '', $url);
 
 try {
 
-  \lib\core\Logger::info('Début du traitement de la requête : ' . $url);
   $response = $router->handleRequest($url);
-  \lib\core\Logger::info('Fin du traitement de la requête : ' . $url);
   $response->send();
 
 } catch (Exception $e)

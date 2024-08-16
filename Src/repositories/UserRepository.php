@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\models\User;
 use PDO;
 use App\utils\PasswordHasher;
+use lib\config\database;
 use lib\core\Logger;
 use PDOException;
 
@@ -12,38 +13,36 @@ class UserRepository extends Repositories
 {
   
   private PasswordHasher $passwordHasher;
+  private $db;
 
-  public function __construct()
+  public function __construct(database $db)
   {
     $this->passwordHasher = new PasswordHasher();
+    $this->db = $db;
   }
 
-  /** Crée un User dans la Base de donnée
-   * 
-   * @param string $email Email de l'user
-   * @param string $password Mdp de l'user
-   * @param int $role L'id du role de cette user
-   * @return User le nouvel objet User crée
-   */
-  public function createUser(string $email, string $password, int $role): User
-  {
-    try {
-
-      $hashedPassword = $this->passwordHasher->hashPassword($password);
-      $query = "INSERT INTO `user` (`email`, `password`, `id_role`) VALUES (:email, :password, :id_role)";
-      $stmt = $this->connexion()->prepare($query);
-      $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-      $stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
-      $stmt->bindValue(':id_role', $role, PDO::PARAM_INT);
-
-      $stmt->execute();
-      $id_user = $this->connexion()->lastInsertId();
-      return new User($id_user, $email, $hashedPassword, $role);
-    } catch (PDOException $e)
+  public function findByEmail($email): User
     {
+        $sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':email', $email, \PDO::PARAM_STR);
+        $stmt->execute();
 
+        $userData = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        if (!$userData) {
+            return null;
+        }
+
+        // Créer et retourner un objet User
+        return new User(
+            $userData['id'],
+            $userData['email'],
+            $userData['password'],
+            $userData['firstname'],
+            $userData['lastname'],
+            $userData['role']
+        );
     }
-    
-  }
 
 }

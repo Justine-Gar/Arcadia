@@ -33,28 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     event.stopPropagation();
   });
 
-  // Gestion de la soumission du formulaire
-  formLogin.addEventListener('submit', function(e) {
-    e.preventDefault(); // Empêche la soumission par défaut du formulaire
-
-    // Récupération et nettoyage des valeurs du formulaire
-    const email = this.email.value.trim();
-    const password = this.password.value.trim();
-
-    // Validation basique côté client
-    if (!email || !password) {
-        alert('Veuillez remplir tous les champs.');
-        return;
-    }
-
-    if (!isValidEmail(email)) {
-        alert('Veuillez entrer une adresse email valide.');
-        return;
-    }
 });
 
-// Fonction pour valider le format de l'email
-function isValidEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
-}
-});
+
+

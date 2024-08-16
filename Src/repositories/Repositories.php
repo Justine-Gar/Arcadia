@@ -8,8 +8,8 @@ abstract class Repositories
 {
   protected function connexion() {
 
-    $database = database::getConnection();
-    var_dump($database);
+    $database = database::getInstance();
+    //var_dump($database);
     return $database;
   }
 }
