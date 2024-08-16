@@ -13,7 +13,7 @@ require_once BASE_PATH . '/lib/core/Autoloader.php';
 require_once BASE_PATH . '/lib/core/EnvLoader.php';
 \lib\core\EnvLoader::load(BASE_PATH . '/.env');
 
-
+/*
 // Configurer la gestion des erreurs et exceptions
 set_error_handler(function($errno, $errstr, $errfile, $errline) {
   \lib\core\Logger::error("Erreur PHP : [$errno] $errstr dans le fichier $errfile à la ligne $errline");
@@ -29,7 +29,7 @@ register_shutdown_function(function() {
       \lib\core\Logger::error("Erreur fatale : " . $error['message'] . " dans " . $error['file'] . " à la ligne " . $error['line']);
   }
 });
-
+*/
 
 //Charger le gestion d'erreur 
 require_once BASE_PATH . '/lib/core/Logger.php';
@@ -38,7 +38,7 @@ require_once BASE_PATH . '/lib/core/Logger.php';
 
 //Connection a la BDD
 \lib\core\Logger::info('Tentative de connexion à la base de données');
-$dbConnection = \lib\config\Database::getConnection();
+$dbConnection = \lib\config\Database::getInstance();
 \lib\core\Logger::info('Connexion à la base de données réussie');
 
 // Charger la configuration en fonction de l'environnement

@@ -2,6 +2,7 @@
 
 namespace lib\core;
 
+
 class Response
 {
     private $headers = [];

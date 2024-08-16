@@ -92,10 +92,10 @@ class User {
      */
     public function setPasswordUser(string $password): void 
     {   
-        if (strlen($password) <= 8) {
+        if (strlen($password) < 8) {
             throw new InvalidArgumentException("Le mot de passe doit contenir au moin 8 caractères");
         }
-        $this->password = (new PasswordHasher())->hashPassword($password);
+        $this->password = $password;
     }
 
     /** Defini le role de l'user
