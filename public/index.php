@@ -38,7 +38,7 @@ require_once BASE_PATH . '/lib/core/Logger.php';
 
 //Connection a la BDD
 \lib\core\Logger::info('Tentative de connexion à la base de données');
-$dbConnection = \lib\config\Database::getConnection();
+$dbConnection = \lib\config\Database::getInstance();
 \lib\core\Logger::info('Connexion à la base de données réussie');
 
 // Charger la configuration en fonction de l'environnement

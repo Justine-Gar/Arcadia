@@ -15,7 +15,7 @@ class Router
     public function __construct(array $routes = [])
     {
         $this->routes = $routes;
-        $this->dbConnection = database::getConnection();
+        $this->dbConnection = database::getInstance();
     }
 
     //Methode pour ajouter une nouvelle route
