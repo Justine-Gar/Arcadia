@@ -19,7 +19,7 @@ class FileSRepository
 
   public function __construct()
   {
-    $this->db = database::getConnection();
+    $this->db = database::getInstance();
   }
 
 
