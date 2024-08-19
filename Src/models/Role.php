@@ -1,6 +1,5 @@
 <?php
-
-namespace App\models;
+namespace App\Models;
 
 enum Role: string {
   case Admin = 'Admin';
