@@ -2,7 +2,7 @@
 namespace App\models;
 
 use InvalidArgumentException;
-use App\utils\PasswordHasher;
+
 
 /**
  * Class représentant un user dans le systeme
@@ -12,16 +12,16 @@ class User {
     private ?int $id_user;
     private string $email;
     private string $password;
-    private int $role;
+    private Role $role;
 
     /** Constructeur de la class User
      * 
      * @param ?int $id_user identifiant de l'user
      * @param string $email_user l'email_user de l'user
      * @param string $password_user le mdp de l'user
-     * @param int $role le role de l'utilisateur
+     * @param Role $role le role de l'utilisateur
      */
-    public function __construct(?int $id_user, string $email, string $password, int $role) 
+    public function __construct(?int $id_user, string $email, string $password, Role $role) 
     {
         $this->setIdUser($id_user);
         $this->setEmailUser($email);
@@ -51,9 +51,9 @@ class User {
 
     /** Obtient le role de l'user
      * 
-     * @return int $role le role de l'user
+     * @return Role $role le role de l'user
      */
-    public function getRole(): int { return $this->role;}
+    public function getRole(): Role { return $this->role;}
 
 
     //SETTERS
@@ -100,15 +100,12 @@ class User {
 
     /** Defini le role de l'user
      * 
-     * @param int $role
+     * @param Role $role
      * @throws InvalideArgumentException
      */
-    public function setRole(int $role): void 
+    public function setRole(Role $role): void 
     {   
-        $validRoles = [1, 2, 3];
-        if (!in_array($role , $validRoles)) {
-            throw new InvalidArgumentException("Rôle Invalide");
-        }
+        
         $this->role = $role;
     }
 }

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Utils\UserService;
 
-class AdminController extends Controllers
+class VetoController extends Controllers
 {
   
   public function index()
@@ -18,7 +18,7 @@ class AdminController extends Controllers
       'title' => 'Administration',
     ];
 
-    return $this->render('admin', $data, 'dashboard');
+    return $this->render('veterinaire', $data, 'dashboard');
   }
 
 
