@@ -1,13 +1,4 @@
-<?php
-// Vérifier si la session est active
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
 
-// Vérifier si l'utilisateur est connecté
-$is_login = isset($_SESSION['user_id']);
-
-?>
 <!--====  START HEADER  ====-->
 <header>
   <div class="header_container">
@@ -22,11 +13,7 @@ $is_login = isset($_SESSION['user_id']);
           <li><a href="/habitats" data-item="Habitats">habitat</a></li>
           <li><a href="/contact" data-item="Contact">contact</a></li>
           <li>
-          <?php if ($is_login): ?>
-            <a href="/logout" data-item="Deconnexion">déconnexion</a>
-          <?php else: ?>
-            <a href="/login" data-item="Connexion">connexion</a>
-          <?php endif; ?>
+            <a href="/login" data-item="Connexion" id="btnLogin">connexion</a>
           </li>  
         </ul>
       </nav>
@@ -38,3 +25,23 @@ $is_login = isset($_SESSION['user_id']);
 </header>
 
 <!--==== END HEADER ====-->
+<!--Model de connexion-->
+<div class="modal" id="modalLogin">
+  <div class="modal_container">
+    <div class="model_title">
+      <span class="close"><i class="ri-close-large-line"></i></span>
+      <h2>Connexion</h2>
+    </div>
+    <form action="../../controllers/AuthController.php" method="POST" id="formLogin" enctype="multipart/form-data">
+      <div class="form_group">
+        <label for="emailuser">Email:</label>
+        <input type="email" id="emailuser" name="emailuser" required>
+      </div>
+      <div class="form_group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <button type="submit" id="btnSubmitLogin">se connecter</button>
+    </form>
+  </div>
+</div>

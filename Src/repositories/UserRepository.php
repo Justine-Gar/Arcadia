@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\models\User;
+use App\Models\User;
 use App\Models\Role;
-use App\utils\PasswordHasher;
+use App\Utils\PasswordHasher;
 use PDO;
 use PDOException;
 
@@ -12,7 +12,6 @@ class UserRepository extends Repositories
 {
 
   private PasswordHasher $passwordHasher;
-  private $db;
 
   public function __construct()
   {

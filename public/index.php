@@ -13,7 +13,7 @@ require_once BASE_PATH . '/lib/core/Autoloader.php';
 require_once BASE_PATH . '/lib/core/EnvLoader.php';
 \lib\core\EnvLoader::load(BASE_PATH . '/.env');
 
-/*
+
 // Configurer la gestion des erreurs et exceptions
 set_error_handler(function($errno, $errstr, $errfile, $errline) {
   \lib\core\Logger::error("Erreur PHP : [$errno] $errstr dans le fichier $errfile à la ligne $errline");
@@ -29,7 +29,7 @@ register_shutdown_function(function() {
       \lib\core\Logger::error("Erreur fatale : " . $error['message'] . " dans " . $error['file'] . " à la ligne " . $error['line']);
   }
 });
-*/
+
 
 //Charger le gestion d'erreur 
 require_once BASE_PATH . '/lib/core/Logger.php';
@@ -63,7 +63,6 @@ try {
 
 } catch (Exception $e)
 {
-  //Gérer les erreurs
   // Ajouter un log pour voir l'URL traitée
   \lib\core\Logger::error('Erreur lors du traitement de la requête : ' . $e->getMessage() . "\n" . $e->getTraceAsString());
   $response = new \lib\core\Response();

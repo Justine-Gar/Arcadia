@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\models\Role;
 use App\Repositories\UserRepository;
 use App\utils\PasswordHasher;
+use lib\core\Response;
 use lib\core\Logger;
 
 class AuthController extends Controllers
@@ -27,7 +28,9 @@ class AuthController extends Controllers
 
       Logger::error("Erreur dans AuthController:" . $e->getMessage());
       Logger::error("Trace: " . $e->getTraceAsString());
-      $this->jsonResponse(['succes' => false, 'message' => 'Erreur Interne Authentification']);
+      $response = new Response();
+      $response->json(['succes' => false, 'message' => 'Erreur Interne Authentification']);
+      return $response;
       exit;
     }
   }
@@ -37,7 +40,12 @@ class AuthController extends Controllers
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
       Logger::error("Methode non autorisé: " . $_SERVER['REQUEST_METHOD']);
-      return $this->jsonResponse(['success' => false, 'message' => 'Méthode non autorisée'], 405);
+
+      $response = new Response();
+      $response->setStatusCode(405);
+      $response->json(['success' => false, 'message' => 'Méthode non autorisée']);
+      return $response;
+
     }
 
     $email = filter_input(INPUT_POST, 'emailuser', FILTER_SANITIZE_EMAIL);
@@ -46,7 +54,11 @@ class AuthController extends Controllers
     if (empty($email) || empty($password)) {
 
       Logger::error("identifiant incorrecte");
-      return $this->jsonResponse(['success' => false, 'message' => 'Identifiants incorrecte'], 400);
+
+      $response = new Response();
+      $response->setStatusCode(400);
+      $response->json(['success' => false, 'message' => 'Identifiants incorrecte']);
+      return $response;
     }
 
     try {
@@ -64,30 +76,32 @@ class AuthController extends Controllers
 
           Role::Admin => '/admin',
           Role::Staff => '/employe',
-          Role::Veto => '/veterinaire',
+          Role::Veto => '/veto',
           default => '/'
         };
 
-        return $this->jsonResponse(['success' => true, 'redirect' => $location]);
-        
+        $response = new Response();
+        $response->json(['success' => true, 'redirect' => $location]);
+        return $response;
+
       } else {
 
-        return $this->jsonResponse(['success' => false, 'message' => 'Authentification à échouée'], 401);
+        $response = new Response();
+        $response->setStatusCode(401);
+        $response->json(['success' => false, 'message' => 'Authentification à échouée']);
+        return $response;
       }
 
     } catch (\Throwable $e) {
 
       Logger::error("Erreur lors de l'authentification: " . $e->getMessage());
       Logger::error("Trace: " . $e->getTraceAsString());
-      return $this->jsonResponse(['success' => false, 'message' => 'Erreur lors de la tentative de connexion'], 500);
+
+      $response = new Response();
+      $response->setStatusCode(500);
+      $response->json(['success' => false, 'message' => 'Erreur lors de la tentative de connexion']);
+      return $response;
 
     }
-  }
-
-  private function jsonResponse($data, $statusCode = 200)
-  {
-    http_response_code($statusCode);
-    header('Content-Type: application/json');
-    echo json_encode($data);
   }
 }
