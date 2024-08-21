@@ -16,7 +16,7 @@
       <h2>dashboard</h2>
       <ul>
         <li><a href="/admin" class="active">Home</a></li>
-        <li><a href="/admin/habitats">habitat</a></li>
+        <li><a href="/admin/habitats">habitats</a></li>
         <li><a href="/admin/services">services</a></li>
         <li><a href="/admin/animaux">animaux</a></li>
         <li><a href="/admin/comptes">compte</a></li>
@@ -42,7 +42,6 @@
             <li>Ici se trouvera les comptre rendu du jour</li>
           </ul>
         </div>
-
       </div>
     </div>
 
