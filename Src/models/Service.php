@@ -9,8 +9,8 @@ use InvalidArgumentException;
 class Service {
 
   private ?int $id_service;
-  private string $name_service;
-  private string $description_service;
+  private string $name;
+  private string $description;
 
   /** Constructeur de la class Service
    * 
@@ -18,11 +18,11 @@ class Service {
    * @param string $name_service le nom du serice
    * @param string $description_service la description du service
    */
-  public function __construct(?int $id_service, string $name_service, string $description_service) 
+  public function __construct(?int $id_service, string $name, string $description) 
   {
     $this->setIdService($id_service);
-    $this->setNameService($name_service);
-    $this->setDescriptionService($description_service);
+    $this->setNameService($name);
+    $this->setDescriptionService($description);
   }
 
   //GETTERS
@@ -37,13 +37,13 @@ class Service {
    * 
    * @return string le nom du service
    */
-  public function getNameService(): string { return $this->name_service;}
+  public function getNameService(): string { return $this->name;}
 
   /** Obtient la description du service
    * 
    * @return string la dscription du service
    */
-  public function getDescrptionService(): string { return $this->description_service;}
+  public function getDescriptionService(): string { return $this->description;}
 
 
   //SETTERS
@@ -67,18 +67,18 @@ class Service {
    * @param string
    * @throws InvalidArgumentException
    */
-  public function setNameService(string $name_service): void
+  public function setNameService(string $name): void
   {
-    $name_service = trim($name_service);
-    if (empty($name_service))
+    $name = trim($name);
+    if (empty($name))
     {
       throw new InvalidArgumentException("le nom ne peut etre vide");
     }
-    if (strlen($name_service) > 50)
+    if (strlen($name) > 50)
     {
       throw new InvalidArgumentException("Le nom ne peut dépasser 50 caractères");
     }
-    $this->name_service = $name_service;
+    $this->name = $name;
   }
 
   /** Defnit le description du service
@@ -86,13 +86,13 @@ class Service {
    * @param string
    * @throws InvalidArgumentException
    */
-  public function setDescriptionService(string $description_service): void
+  public function setDescriptionService(string $description): void
   {
-    $description_service = trim($description_service);
-    if (empty($description_service))
+    $description = trim($description);
+    if (empty($description))
     {
       throw new InvalidArgumentException("la description ne peut etre vide");
     }
-    $this->description_service = $description_service;
+    $this->description = $description;
   }
 } 

@@ -14,4 +14,6 @@ class HabitatController extends Controllers
 
         return $this->render('habitats', $data);
     }
+
+    
 }

@@ -1,0 +1,87 @@
+@use "../abstract/all" as *;
+
+
+.dash_container {
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+
+  .dash_sidebar {
+
+    background-color: $color-back-third;
+    padding: 90px 70px 45px 40px;
+    border-right: 4px solid #ccc;
+    height: 50vh;
+
+    h2 {
+      @include font($font-dimsum, $font-size-xlarge, 500, $color-font-primary);
+      margin-bottom: 50px;
+    }
+    ul {
+
+
+      li a {
+      text-transform: uppercase;
+      @include font($font-monserrat, $font-size-regular, 400, $color-font-third);
+
+      margin: 10px, 0, 10px, 0;
+      }
+    }
+    .active {
+        color: $color-font-primary;
+    }
+  }
+
+  .main_content {
+
+    background-color: $color-font-third;
+    //flex-grow: 1;
+    padding: 20px;
+
+    //overflow-y: auto;
+    
+    h1 {
+      @include font($font-monserrat, $font-size-xlarge, 500, $color-back-third);
+      margin-bottom: 30px;
+    }
+    .dash_overview {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @include respond-to(desktop) {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 90px 40px 0px 40px;
+    }
+    
+    @include respond-to(large) {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 90px 40px 0px 40px;
+    }
+
+    @include respond-to(xlarge) {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 90px 40px 0px 40px;
+      
+    }
+  }
+
+  @include respond-to(desktop) {
+    flex-direction: row;
+    
+  }
+  @include respond-to(large) {
+    flex-direction: row;
+    
+  }
+  @include respond-to(xlarge) {
+    flex-direction: row;
+    
+  }
+}

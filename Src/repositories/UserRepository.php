@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\User;
 use App\Models\Role;
 use App\Utils\PasswordHasher;
+use lib\core\Logger;
 use PDO;
 use PDOException;
 
@@ -43,6 +44,7 @@ class UserRepository extends Repositories
       //creaet user 
       //Role::Admin;
     } catch (PDOException $e) {
+      Logger::error("Erreur lors de la création de l'utilisateur" . $e->getMessage());
       throw $e;
     }
   }
@@ -75,7 +77,7 @@ class UserRepository extends Repositories
       }
     } catch (PDOException $e) {
 
-      error_log("Erreur lors de l'authentitification en BDD" . $e->getMessage());
+      Logger::error("Erreur lors de l'authentitification en BDD" . $e->getMessage());
       throw $e;
     }
   }
@@ -104,7 +106,7 @@ class UserRepository extends Repositories
 
     } catch (PDOException $e) {
 
-      error_log("Erreur lors de l'authentitification en BDD" . $e->getMessage());
+      Logger::error("Identifiant non trouvé" . $e->getMessage());
       throw $e;
     }
   }

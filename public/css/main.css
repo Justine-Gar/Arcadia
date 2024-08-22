@@ -4259,6 +4259,89 @@ table {
   color: #FFE888;
 }
 
+.dash_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+}
+.dash_container .dash_sidebar {
+  background-color: #5a7064;
+  padding: 90px 70px 45px 40px;
+  border-right: 4px solid #ccc;
+  height: 50vh;
+}
+.dash_container .dash_sidebar h2 {
+  font-family: "Dimsum Week";
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: #FFE888;
+  margin-bottom: 50px;
+}
+.dash_container .dash_sidebar ul li a {
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #f1f0f2;
+  margin: 10px, 0, 10px, 0;
+}
+.dash_container .dash_sidebar .active {
+  color: #FFE888;
+}
+.dash_container .main_content {
+  background-color: #f1f0f2;
+  padding: 20px;
+}
+.dash_container .main_content h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: #5a7064;
+  margin-bottom: 30px;
+}
+.dash_container .main_content .dash_overview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .dash_container .main_content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 90px 40px 0px 40px;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .dash_container .main_content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 90px 40px 0px 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dash_container .main_content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 90px 40px 0px 40px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .dash_container {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  .dash_container {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dash_container {
+    flex-direction: row;
+  }
+}
+
 @font-face {
   font-family: "Dimsum Week";
   src: url("../../assets/font/Dimsum Week.ttf") format("truetype");
