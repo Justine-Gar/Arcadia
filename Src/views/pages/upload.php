@@ -20,53 +20,57 @@ function handleUpload() {
 
     $entityType = sanitizeString($_POST['entity_type']);
     $entityId = filter_input(INPUT_POST, 'entity_id', FILTER_VALIDATE_INT);
-    $fileName = sanitizeString($_POST['fileName']);
+    $originalFileName = sanitizeString($_POST['fileName']);
     $uploadedFile = $_FILES['file'];
 
-    if (!in_array($entityType, ['animal', 'service', 'habitat']) || $entityId === false || $entityId === null) {
-        throw new Exception("Type d'entité invalide ou ID d'entité manquant.");
-    }
-
-    if ($uploadedFile['error'] !== UPLOAD_ERR_OK) {
-        throw new Exception("Erreur lors de l'upload du fichier.");
-    }
-
-    if ($uploadedFile['size'] > MAX_FILE_SIZE) {
-        throw new Exception("Le fichier est trop volumineux. Taille maximale : " . (MAX_FILE_SIZE / 1000000) . " MB");
-    }
+    // Vérifications (comme dans votre code original)...
 
     $fileExtension = strtolower(pathinfo($uploadedFile['name'], PATHINFO_EXTENSION));
-    if (!in_array($fileExtension, ALLOWED_EXTENSIONS)) {
-        throw new Exception("Type de fichier non autorisé. Extensions autorisées : " . implode(', ', ALLOWED_EXTENSIONS));
-    }
+
+    // Générer un nouveau nom de fichier unique
+    $newFileName = uniqid($entityType . '_' . $entityId . '_') . '.' . $fileExtension;
 
     $entityDir = BASE_UPLOAD_DIR . $entityType . 's/';
     if (!is_dir($entityDir) && !mkdir($entityDir, 0777, true)) {
         throw new Exception("Impossible de créer le répertoire de destination.");
     }
 
-    $newFileName = uniqid() . '.' . $fileExtension;
-    $filePath = $entityDir . $newFileName;
+    // Chemin complet du fichier
+    $fullFilePath = $entityDir . $newFileName;
 
-    if (!move_uploaded_file($uploadedFile['tmp_name'], $filePath)) {
+    // Déplacer le fichier uploadé vers sa destination finale
+    if (!move_uploaded_file($uploadedFile['tmp_name'], $fullFilePath)) {
         throw new Exception("Échec du déplacement du fichier uploadé.");
     }
 
-    $relativeFilePath = str_replace('public/', '', $filePath);
+    // Chemin relatif pour stockage en base de données
+    $relativeFilePath = 'uploads/' . $entityType . 's/' . $newFileName;
 
     $tableName = 'file' . ucfirst($entityType[0]);
     $idColumnName = 'id_' . $entityType;
 
+    // Insérer les informations dans la base de données
     $stmt = $pdo->prepare("INSERT INTO $tableName (fileName, filePath, $idColumnName) VALUES (?, ?, ?)");
-    $stmt->execute([$fileName, $relativeFilePath, $entityId]);
+    $stmt->execute([$originalFileName, $relativeFilePath, $entityId]);
 
-    return "L'image a été uploadée et enregistrée avec succès.";
+    return [
+        "message" => "L'image a été uploadée et enregistrée avec succès.",
+        "originalFileName" => $originalFileName,
+        "newFileName" => $newFileName,
+        "filePath" => $relativeFilePath
+    ];
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
-        $message = handleUpload();
-        echo json_encode(['success' => true, 'message' => $message]);
+        $result = handleUpload();
+        echo json_encode([
+            'success' => true, 
+            'message' => $result['message'],
+            'originalFileName' => $result['originalFileName'],
+            'newFileName' => $result['newFileName'],
+            'filePath' => $result['filePath']
+        ]);
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     }

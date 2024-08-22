@@ -9,23 +9,23 @@ use InvalidArgumentException;
 class FileS {
 
   private ?int $id_fileS;
-  private string $file_name;
-  private string $file_path;
-  private int $serviceId;
+  private string $fileName;
+  private string $filePath;
+  private int $service_id;
 
   /** Constructeur de la classe File
    * 
    * @param ?int $id_fileh est l'identifiant du file
-   * @param string $file_name le nom du file
-   * @param string $file_path le chemin de l'image
-   * @param ?int $id_animal l'identifiant de l'animal
+   * @param string $fileName le nom du file
+   * @param string $filePath le chemin de l'image
+   * @param ?int $id_animal l'identifiant du service
    */
-  public function __construct(?int $id_fileS, string $file_name, string $file_path, int $serviceId)
+  public function __construct(?int $id_fileS, string $fileName, string $filePath, int $service_id)
   {
     $this->setIdFileS($id_fileS);
-    $this->setFileName($file_name);
-    $this->setFilePath($file_path);
-    $this->setServiceId($serviceId);
+    $this->setFileSName($fileName);
+    $this->setFileSPath($filePath);
+    $this->setServiceId($service_id);
   }
 
   //GETTERS
@@ -40,19 +40,19 @@ class FileS {
    * 
    * @return string
    */
-  public function getFileName(): string { return $this->file_name;}
+  public function getFileSName(): string { return $this->fileName;}
 
   /** Obtient le chemin de l'image
    * 
    * @return string
    */
-  public function getFilePath(): string { return $this->file_path;}
+  public function getFileSPath(): string { return $this->filePath;}
 
   /** Obtient l'identifiant habitat du file
    * 
    * @return int
    */
-  public function getServiceId(): int { return $this->serviceId;}
+  public function getServiceId(): int { return $this->service_id;}
 
 
   //SETTERS
@@ -76,18 +76,18 @@ class FileS {
    * @param string nom de l'image
    * @throws InvalidArgumentException
    */
-  public function setFileName(string $file_name): void
+  public function setFileSName(string $fileName): void
   {
-    $file_name = trim($file_name);
-    if (empty($file_name))
+    $fileName = trim($fileName);
+    if (empty($fileName))
     {
       throw new InvalidArgumentException("Le nom ne peut etre vide");
     }
-    if (strlen($file_name) > 50)
+    if (strlen($fileName) > 50)
     {
       throw new InvalidArgumentException("le nom ne peut dépasser 50 caractère");
     }
-    $this->file_name = $file_name;
+    $this->fileName = $fileName;
   }
 
   /** Defini le chemin de l'image
@@ -95,14 +95,14 @@ class FileS {
    * @param string chemin de l'image
    * @throws InvalidArgumentException
    */
-  public function setFilePath(string $file_path): void
+  public function setFileSPath(string $filePath): void
   {
-    $file_path = trim($file_path);
-    if (empty($file_path))
+    $filePath = trim($filePath);
+    if (empty($filePath))
     {
       throw new InvalidArgumentException("Le chemin de l'image ne peut etre vide");
     }
-    $this->file_path = $file_path;
+    $this->filePath = $filePath;
   }
 
   /** Defini l'id_habitat de l'animal
@@ -110,8 +110,8 @@ class FileS {
    * @param int id_habitat de table habitat
    * @throws InvalidArgumentException
    */
-  public function setServiceId(int $serviceId): void
+  public function setServiceId(int $service_id): void
   {
-    $this->serviceId = $serviceId;
+    $this->service_id = $service_id;
   }
 }
