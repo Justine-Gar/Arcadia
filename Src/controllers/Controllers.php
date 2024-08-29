@@ -13,6 +13,26 @@ class Controllers
 
   protected function render($view, $data = [], $domain = 'pages')
   {
+    return $this->renderView($view, $data, $domain);
+  }
+
+  protected function renderAdmin($view, $data = [])
+  {
+    return $this->renderView($view, $data, 'dashboard/admin');
+  }
+
+  protected function renderVeto($view, $data = [])
+  {
+    return $this->renderView($view, $data, 'dashboard/veto');
+  }
+
+  protected function renderEmploye($view, $data = [])
+  {
+    return $this->renderView($view, $data, 'dashboard/employe');
+  }
+
+  protected function renderView($view, $data = [], $domain = 'pages')
+  {
     //error_log("Render method called with view: " . $view);
 
     $viewPath = BASE_PATH . '/src/views';

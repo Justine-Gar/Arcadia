@@ -6,7 +6,7 @@
   <!--====  REMIXIONS ====-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
   <!--====  CSS ====-->
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
   <title><?= $title ?? 'Arcadia';?></title>
 </head>
 <body>

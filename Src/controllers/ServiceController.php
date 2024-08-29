@@ -7,7 +7,6 @@ use lib\core\Response;
 
 class ServiceController extends Controllers
 {   
-    
     private $serviceRepository;
 
     public function __construct()
@@ -36,5 +35,18 @@ class ServiceController extends Controllers
         echo "</pre>";*/
         
         return $this->render('services', $data);
+    }
+
+    public function gestionServices()
+    {
+        $services = $this->serviceRepository->getAllService();
+        //var_dump($services);
+        $data = [
+            'title' => 'Gestion des Services',
+            'services' => $services
+        ];
+
+        return $this->renderAdmin('gestionServices', $data);
+        
     }
 }
