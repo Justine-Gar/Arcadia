@@ -15,7 +15,7 @@ class Animal {
   private string $species;
   private string $diet;
   private string $reproduction;
-  private ?Habitat $habitat = null;
+  private int $id_habitat;
 
   /** Constructeur de la class Animal
    * 
@@ -25,13 +25,13 @@ class Animal {
    * @param string $species la famille de la l'animal
    * @param string $diet le regima alimentaire de l'animal
    * @param string $reproduction la reproduction de l'animal
-   * @param ?int $id_habitat l'identifiant de l'habitat
+   * @param int $id_habitat l'identifiant de l'habitat
    */
   public function __construct(
     ?int $id_animal, string $firstname, 
     string $gender, string $species, 
     string $diet, string $reproduction,
-    ?Habitat $habitat = null)
+    int $id_habitat)
   {
     $this->setIdAnimal($id_animal);
     $this->setFirstname($firstname);
@@ -39,7 +39,7 @@ class Animal {
     $this->setSpecies($species);
     $this->setDiet($diet);
     $this->setReproduction($reproduction);
-    $this->setIdHabitat($habitat);
+    $this->setIdHabitat($id_habitat);
   }
 
   //GETTERS
@@ -84,7 +84,7 @@ class Animal {
    * 
    * @return int
    */
-  public function getIdHabitat(): ?Habitat { return $this->habitat;}
+  public function getIdHabitat(): int { return $this->id_habitat;}
 
 
   //SETTERS
@@ -198,8 +198,8 @@ class Animal {
    * @param int id_habitat de table habitat
    * @throws InvalidArgumentException
    */
-  public function setIdHabitat(Habitat $habitat): void
+  public function setIdHabitat(int $id_habitat): void
   {
-    $this->habitat = $habitat;
+    $this->id_habitat = $id_habitat;
   }
 }

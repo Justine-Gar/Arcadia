@@ -26,7 +26,7 @@ class AnimalRepository extends Repositories
    * @param Habitat Objt habitat
    * @return Animal
    */
-  public function createAnimal(string $firstname, string $gender, string $species, string $diet, string $reproduction, Habitat $id_habitat): Animal
+  public function createAnimal(string $firstname, string $gender, string $species, string $diet, string $reproduction, int $id_habitat): Animal
   {
     try {
 
@@ -58,7 +58,7 @@ class AnimalRepository extends Repositories
    * @param string $description
    * @return ?Animal
    */
-  public function updateAnimal(int $id_animal, string $firstname, string $gender, string $species, string $diet, string $reproduction): ?Animal
+  public function updateAnimal(int $id_animal, string $firstname, string $gender, string $species, string $diet, string $reproduction, int $id_habitat): ?Animal
   {
     try {
 
@@ -70,13 +70,14 @@ class AnimalRepository extends Repositories
       $stmt->bindValue(':species', $species, PDO::PARAM_STR);
       $stmt->bindValue(':diet', $diet, PDO::PARAM_STR);
       $stmt->bindValue(':reproduction', $reproduction, PDO::PARAM_STR);
+      $stmt->bindValue(':id_habitat', $id_habitat, PDO::PARAM_INT);
 
       $stmt->execute();
 
       //vérification si service existe bien
       if($stmt->rowCount() > 0) {
         
-        return new Animal($id_animal, $firstname, $gender,$species, $diet, $reproduction);
+        return new Animal($id_animal, $firstname, $gender,$species, $diet, $reproduction, $id_habitat);
 
       } else {
 

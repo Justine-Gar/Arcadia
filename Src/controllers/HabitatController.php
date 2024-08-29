@@ -23,7 +23,7 @@ class HabitatController extends Controllers
         return $this->render('habitats', $data);
     }
 
-    public function gestion()
+    public function gestionHabitats()
     {
         $habitats = $this->habitatRepository->getAllHabitat();
         $data = [
