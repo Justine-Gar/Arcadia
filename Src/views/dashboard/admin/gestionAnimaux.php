@@ -6,7 +6,7 @@
       <li><a href="/admin/habitats">habitats</a></li>
       <li><a href="/admin/services">services</a></li>
       <li><a href="/admin/animaux" class="active">animaux</a></li>
-      <li><a href="/admin/comptes">compte</a></li>
+      <li><a href="/admin/journal">journal</a></li>
       <li><a href="/admin/staff">staff</a></li>
       <li><a href="/admin/veto">veto</a></li>
     </ul>

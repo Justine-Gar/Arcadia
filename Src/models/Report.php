@@ -10,21 +10,8 @@ use InvalidArgumentException;
  */
 class Report {
 
-  private const VALID_HEALTH_STATUSES = [
-      'Bonne santé',
-      'Convalescence',
-      'Sous traitement Médical',
-      'Sous observation',
-      'Enrichissement environnemental',
-      'En quarantaine',
-      'En gestation',
-      'En période de mue',
-      'En réhabilitation',
-      'Vieillesse'
-  ];
-
   private ?int $id_report;
-  private string $health_status;
+  private Health $health_status;
   private DateTime $passage;
   private ?string $prescription;
   private ?string $quantity;
@@ -37,7 +24,7 @@ class Report {
   /** Constructeur de la classe Report
    * 
    * @param ?int $id_report identifiant du rapport
-   * @param string $health_status Le statut de santé
+   * @param Health $health_status Le statut de santé
    * @param DateTime $passage La date et l'heure du passage
    * @param ?string $prescription La prescription 
    * @param ?string $quantity La quantité 
@@ -47,7 +34,7 @@ class Report {
   */
   public function __construct(
     ?int $id_report,
-    string $health_status,
+    Health $health_status,
     DateTime $passage,
     ?string $prescription,
     ?string $quantity,
@@ -78,7 +65,7 @@ class Report {
    * 
    * @return string
    */
-  public function getHealthStatus(): string { return $this->health_status; }
+  public function getHealthStatus(): Health { return $this->health_status; }
 
   /** Obtient le passage du medecin
    * 
@@ -142,14 +129,11 @@ class Report {
 
   /** Defini le status de santé de l'animal
    * 
-   * @param string
+   * @param Health
    * @throws InvalidArgumentException
    */
-  public function setHealthStatus(string $health_status): void
+  public function setHealthStatus(Health $health_status): void
   {
-      if (!in_array($health_status, self::VALID_HEALTH_STATUSES)) {
-          throw new InvalidArgumentException("Statut de santé invalide");
-      }
       $this->health_status = $health_status;
   }
 
