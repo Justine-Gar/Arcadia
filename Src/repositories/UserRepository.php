@@ -22,24 +22,26 @@ class UserRepository extends Repositories
 
   /** Methode de création d'un utilisateur
    * 
+   * @param string $username
    * @param string $email
    * @param string $password
    * @param Role $role
    * @return User
    */
-  public function createUser(string $email, string $password, Role $role): User
+  public function createUser(string $username, string $email, string $password, Role $role): User
   {
     try {
       $hashedPassword = $this->passwordHasher->hashPassword($password);
-      $query = "INSERT INTO `user` (`email`, `password`, `role`) VALUES (:email, :password, :role)";
+      $query = "INSERT INTO `user` (`username`, `email`, `password`, `role`) VALUES (:username, :email, :password, :role)";
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
       $stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
       $stmt->bindValue(':role', $role->value, PDO::PARAM_STR);
 
       $stmt->execute();
       $id_user = $this->db->lastInsertId();
-      return new User($id_user, $email, $hashedPassword, $role);
+      return new User($id_user, $username, $email, $hashedPassword, $role);
 
       //creaet user 
       //Role::Admin;
@@ -59,7 +61,7 @@ class UserRepository extends Repositories
   {
     try {
 
-      $query = 'SELECT `id_user`, `email`, `password`, `role` FROM `user` WHERE email = :email';
+      $query = 'SELECT `id_user`,`username`, `email`, `password`, `role` FROM `user` WHERE email = :email';
       $stmt = $this->db->prepare($query);
       $stmt->bindParam(':email', $email);
       $stmt->execute();
@@ -70,7 +72,7 @@ class UserRepository extends Repositories
       if ($user && $this->passwordHasher->verifyPassword($password, $user['password'])) {
         //$role = $user['role'];
         //$Role = Role::from($role);
-        return new User($user['id_user'], $user['email'], $user['password'], Role::from($user['role']));
+        return new User($user['id_user'],$user['username'], $user['email'], $user['password'], Role::from($user['role']));
       } else {
 
         return false;
@@ -91,7 +93,7 @@ class UserRepository extends Repositories
   {
     try {
 
-      $query = 'SELECT `id_user`, `email`, `password`, `role` FROM `user` WHERE id_user = :id_user';
+      $query = 'SELECT `id_user`, `username`, `email`, `password`, `role` FROM `user` WHERE id_user = :id_user';
       $stmt = $this->db->prepare($query);
       $stmt->bindParam(':id_user', $id_user);
       $stmt->execute();
@@ -102,7 +104,7 @@ class UserRepository extends Repositories
       if (!$user) {
         return null;
       }
-      return new User($user['id_user'], $user['email'], $user['password'], Role::from($user['role']));
+      return new User($user['id_user'],$user['username'], $user['email'], $user['password'], Role::from($user['role']));
 
     } catch (PDOException $e) {
 

@@ -21,10 +21,10 @@
 
   <?php require_once __DIR__ . '/partials/_footer.php';?>
 
-  <script src="js/burger.js"></script>
-  <script src="js/homes.js"></script>
-  <script src="js/avis.js"></script>
-  <script src="js/habitat.js"></script>
-  <script src="js/modal.js"></script>
+  <script src="/js/burger.js"></script>
+  <script src="/js/homes.js"></script>
+  <script src="/js/avis.js"></script>
+  <script src="/js/habitat.js"></script>
+  <script src="/js/modal.js"></script>
 </body>
 </html>

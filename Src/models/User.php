@@ -10,6 +10,7 @@ use InvalidArgumentException;
 class User {
 
     private ?int $id_user;
+    private string $username;
     private string $email;
     private string $password;
     private Role $role;
@@ -21,9 +22,10 @@ class User {
      * @param string $password_user le mdp de l'user
      * @param Role $role le role de l'utilisateur
      */
-    public function __construct(?int $id_user, string $email, string $password, Role $role) 
+    public function __construct(?int $id_user, string $username, string $email, string $password, Role $role) 
     {
         $this->setIdUser($id_user);
+        $this->setUserName($username);
         $this->setEmailUser($email);
         $this->setPasswordUser($password);
         $this->setRole($role);
@@ -36,6 +38,12 @@ class User {
      * @return ?int $id_user id_user de l'user
      */
     public function getIdUser(): ?int { return $this->id_user;}
+
+    /** Obtien le nom de l'utilisateur
+     * 
+     * @return string $name_user le nom de l'utilisateur
+     */
+    public function getUserName(): string { return $this->username;}
 
     /** Obtient l'email_user de l'user
      * 
@@ -72,6 +80,16 @@ class User {
         return $this->id_user = $id_user;
     }
 
+    /** Defini luserName de l'user
+     * 
+     * @param string $name_user
+     * @throws InvalidArgumentException
+     */
+    public function setUserName(string $username): string
+    {
+        return $this->username = $username;
+    }
+    
     /** Defini l'email_user de l'user
      * 
      * @param string $email_user
