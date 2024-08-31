@@ -59,7 +59,7 @@ class ReportController extends Controllers
       'startDate' => $startDate ? $startDate->format('Y-m-d') : '',
     ];
 
-    return $this->renderAdmin('gestionJournl', $data);
+    return $this->renderAdmin('gestionJournal', $data);
   }
 }
 

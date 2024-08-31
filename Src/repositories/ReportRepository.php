@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use App\Models\Report;
 use App\Models\Health;
+use App\Models\Animal;
+use App\Models\User;
 use lib\core\Logger;
 use DateTime;
 use PDO;
@@ -135,13 +137,17 @@ class ReportRepository extends Repositories
   public function getAllReports(): array
   {
     try {
-      $query = "SELECT * FROM `report` ORDER BY `passage` DESC";
+      $query = "SELECT r.*, a.firstname as firstname, u.username
+                FROM `report` r
+                LEFT JOIN `animal` a ON r.id_animal = a.id_animal
+                LEFT JOIN `user` u ON r.id_user = u.id_user
+                ORDER BY r.passage DESC";
       $stmt = $this->db->prepare($query);
       $stmt->execute();
 
       $reports = [];
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { 
-        $reports[] = new Report(
+        $report = new Report(
           $row['id_report'],
           Health::from($row['health_status']),
           new DateTime($row['passage']),
@@ -151,6 +157,18 @@ class ReportRepository extends Repositories
           $row['id_animal'],
           $row['id_user']
         );
+
+        if ($row['firstname']) {
+          $animal = new Animal($row['id_animal'], $row['firstname'], $row['gender'], $row['species'], $row['diet'], $row['reproduction'], $row['id_habitat']);
+          $report->setAnimalReport($animal);
+        }
+        
+        if ($row['username']) {
+            $user = new User($row['id_user'], $row['username'], $row['email'], $row['password'], $row['role']);
+            $report->setUserReport($user);
+        }
+        
+        $reports[] = $report;
       }
 
       return $reports;

@@ -129,7 +129,7 @@ class Report {
 
   /** Defini le status de santé de l'animal
    * 
-   * @param Health
+   * @param He
    * @throws InvalidArgumentException
    */
   public function setHealthStatus(Health $health_status): void

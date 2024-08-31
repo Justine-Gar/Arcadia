@@ -50,7 +50,7 @@ class Animal {
    */
   public function getIdAnimal(): int { return $this->id_animal;}
 
-  /** Obtenir le nom de l'habitat
+  /** Obtenir le nom de l'animal
    * 
    * @return string
    */

@@ -25,7 +25,7 @@
               </option>
             <?php endforeach; ?>
         </select>
-        <input type="date" name="start" value="<?= $startDate ?? '' ?>" placeholder="Date d'entrée">
+        <input type="date" name="start" value="<?= $startDate ?? '' ?>" placeholder="Date">
         <button type="submit">Filtrer</button>
       </form>
 

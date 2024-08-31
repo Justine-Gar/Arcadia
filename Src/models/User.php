@@ -25,7 +25,7 @@ class User {
     public function __construct(?int $id_user, string $username, string $email, string $password, Role $role) 
     {
         $this->setIdUser($id_user);
-        $this->setUserName($username);
+        $this->setUsername($username);
         $this->setEmailUser($email);
         $this->setPasswordUser($password);
         $this->setRole($role);
@@ -43,7 +43,7 @@ class User {
      * 
      * @return string $name_user le nom de l'utilisateur
      */
-    public function getUserName(): string { return $this->username;}
+    public function getUsername(): string { return $this->username;}
 
     /** Obtient l'email_user de l'user
      * 
@@ -85,7 +85,7 @@ class User {
      * @param string $name_user
      * @throws InvalidArgumentException
      */
-    public function setUserName(string $username): string
+    public function setUsername(string $username): string
     {
         return $this->username = $username;
     }
