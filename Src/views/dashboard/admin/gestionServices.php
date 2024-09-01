@@ -7,17 +7,16 @@
         <li><a href="/admin/services" class="active">services</a></li>
         <li><a href="/admin/animaux">animaux</a></li>
         <li><a href="/admin/journal">journal</a></li>        
-        <li><a href="/admin/staff">staff</a></li>
-        <li><a href="/admin/veto">veto</a></li>
+        <li><a href="/admin/comptes">comptes</a></li>
       </ul>
     </div>
 
     <div class="main_content">
       <h1>Gestion des Services</h1>
+      <button class="btn btn-add" onclick="location.href='/admin/services/ajouter'">Ajouter un service</button>
       <div class="dash_overview">
 
       <h2>Liste des Services</h2>
-            <button class="btn btn-add" onclick="location.href='/admin/services/ajouter'">Ajouter un service</button>
             <table>
                 <thead>
                     <tr>

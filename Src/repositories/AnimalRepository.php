@@ -179,4 +179,49 @@ class AnimalRepository extends Repositories
     }
   }
 
+  /** Methode pour obtenir le nombre d'animaux
+   * 
+   */
+  public function countAllAnimal()
+  {
+    $query = "SELECT COUNT(*) FROM `animal`";
+    $stmt = $this->db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchColumn();
+  }
+
+  /** Methode pour obetnir un ensemble d'animal par page 
+   * 
+   * @param int $offset
+   * @param int $byPage
+   * @return array
+   */
+  public function getAnimalPagination($offset, $byPage): array
+  {
+    try {
+      $query = "SELECT * FROM `animal` LIMIT :offset, :byPage";
+      $stmt = $this->db->prepare($query);
+      $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+      $stmt->bindValue(':byPage', $byPage, PDO::PARAM_INT);
+      $stmt->execute();
+
+      $animals = [];
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          $animals[] = new Animal(
+              $row['id_animal'],
+              $row['firstname'],
+              $row['gender'],
+              $row['species'],
+              $row['diet'],
+              $row['reproduction'],
+              $row['id_habitat']
+          );
+      }
+      return $animals;
+      
+    } catch (PDOException $e) {
+        Logger::error("Erreur lors de la récupération des animaux paginés: " . $e->getMessage());
+        return [];
+    }
+  }
 }

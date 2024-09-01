@@ -17,13 +17,23 @@ class AnimalController extends Controllers
 
   public function gestionAnimals() 
   {
-    $animals = $this->animalRepository->getAllAnimal();
+
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $byPage = 4;
+    $offset = ($page - 1) * $byPage;
+
+    $totalAnimaux = $this->animalRepository->countAllAnimal();
+    $totalPages = ceil($totalAnimaux / $byPage);
+
+    $animals = $this->animalRepository->getAnimalPagination($offset, $byPage);
 
     //var_dump($animals);
 
     $data = [
       'title' => 'Gestion des Animaux',
-      'animals' => $animals
+      'animals' => $animals,
+      'pageActuelle' => $page,
+      'totalPages' => $totalPages
     ];
         /*echo "<pre>";
         var_dump($animals);

@@ -112,4 +112,83 @@ class UserRepository extends Repositories
       throw $e;
     }
   }
+
+  /** Methode pour récupérer tout les user (sauf Admin)
+   * 
+   * @return array
+   */
+  public function getAllUsers(): array
+  {
+    try {
+      $query = "SELECT * FROM `user` WHERE role != :admin_role ORDER BY username";
+      $stmt = $this->db->prepare($query);
+      $stmt->bindValue(':admin_role', Role::Admin->value, PDO::PARAM_STR);
+      $stmt->execute();
+
+      $users = [];
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $users[] = new User(
+          $row['id_user'],
+          $row['username'],
+          $row['email'], 
+          $row['password'],
+          Role::from($row['role'])
+        );
+      }
+      return $users;
+    } catch (PDOException $e) {
+      Logger::error("Erreur lors de la récupération des User: " . $e->getMessage());
+      return[];
+    }
+  }
+
+  /** Methode pour mettre à jours un User
+   * 
+   * @param int $id_user
+   * @param string $username
+   * @param string $email
+   * @param Role $role
+   * @return bool
+   */
+  public function updateUser(int $id_user, string $username, string $email, Role $role): bool
+  {
+    try {
+
+      $query = "UPDATE `user` SET `username` = :username, `email` = :email, `role` = :role WHERE `id_user` = :id_user";
+      $stmt = $this->db->prepare($query);
+      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+      $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+      $stmt->bindValue(':role', $role->value, PDO::PARAM_STR);
+      $stmt->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+      
+      return $stmt->execute();
+
+    } catch (PDOException $e) {
+
+      Logger::error("Erreur lors de la mise à jour de l'user " . $e->getMessage());
+      return false;
+    }
+  }
+
+  /** Méthode pour supprimer un user
+   * 
+   * @param int $id_user
+   * @return bool
+   */
+  public function deleteUser(int $id_user): bool
+  {
+    try{
+
+      $query = "DELETE FROM `user` WHERE `id_user` = :id_user";
+      $stmt = $this->db->prepare($query);
+      $stmt->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+
+      return $stmt->execute();
+      
+    } catch (PDOException $e) {
+
+      Logger::error("Erreur lors de la suppression de l'user: " . $e->getMessage());
+      return false;
+    }
+  }
 }

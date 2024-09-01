@@ -7,13 +7,13 @@
       <li><a href="/admin/services">services</a></li>
       <li><a href="/admin/animaux">animaux</a></li>
       <li><a href="/admin/journal" class="active">journal</a></li>
-      <li><a href="/admin/staff">staff</a></li>
-      <li><a href="/admin/veto">veto</a></li>
+      <li><a href="/admin/comptes">comptes</a></li>
     </ul>
   </div>
-
+ 
   <div class="main_content">
     <h1>Gestion des Rapports</h1>
+    <button class="btn btn-add" onclick="location.href='/admin/journal/ajouter'">Ajouter un service</button>
     <div class="dash_overview">
 
       <form action="/admin/journal/filtrer" method="GET" class="filter-form">
@@ -29,7 +29,6 @@
         <button type="submit">Filtrer</button>
       </form>
 
-      <button class="btn btn-add" onclick="location.href='/admin/journal/ajouter'">Ajouter un service</button>
       <table>
         <thead>
           <tr>

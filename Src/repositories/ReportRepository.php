@@ -6,6 +6,7 @@ use App\Models\Report;
 use App\Models\Health;
 use App\Models\Animal;
 use App\Models\User;
+use App\Models\Role;
 use lib\core\Logger;
 use DateTime;
 use PDO;
@@ -137,7 +138,8 @@ class ReportRepository extends Repositories
   public function getAllReports(): array
   {
     try {
-      $query = "SELECT r.*, a.firstname as firstname, u.username
+      $query = "SELECT r.*, a.firstname, a.gender, a.species, a.diet, a.reproduction, a.id_habitat, 
+                        u.username, u.email, u.password, u.role
                 FROM `report` r
                 LEFT JOIN `animal` a ON r.id_animal = a.id_animal
                 LEFT JOIN `user` u ON r.id_user = u.id_user
@@ -159,14 +161,28 @@ class ReportRepository extends Repositories
         );
 
         if ($row['firstname']) {
-          $animal = new Animal($row['id_animal'], $row['firstname'], $row['gender'], $row['species'], $row['diet'], $row['reproduction'], $row['id_habitat']);
+          $animal = new Animal(
+              $row['id_animal'],
+              $row['firstname'],
+              $row['gender'],
+              $row['species'],
+              $row['diet'],
+              $row['reproduction'],
+              $row['id_habitat']
+          );
           $report->setAnimalReport($animal);
-        }
-        
-        if ($row['username']) {
-            $user = new User($row['id_user'], $row['username'], $row['email'], $row['password'], $row['role']);
-            $report->setUserReport($user);
-        }
+      }
+      
+      if ($row['username']) {
+          $user = new User(
+              $row['id_user'],
+              $row['username'],
+              $row['email'],
+              $row['password'],
+              Role::from($row['role'])
+          );
+          $report->setUserReport($user);
+      }
         
         $reports[] = $report;
       }

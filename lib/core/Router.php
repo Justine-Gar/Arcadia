@@ -78,7 +78,7 @@ class Router
                 // Gère le résultat retourné par le contrôleur
                 if (!($response instanceof Response)) {
                     // Si c'est déjà un objet Response, on l'utilise tel quel
-                    Logger::error("Controller returned: " . gettype($response));
+                    //Logger::error("Controller returned: " . gettype($response));
                     throw new Exception("Controller ne return pas objet Response");
                 } 
                 return $response;
