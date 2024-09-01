@@ -13,7 +13,7 @@
     background-color: $color-back-third;
     padding: 90px 70px 45px 40px;
     border-right: 4px solid #ccc;
-    height: 50vh;
+    min-height: 50vh;
 
     h2 {
       @include font($font-dimsum, $font-size-xlarge, 500, $color-font-primary);
@@ -50,6 +50,63 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      margin-bottom: 40px;
+
+      .tableau {
+
+        .tableau_name {
+          background-color: $color-font-primary;
+          @include font($font-monserrat, $font-size-small, 500, $color-back-third);
+          margin: 20px;
+
+          th {
+            padding: 10px;
+          }
+        }
+
+        .tableau_donnee {
+          color: $color-back-primary;
+          font-family: $font-monserrat;
+          font-weight: 400;
+          font-size: $font-size-xs;
+          text-align: center;
+
+          td {
+            padding: 10px;
+          }
+        }
+      }
+      .pagination {
+        text-align: center;
+        font-weight: 400;
+        font-size: $font-size-regular;
+        color: $color-back-third;
+        margin-bottom: 20px;
+
+        .active {
+          color: $color-back-primary;
+        }
+      }
+
+      .tableau_actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .tab_btn {
+          background-color: $color-font-primary;
+          text-transform: uppercase;
+          padding: 10px;
+          border: 0px solid;
+          border-radius: 10px;
+          cursor: pointer;
+          
+          &:hover {
+            background-color: $color-back-primary;
+            color: $color-font-primary;
+          }
+        }
+      }
     }
 
     @include respond-to(desktop) {

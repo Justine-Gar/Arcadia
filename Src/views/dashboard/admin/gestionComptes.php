@@ -12,37 +12,45 @@
   </div>
 
   <div class="main_content">
-    <h1>Gestion des Comptes Arcadia</h1>
-    <button class="btn btn-add" onclick="openModal()">Ajouter un compte</button>
-    <div class="dash_overview"> 
-      <table>
-        <thead>
+    <h1>Gestion des Comptes</h1>
+
+    <div class="dash_overview">
+      <div class="tableau_actions">
+        <button class="tab_btn btn-add" onclick="location.href='/admin/services/ajouter'">Ajouter un compte</button>
+        <div>
+          <button type="submit" name="action" value="modifier" class="tab_btn btn-edit">Modifier</button>
+          <button type="submit" name="action" value="supprimer" class="tab_btn btn-delete">Supprimer</button>
+        </div>
+      </div>
+      <table class="tableau">
+        <thead class="tableau_name">
           <tr>
             <th>Nom d'utilisateur</th>
             <th>Email</th>
             <th>Rôle</th>
-            <th>Actions</th>
+            <th>Action</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="tableau_donnee">
           <?php foreach ($users as $user): ?>
             <tr>
               <td><?= htmlspecialchars($user->getUsername()) ?></td>
               <td><?= htmlspecialchars($user->getEmail()) ?></td>
               <td><?= htmlspecialchars($user->getRole()->value) ?></td>
               <td>
-                <button class="btn btn-edit" onclick="location.href='/admin/comptes/modifier/<?= $user->getIdUser() ?>'">Modifier</button>
-                <button class="btn btn-delete" onclick="confirmerSuppression(<?= $user->getIdUser() ?>)">Supprimer</button>
+                <input type="checkbox" name="comptes[]" value="<?= $user->getIdUser() ?>">
               </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
+
+
     </div>
   </div>
 
-<!-- Modal pour ajouter un utilisateur -->
-<div id="addUserModal" class="modal">
+  <!-- Modal pour ajouter un utilisateur -->
+  <div id="addUserModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Ajouter un nouveau compte</h2>

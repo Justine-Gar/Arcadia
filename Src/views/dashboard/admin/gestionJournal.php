@@ -13,8 +13,16 @@
  
   <div class="main_content">
     <h1>Gestion des Rapports</h1>
-    <button class="btn btn-add" onclick="location.href='/admin/journal/ajouter'">Ajouter un service</button>
+
     <div class="dash_overview">
+
+    <div class="tableau_actions">
+        <button class="tab_btn btn-add" onclick="location.href='/admin/services/ajouter'">Ajouter un rapport</button>
+        <div>
+          <button type="submit" name="action" value="modifier" class="tab_btn btn-edit">Modifier</button>
+          <button type="submit" name="action" value="supprimer" class="tab_btn btn-delete">Supprimer</button>
+        </div>
+      </div>
 
       <form action="/admin/journal/filtrer" method="GET" class="filter-form">
         <select name="animal_id">
@@ -28,9 +36,9 @@
         <input type="date" name="start" value="<?= $startDate ?? '' ?>" placeholder="Date">
         <button type="submit">Filtrer</button>
       </form>
-
-      <table>
-        <thead>
+      
+      <table class="tableau">
+        <thead class="tableau_name">
           <tr>
             <th>Animal</th>
             <th>Santé</th>
@@ -39,10 +47,11 @@
             <th>Quantity</th>
             <th>Condition Habitat</th>
             <th>User</th>
+            <th>Action</th>
           </tr>
         </thead>
 <!--jointure pour trouver le nom de l'animal et non son id meme chose pour user-->
-        <tbody>
+        <tbody class="tableau_donnee">
           <?php foreach ($reports as $report): ?>
             <tr>
               <td><?= htmlspecialchars($report->getAnimal() ? $report->getAnimal()->getFirstname() : 'N/A') ?></td> 
@@ -53,13 +62,14 @@
               <td><?= htmlspecialchars($report->getHabitatCondition() ?? 'N/A') ?></td>
               <td><?= htmlspecialchars($report->getUser() ? $report->getUser()->getUsername() : 'N/A') ?></td>
               <td>
-                <button class="btn btn-edit" onclick="location.href='/admin/journal/modifier/<?= $report->getIdReport() ?>'">Modifier</button>
-                <button class="btn btn-delete" onclick="confirmerSuppression(<?= $report->getIdReport() ?>)">Supprimer</button>
+                <input type="checkbox" name="reports[]" value="<?= $report->getIdReport() ?>">
               </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
+
+      
     </div>
   </div>
 

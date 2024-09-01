@@ -4269,7 +4269,7 @@ table {
   background-color: #5a7064;
   padding: 90px 70px 45px 40px;
   border-right: 4px solid #ccc;
-  height: 50vh;
+  min-height: 50vh;
 }
 .dash_container .dash_sidebar h2 {
   font-family: "Dimsum Week";
@@ -4304,6 +4304,55 @@ table {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 40px;
+}
+.dash_container .main_content .dash_overview .tableau .tableau_name {
+  background-color: #FFE888;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #5a7064;
+  margin: 20px;
+}
+.dash_container .main_content .dash_overview .tableau .tableau_name th {
+  padding: 10px;
+}
+.dash_container .main_content .dash_overview .tableau .tableau_donnee {
+  color: #182828;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.dash_container .main_content .dash_overview .tableau .tableau_donnee td {
+  padding: 10px;
+}
+.dash_container .main_content .dash_overview .pagination {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #5a7064;
+  margin-bottom: 20px;
+}
+.dash_container .main_content .dash_overview .pagination .active {
+  color: #182828;
+}
+.dash_container .main_content .dash_overview .tableau_actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dash_container .main_content .dash_overview .tableau_actions .tab_btn {
+  background-color: #FFE888;
+  text-transform: uppercase;
+  padding: 10px;
+  border: 0px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.dash_container .main_content .dash_overview .tableau_actions .tab_btn:hover {
+  background-color: #182828;
+  color: #FFE888;
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .dash_container .main_content {
