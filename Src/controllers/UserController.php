@@ -6,6 +6,7 @@ use App\Controllers\Controllers;
 use App\Repositories\UserRepository;
 use App\Models\User;
 use App\Models\Role;
+use lib\core\Logger;
 
 class UserController extends Controllers
 {
@@ -31,6 +32,9 @@ class UserController extends Controllers
 
     public function ajouterCompte()
     {
+        $message = '';
+        $messageType = '';
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = $_POST['username'] ?? '';
             $email = $_POST['email'] ?? '';
@@ -39,16 +43,28 @@ class UserController extends Controllers
 
             try {
                 $newUser = $this->userRepository->createUser($username, $email, $password, $role);
-                $this->redirect('/admin/comptes', ['success' => 'Compte créé avec succès']);
+                $message = 'Compte créé avec succès';
+                $messageType = 'success';            } catch (\Exception $e) {
+                
             } catch (\Exception $e) {
-                $this->redirect('/admin/comptes/ajouter', ['error' => 'Erreur lors de la création du compte']);
+                $message = 'Erreur lors de la création du compte: ' . $e->getMessage();
+                $messageType = 'error';
             }
         }
 
+        $users = $this->userRepository->getAllUsers();
+        
         $data = [
-            'title' => 'Ajouter un Compte',
-            'roles' => Role::cases()
+            'title' => 'Gestion des Comptes',
+            'users' => $users,
+            'roles' => Role::cases(),
+            'message' => $message,
+            'messageType' => $messageType
         ];
+
+        Logger::error('Méthode gestionComptes appelée. Méthode: ' . $_SERVER['REQUEST_METHOD']);
+        Logger::error('Données passées à la vue: ' . print_r($data, true));
+
         return $this->renderAdmin('gestionComptes', $data);
     }
 
@@ -56,7 +72,7 @@ class UserController extends Controllers
     {
         $user = $this->userRepository->findById($id);
         if (!$user) {
-            $this->redirect('/admin/comptes', ['error' => 'Utilisateur non trouvé']);
+            
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -65,9 +81,9 @@ class UserController extends Controllers
             $role = Role::from($_POST['role'] ?? '');
 
             if ($this->userRepository->updateUser($id, $username, $email, $role)) {
-                $this->redirect('/admin/comptes', ['success' => 'Compte modifié avec succès']);
+
             } else {
-                $this->redirect('/admin/comptes/modifier/' . $id, ['error' => 'Erreur lors de la modification du compte']);
+
             }
         }
 
@@ -82,9 +98,9 @@ class UserController extends Controllers
     public function supprimerCompte($id)
     {
         if ($this->userRepository->deleteUser($id)) {
-            $this->redirect('/admin/comptes', ['success' => 'Compte supprimé avec succès']);
+
         } else {
-            $this->redirect('/admin/comptes', ['error' => 'Erreur lors de la suppression du compte']);
+
         }
     }
 }

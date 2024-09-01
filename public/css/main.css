@@ -4354,6 +4354,9 @@ table {
   background-color: #182828;
   color: #FFE888;
 }
+.dash_container .main_content .dash_overview #addUserForm {
+  display: none;
+}
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .dash_container .main_content {
     flex-grow: 1;

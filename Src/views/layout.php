@@ -26,5 +26,6 @@
   <script src="/js/avis.js"></script>
   <script src="/js/habitat.js"></script>
   <script src="/js/modal.js"></script>
+  <script src="/js/modelComptes.js"></script>
 </body>
 </html>
