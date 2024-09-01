@@ -4,8 +4,10 @@ namespace App\Controllers;
 
 use App\Controllers\Controllers;
 use App\Repositories\UserRepository;
+use lib\core\Response;
 use App\Models\User;
 use App\Models\Role;
+use LDAP\Result;
 use lib\core\Logger;
 
 class UserController extends Controllers
@@ -73,6 +75,10 @@ class UserController extends Controllers
         $user = $this->userRepository->findById($id);
         if (!$user) {
             
+            $response = new Response();
+            $response->setStatusCode(405);
+            $response->json(['success' => false, 'message' => 'Utilisateur non trouvé']);
+            return $response;
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -81,11 +87,26 @@ class UserController extends Controllers
             $role = Role::from($_POST['role'] ?? '');
 
             if ($this->userRepository->updateUser($id, $username, $email, $role)) {
-
+                $response = new Response;
+                $response->json(['success' => true, 'message' => 'Compte modifié avec succès']);
             } else {
-
+                $response = new Response;
+                $response->setStatusCode(500);
+                $response->json(['success' => false, 'message' => 'Eurreur lors de la modification du compte']);
             }
         }
+        $response = new Response;
+        $response->json([
+            'success' => true,
+            'user' => [
+                'id' => $user->getIdUser(),
+                'username' => $user->getUsername(),
+                'email' => $user->getEmailUser(),
+                'role' => $user->getRole()->value
+            ]
+        ]);
+
+        return $response;
 
         $data = [
             'title' => 'Modifier un Compte',
@@ -97,10 +118,49 @@ class UserController extends Controllers
 
     public function supprimerCompte($id)
     {
-        if ($this->userRepository->deleteUser($id)) {
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
-        } else {
-
+            $response = new Response();
+            $response->setStatusCode(405);
+            $response->json(['success' => false, 'message' => 'Méthode non autorisée']);
+            return $response;
         }
+    
+        $data = json_decode(file_get_contents('php://input'), true);
+        $userIds = $data['userIds'] ?? [];
+    
+        if (empty($userIds)) {
+            
+            $response = new Response();
+            $response->setStatusCode(400);
+            $response->json(['success' => false, 'message' => 'Aucun utilisateur sélectionné']);
+            return $response;
+        }
+    
+        $deletedCount = 0;
+        $errors = [];
+    
+        foreach ($userIds as $userId) {
+            if ($this->userRepository->deleteUser($userId)) {
+                $deletedCount++;
+            } else {
+                $errors[] = "Impossible de supprimer l'utilisateur avec l'ID $userId";
+            }
+        }
+    
+        if ($deletedCount > 0) {
+            $message = "$deletedCount utilisateur(s) supprimé(s) avec succès";
+            if (!empty($errors)) {
+                $message .= ". Erreurs : " . implode(", ", $errors);
+            }
+            $response = new Response();
+            $response->json(['success' => true, 'message' => $message]);
+        } else {
+            $response = new Response();
+            $response->setStatusCode(500);
+            $response->json(['success' => false, 'message' => 'Erreur lors de la suppression des utilisateurs. ' . implode(", ", $errors)]);
+        }
+    
+        return $response;
     }
 }

@@ -39,6 +39,8 @@
     background-color: $color-font-third;
     //flex-grow: 1;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 
     //overflow-y: auto;
     
@@ -53,7 +55,12 @@
       margin-bottom: 40px;
 
       .tableau {
-
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
         .tableau_name {
           background-color: $color-font-primary;
           @include font($font-monserrat, $font-size-small, 500, $color-back-third);
@@ -113,16 +120,60 @@
       }
     }
 
+    #formModifierUser {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      color: $color-font-primary;
+      font-size: $font-size-regular;
+
+      .form_group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+        
+        label {
+          margin-bottom: 5px;
+        }
+        
+        input {
+          width: 80%;
+          padding: 8px;
+          border-radius: 4px;
+          border: 1px solid $color-font-primary;
+          background-color: $color-font-third;
+          color: $color-back-primary;
+        }
+      }
+      #btnSubmitModifierUser {
+        @include button;
+        margin-top: 20px;
+      }
+    }
+
     @include respond-to(desktop) {
       flex-grow: 1;
       overflow-y: auto;
       padding: 90px 40px 0px 40px;
+
     }
     
     @include respond-to(large) {
       flex-grow: 1;
       overflow-y: auto;
       padding: 90px 40px 0px 40px;
+
+      .dash_overview {
+
+        .tableau {
+          display: inline-table;
+          width: 100%;
+        }
+      }
     }
 
     @include respond-to(xlarge) {
@@ -130,6 +181,14 @@
       overflow-y: auto;
       padding: 90px 40px 0px 40px;
       
+      
+      .dash_overview {
+
+        .tableau {
+          display: inline-table;
+          width: 100%;
+        }
+      }
     }
   }
 
@@ -140,7 +199,7 @@
   }
   @include respond-to(large) {
     flex-direction: row;
-    
+
   }
   @include respond-to(xlarge) {
     flex-direction: row;

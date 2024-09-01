@@ -4292,6 +4292,8 @@ table {
 .dash_container .main_content {
   background-color: #f1f0f2;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 .dash_container .main_content h1 {
   font-family: "Montserrat", sans-serif;
@@ -4305,6 +4307,13 @@ table {
   flex-direction: column;
   gap: 20px;
   margin-bottom: 40px;
+}
+.dash_container .main_content .dash_overview .tableau {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .dash_container .main_content .dash_overview .tableau .tableau_name {
   background-color: #FFE888;
@@ -4357,6 +4366,48 @@ table {
 .dash_container .main_content .dash_overview #addUserForm {
   display: none;
 }
+.dash_container .main_content #formModifierUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: #FFE888;
+  font-size: 1.5rem;
+}
+.dash_container .main_content #formModifierUser .form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.dash_container .main_content #formModifierUser .form_group label {
+  margin-bottom: 5px;
+}
+.dash_container .main_content #formModifierUser .form_group input {
+  width: 80%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #FFE888;
+  background-color: #f1f0f2;
+  color: #182828;
+}
+.dash_container .main_content #formModifierUser #btnSubmitModifierUser {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.dash_container .main_content #formModifierUser #btnSubmitModifierUser:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .dash_container .main_content {
     flex-grow: 1;
@@ -4370,12 +4421,20 @@ table {
     overflow-y: auto;
     padding: 90px 40px 0px 40px;
   }
+  .dash_container .main_content .dash_overview .tableau {
+    display: inline-table;
+    width: 100%;
+  }
 }
 @media screen and (min-width: 1200px) {
   .dash_container .main_content {
     flex-grow: 1;
     overflow-y: auto;
     padding: 90px 40px 0px 40px;
+  }
+  .dash_container .main_content .dash_overview .tableau {
+    display: inline-table;
+    width: 100%;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {
