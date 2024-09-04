@@ -71,6 +71,10 @@ class AuthController extends Controllers
 
         Logger::error("Authentification réussis pour l'email: " . $email);
         $_SESSION['id_user'] = $user->getIdUser();
+        $_SESSION['user_role'] = $user->getRole();
+
+        //cookie 30 jours
+        setcookie("user_logged", "true", time() + (30 * 24 * 60 * 60), "/", "", true, true);
 
         $location = match ($user->getRole()) {
 
@@ -103,5 +107,28 @@ class AuthController extends Controllers
       return $response;
 
     }
+  }
+
+  public function logout()
+  {
+    session_start();
+
+    // Détruire la session
+    session_destroy();
+
+    // Supprimer le cookie si vous en utilisez un
+    if (isset($_COOKIE['user_logged'])) {
+      setcookie("user_logged", "", time() - 3600, "/");
+    }
+
+    Logger::info("Déconnexion réussie");
+
+    $response = new Response();
+    $response->json([
+      'success' => true,
+      'message' => 'Déconnexion réussie',
+      'redirect' => '/'
+    ]);
+    return $response;
   }
 }

@@ -13,7 +13,11 @@
           <li><a href="/habitats" data-item="Habitats">habitat</a></li>
           <li><a href="/contact" data-item="Contact">contact</a></li>
           <li>
+            <?php if (isset($_SESSION['id_user'])): ?>
+            <a href="/logout" data-item="Deconnexion" id="btnLogout">deconnexion</a>
+            <?php else: ?>
             <a href="/login" data-item="Connexion" id="btnLogin">connexion</a>
+            <?php endif; ?>
           </li>  
         </ul>
       </nav>
@@ -45,3 +49,4 @@
     </form>
   </div>
 </div>
+

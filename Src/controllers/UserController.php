@@ -46,10 +46,11 @@ class UserController extends Controllers
             try {
                 $newUser = $this->userRepository->createUser($username, $email, $password, $role);
                 $message = 'Compte créé avec succès';
-                $messageType = 'success';            } catch (\Exception $e) {
+                $messageType = 'success';            
                 
             } catch (\Exception $e) {
-                $message = 'Erreur lors de la création du compte: ' . $e->getMessage();
+                Logger::error("Erreur lors de la création du compte: " . $e->getMessage());
+                $message = 'Erreur lors de la création du compte';
                 $messageType = 'error';
             }
         }
