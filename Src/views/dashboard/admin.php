@@ -1,16 +1,6 @@
 
   <div class="dash_container">
-    <div class="dash_sidebar">
-      <h2>dashboard</h2>
-      <ul>
-        <li><a href="/admin" class="active">Home</a></li>
-        <li><a href="/admin/habitats">habitats</a></li>
-        <li><a href="/admin/services">services</a></li>
-        <li><a href="/admin/animaux">animaux</a></li>
-        <li><a href="/admin/journal">journal</a></li>
-        <li><a href="/admin/comptes">comptes</a></li>
-      </ul>
-    </div>
+    <?php include __DIR__ . '/../partials/_sideAdmin.php'; ?>
 
     <div class="main_content">
       <h1>Tableau de Board</h1>

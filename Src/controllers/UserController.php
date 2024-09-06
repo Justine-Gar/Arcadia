@@ -117,7 +117,7 @@ class UserController extends Controllers
         return $this->renderAdmin('modifierCompte', $data);
     }
 
-    public function supprimerCompte($id)
+    public function supprimerCompte()
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 

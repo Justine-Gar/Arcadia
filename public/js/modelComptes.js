@@ -114,32 +114,41 @@ document.addEventListener('DOMContentLoaded', function () {
   // Gestion de la suppression d'utilisateurs
   btnSupprimer.addEventListener('click', function(e) {
     e.preventDefault();
-    
+    //selectionne toute les cases cocher
     const selectedUsers = document.querySelectorAll('input[name="selected_users[]"]:checked');
+    //verification si un user et bien selectionner
     if (selectedUsers.length === 0) {
       alert('Veuillez sélectionner au moins un utilisateur à supprimer.');
       return;
     }
-
+    //demande de confirmation
     if (confirm(`Êtes-vous sûr de vouloir supprimer ${selectedUsers.length} utilisateur(s) ?`)) {
+      //si confirme selectionne l'id user et supprime
       const userIds = Array.from(selectedUsers).map(checkbox => checkbox.value);
-
+      //requete envoyer au serveux -> via route/ method/content-type
       fetch('/admin/comptes/supprimer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        //stringify prend obj js et transforme en chaine de caract au format json
         body: JSON.stringify({ userIds: userIds })
       })
+      //prend la requet fetch et la convertit en Json
       .then(response => response.json())
+      //traite les donnée json extraites de la reponse => data est obj Js
       .then(data => {
+        //verifie si opéaration réussis 
         if (data.success) {
+          //affiche message alerte
           alert(data.message);
+          //recharge la page
           location.reload();
         } else {
           alert('Erreur lors de la suppression : ' + data.message);
         }
       })
+      //gere les erreurs du process fetch ou traitement des données
       .catch(error => {
         console.error('Erreur:', error);
         alert('Une erreur est survenue lors de la suppression.');
