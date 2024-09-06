@@ -43,20 +43,32 @@ class ReportController extends Controllers
    */
   public function filtrer() 
   {
-    $animalId = isset($_GET['animal_id']) ? intval($_GET['animal_id']) : null;
-    $startDate = !empty($_GET['start_date']) ? new DateTime($_GET['start_date']) : null;
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $byPage = 10;
+    $offset = ($page - 1) * $byPage;
 
-    $reports = $this->reportRepository->getFiltrer($animalId, $startDate);
+    $animalId = !empty($_GET['animal_id']) ? intval($_GET['animal_id']) : null;
+    $startDate = !empty($_GET['start']) ? new DateTime($_GET['start']) : null;
+
+    $totalReport = $this->reportRepository->countFilteredReports($animalId, $startDate);
+    $totalPages = ceil($totalReport / $byPage);
+
+    // Utilisons toujours getFilteredReportsPaginated, même sans filtres
+    $reports = $this->reportRepository->getFilteredReportsPaginated($animalId, $startDate, $offset, $byPage);
+    
     $animals = $this->animalRepository->getAllAnimal();
 
-
     $data = [
-      'title' => 'Rapport Filtrés',
-      'reports' => $reports,
-      'animals' => $animals,
-      'healthStatus' => Health::cases(),
-      'selectedAnimalId' => $animalId,
-      'startDate' => $startDate ? $startDate->format('Y-m-d') : '',
+        'title' => 'Rapports Filtrés',
+        'reports' => $reports,
+        'animals' => $animals,
+        'healthStatus' => Health::cases(),
+        'selectedAnimalId' => $animalId,
+        'startDate' => $startDate ? $startDate->format('Y-m-d') : '',
+        'pageActuelle' => $page,
+        'totalPages' => $totalPages,
+        'animalId' => $animalId,
+        'start' => $startDate ? $startDate->format('Y-m-d') : ''
     ];
 
     return $this->renderAdmin('gestionJournal', $data);

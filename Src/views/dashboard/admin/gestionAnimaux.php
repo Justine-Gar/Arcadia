@@ -46,7 +46,7 @@
           <?php endforeach; ?>
         </tbody>
 
-        
+
       </table>
       <!-- Pagination -->
       <div class="pagination">
@@ -55,7 +55,7 @@
         <?php endfor; ?>
       </div>
 
-      
+
     </div>
   </div>
 
