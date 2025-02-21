@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -1669,7 +1668,7 @@ table {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0) 50%), linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 20%), url("../../assets/img/jungle/panthèrenoir/adobestock_328526890.avif");
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0) 50%), linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 20%), url("/assets/upload/animals/baghera_image_3.avif");
   background-size: cover;
   background-position: right 10% top;
   opacity: 1;
@@ -1760,7 +1759,7 @@ table {
   width: 100vw;
   height: 50vh;
   overflow: hidden;
-  background-image: url("../../assets/img/marais/salamandre/adobestock_325983454.avif");
+  background-image: url("/assets/upload/animals/bruni_image_1.avif");
   background-size: cover;
   background-position: bottom 25% right 45%;
 }
@@ -2225,7 +2224,7 @@ table {
   width: 100vw;
   height: 55vh;
   overflow: hidden;
-  background-image: url("../../assets/img/jungle/araRouge/adobestock-43097757.avif");
+  background-image: url("/assets/upload/animals/rio_image_1.avif");
   background-size: cover;
   background-position: bottom 100% right 45%;
 }
@@ -2557,7 +2556,7 @@ table {
 #onglet .tab_container #savane .onglet_savane_img {
   width: 100vw;
   height: 50vh;
-  background-image: url("../../assets/img/savane/adobestock_186907864.avif");
+  background-image: url("/assets/upload/habitats/savane_image_1.avif");
   background-size: cover;
   background-position: right 35% bottom 25%;
 }
@@ -2877,7 +2876,7 @@ table {
 #onglet .tab_container #marais .onglet_marais_img {
   width: 100vw;
   height: 50vh;
-  background-image: url("../../assets/img/marais/adobestock_391231580.avif");
+  background-image: url("/assets/upload/habitats/marais_image_2.avif");
   background-size: cover;
   background-position: right 35% bottom 25%;
 }
@@ -3178,7 +3177,7 @@ table {
 #onglet .tab_container #jungle .onglet_jungle_img {
   width: 100vw;
   height: 50vh;
-  background-image: url("../../assets/img/jungle/AdobeStock_445496398.avif");
+  background-image: url("/assets/upload/habitats/jungle_image_2.avif");
   background-size: cover;
   background-position: right 35% bottom 55%;
 }
@@ -3801,7 +3800,7 @@ table {
   width: 100vw;
   height: 52vh;
   overflow: hidden;
-  background-image: url("../../assets/img/jungle/paresseux/adobestock_279967025.avif");
+  background-image: url("/assets/upload/animals/pricilla_image_2.avif");
   background-size: cover;
   background-position: bottom 25% right 11%;
 }
@@ -4002,7 +4001,7 @@ table {
 .mainFaq .faq_title_img {
   width: 100%;
   min-height: 400px;
-  background-image: url("../../assets/img/savane/zèbre/adobestock_343763723.avif");
+  background-image: url("/assets/upload/animals/marty_image_2.avif");
   background-size: cover;
   background-position: bottom 25% right 11%;
   display: flex;
@@ -4258,6 +4257,222 @@ table {
   background-color: #182828;
   color: #FFE888;
 }
+.modal .modal_conter {
+  background-color: #182828;
+  width: 70%;
+  height: 70%;
+  max-width: 520px;
+  max-height: 520px;
+  padding: 30px;
+  margin: 10% auto;
+  border-radius: 20px;
+}
+.modal .modal_conter .model_title {
+  color: #FFE888;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.modal .modal_conter .model_title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #FFE888;
+  text-transform: uppercase;
+}
+.modal .modal_conter .model_title .close {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.modal .modal_conter #formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: #FFE888;
+  font-size: 1.5rem;
+}
+.modal .modal_conter #formLogin .form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.modal .modal_conter #formLogin .form_group label {
+  margin-bottom: 5px;
+}
+.modal .modal_conter #formLogin .form_group input {
+  width: 80%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #FFE888;
+  background-color: #f1f0f2;
+  color: #182828;
+}
+.modal .modal_conter #formLogin #btnSubmitLogin {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.modal .modal_conter #formLogin #btnSubmitLogin:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+.modal .modal_petit {
+  background-color: #182828;
+  width: 70%;
+  height: 100%;
+  max-width: 520px;
+  max-height: 370px;
+  padding: 30px;
+  margin: 10% auto;
+  border-radius: 20px;
+}
+.modal .modal_petit .model_title {
+  color: #FFE888;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.modal .modal_petit .model_title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #FFE888;
+  text-transform: uppercase;
+}
+.modal .modal_petit .model_title .close {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.modal .modal_petit #formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: #FFE888;
+  font-size: 1.5rem;
+}
+.modal .modal_petit #formLogin .form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.modal .modal_petit #formLogin .form_group label {
+  margin-bottom: 5px;
+}
+.modal .modal_petit #formLogin .form_group input {
+  width: 80%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #FFE888;
+  background-color: #f1f0f2;
+  color: #182828;
+}
+.modal .modal_petit #formLogin #btnSubmitLogin {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.modal .modal_petit #formLogin #btnSubmitLogin:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
+.modal .modal_moyen {
+  background-color: #182828;
+  width: 70%;
+  height: 70%;
+  max-width: 520px;
+  max-height: 400px;
+  padding: 30px;
+  margin: 10% auto;
+  border-radius: 20px;
+}
+.modal .modal_moyen .model_title {
+  color: #FFE888;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.modal .modal_moyen .model_title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #FFE888;
+  text-transform: uppercase;
+}
+.modal .modal_moyen .model_title .close {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.modal .modal_moyen #formLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: #FFE888;
+  font-size: 1.5rem;
+}
+.modal .modal_moyen #formLogin .form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.modal .modal_moyen #formLogin .form_group label {
+  margin-bottom: 5px;
+}
+.modal .modal_moyen #formLogin .form_group input {
+  width: 80%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #FFE888;
+  background-color: #f1f0f2;
+  color: #182828;
+}
+.modal .modal_moyen #formLogin #btnSubmitLogin {
+  font-family: "Montserrat";
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #FFE888;
+  color: #182828;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.modal .modal_moyen #formLogin #btnSubmitLogin:hover {
+  background-color: #182828;
+  color: #FFE888;
+}
 
 .dash_container {
   display: flex;
@@ -4336,6 +4551,12 @@ table {
 .dash_container .main_content .dash_overview .tableau .tableau_donnee td {
   padding: 10px;
 }
+.dash_container .main_content .dash_overview .tableau .tableau_donnee td img {
+  width: 120px;
+  /* margin: auto; */
+  position: relative;
+  top: 47px;
+}
 .dash_container .main_content .dash_overview .pagination {
   text-align: center;
   font-weight: 400;
@@ -4366,25 +4587,130 @@ table {
 .dash_container .main_content .dash_overview #addUserForm {
   display: none;
 }
-.dash_container .main_content #formModifierUser {
+.dash_container .main_content .dash_overview .dash_card {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.dash_container .main_content .dash_overview .dash_card .dash_cardIn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.dash_container .main_content .dash_overview .dash_card .dash_cardIn .rapport_container, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .horaires-container {
+  margin-top: 20px;
+  width: 100%;
+}
+.dash_container .main_content .dash_overview .dash_card .dash_cardIn .rapport_container table, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .horaires-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.dash_container .main_content .dash_overview .dash_card .dash_cardIn .rapport_container table th, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .rapport_container table td, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .horaires-container table th, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .horaires-container table td {
+  padding: 12px;
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .dash_container .main_content .dash_overview .dash_card .dash_cardIn .rapport_container table th, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .rapport_container table td, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .horaires-container table th, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .horaires-container table td {
+    padding: 8px;
+  }
+}
+.dash_container .main_content .dash_overview .dash_card .dash_cardIn .rapport_container table th, .dash_container .main_content .dash_overview .dash_card .dash_cardIn .horaires-container table th {
+  background-color: #FFE888;
+  color: #5a7064;
+  font-weight: 500;
+  font-size: 1rem;
+}
+@media screen and (max-width: 768px) {
+  .dash_container .main_content .dash_overview .dash_card .dash_cardIn thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .dash_container .main_content .dash_overview .dash_card .dash_cardIn tr {
+    margin-bottom: 15px;
+    border: 1px solid #FFE888;
+  }
+  .dash_container .main_content .dash_overview .dash_card .dash_cardIn td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    min-height: 30px;
+  }
+  .dash_container .main_content .dash_overview .dash_card .dash_cardIn td:before {
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    content: attr(data-label);
+  }
+}
+.dash_container .main_content #formAddUser,
+.dash_container .main_content #formModifyUser,
+.dash_container .main_content #formAddImage,
+.dash_container .main_content #formAddAnimal,
+.dash_container .main_content #formModifyAnimal,
+.dash_container .main_content #formAddService,
+.dash_container .main_content #formModifyService,
+.dash_container .main_content #formAddHabitat,
+.dash_container .main_content #formModifyHabitat,
+.dash_container .main_content #formAddReport,
+.dash_container .main_content #formModifyReport,
+.dash_container .main_content #formEditHoraire {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   color: #FFE888;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
-.dash_container .main_content #formModifierUser .form_group {
+.dash_container .main_content #formAddUser .form-group,
+.dash_container .main_content #formModifyUser .form-group,
+.dash_container .main_content #formAddImage .form-group,
+.dash_container .main_content #formAddAnimal .form-group,
+.dash_container .main_content #formModifyAnimal .form-group,
+.dash_container .main_content #formAddService .form-group,
+.dash_container .main_content #formModifyService .form-group,
+.dash_container .main_content #formAddHabitat .form-group,
+.dash_container .main_content #formModifyHabitat .form-group,
+.dash_container .main_content #formAddReport .form-group,
+.dash_container .main_content #formModifyReport .form-group,
+.dash_container .main_content #formEditHoraire .form-group {
+  width: 80%;
   display: flex;
-  flex-direction: column;
+  margin-bottom: 5px;
+  flex-direction: row;
   align-items: center;
-  width: 100%;
-  margin-bottom: 15px;
+  justify-content: space-between;
 }
-.dash_container .main_content #formModifierUser .form_group label {
+.dash_container .main_content #formAddUser .form-group label,
+.dash_container .main_content #formModifyUser .form-group label,
+.dash_container .main_content #formAddImage .form-group label,
+.dash_container .main_content #formAddAnimal .form-group label,
+.dash_container .main_content #formModifyAnimal .form-group label,
+.dash_container .main_content #formAddService .form-group label,
+.dash_container .main_content #formModifyService .form-group label,
+.dash_container .main_content #formAddHabitat .form-group label,
+.dash_container .main_content #formModifyHabitat .form-group label,
+.dash_container .main_content #formAddReport .form-group label,
+.dash_container .main_content #formModifyReport .form-group label,
+.dash_container .main_content #formEditHoraire .form-group label {
   margin-bottom: 5px;
 }
-.dash_container .main_content #formModifierUser .form_group input {
+.dash_container .main_content #formAddUser .form-group input,
+.dash_container .main_content #formModifyUser .form-group input,
+.dash_container .main_content #formAddImage .form-group input,
+.dash_container .main_content #formAddAnimal .form-group input,
+.dash_container .main_content #formModifyAnimal .form-group input,
+.dash_container .main_content #formAddService .form-group input,
+.dash_container .main_content #formModifyService .form-group input,
+.dash_container .main_content #formAddHabitat .form-group input,
+.dash_container .main_content #formModifyHabitat .form-group input,
+.dash_container .main_content #formAddReport .form-group input,
+.dash_container .main_content #formModifyReport .form-group input,
+.dash_container .main_content #formEditHoraire .form-group input {
   width: 80%;
   padding: 8px;
   border-radius: 4px;
@@ -4392,7 +4718,104 @@ table {
   background-color: #f1f0f2;
   color: #182828;
 }
-.dash_container .main_content #formModifierUser #btnSubmitModifierUser {
+.dash_container .main_content #formAddUser .form-textera,
+.dash_container .main_content #formModifyUser .form-textera,
+.dash_container .main_content #formAddImage .form-textera,
+.dash_container .main_content #formAddAnimal .form-textera,
+.dash_container .main_content #formModifyAnimal .form-textera,
+.dash_container .main_content #formAddService .form-textera,
+.dash_container .main_content #formModifyService .form-textera,
+.dash_container .main_content #formAddHabitat .form-textera,
+.dash_container .main_content #formModifyHabitat .form-textera,
+.dash_container .main_content #formAddReport .form-textera,
+.dash_container .main_content #formModifyReport .form-textera,
+.dash_container .main_content #formEditHoraire .form-textera {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 15px;
+}
+.dash_container .main_content #formAddUser .form-textera label,
+.dash_container .main_content #formModifyUser .form-textera label,
+.dash_container .main_content #formAddImage .form-textera label,
+.dash_container .main_content #formAddAnimal .form-textera label,
+.dash_container .main_content #formModifyAnimal .form-textera label,
+.dash_container .main_content #formAddService .form-textera label,
+.dash_container .main_content #formModifyService .form-textera label,
+.dash_container .main_content #formAddHabitat .form-textera label,
+.dash_container .main_content #formModifyHabitat .form-textera label,
+.dash_container .main_content #formAddReport .form-textera label,
+.dash_container .main_content #formModifyReport .form-textera label,
+.dash_container .main_content #formEditHoraire .form-textera label {
+  margin-bottom: 5px;
+}
+.dash_container .main_content #formAddUser .form-textera input,
+.dash_container .main_content #formModifyUser .form-textera input,
+.dash_container .main_content #formAddImage .form-textera input,
+.dash_container .main_content #formAddAnimal .form-textera input,
+.dash_container .main_content #formModifyAnimal .form-textera input,
+.dash_container .main_content #formAddService .form-textera input,
+.dash_container .main_content #formModifyService .form-textera input,
+.dash_container .main_content #formAddHabitat .form-textera input,
+.dash_container .main_content #formModifyHabitat .form-textera input,
+.dash_container .main_content #formAddReport .form-textera input,
+.dash_container .main_content #formModifyReport .form-textera input,
+.dash_container .main_content #formEditHoraire .form-textera input {
+  width: 80%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #FFE888;
+  background-color: #f1f0f2;
+  color: #182828;
+}
+.dash_container .main_content #formAddUser #btnSubmitModify,
+.dash_container .main_content #formAddUser #btnSubmitAdd,
+.dash_container .main_content #formAddUser #btnSubmitEdit,
+.dash_container .main_content #formAddUser #btnSubmitAddFile,
+.dash_container .main_content #formModifyUser #btnSubmitModify,
+.dash_container .main_content #formModifyUser #btnSubmitAdd,
+.dash_container .main_content #formModifyUser #btnSubmitEdit,
+.dash_container .main_content #formModifyUser #btnSubmitAddFile,
+.dash_container .main_content #formAddImage #btnSubmitModify,
+.dash_container .main_content #formAddImage #btnSubmitAdd,
+.dash_container .main_content #formAddImage #btnSubmitEdit,
+.dash_container .main_content #formAddImage #btnSubmitAddFile,
+.dash_container .main_content #formAddAnimal #btnSubmitModify,
+.dash_container .main_content #formAddAnimal #btnSubmitAdd,
+.dash_container .main_content #formAddAnimal #btnSubmitEdit,
+.dash_container .main_content #formAddAnimal #btnSubmitAddFile,
+.dash_container .main_content #formModifyAnimal #btnSubmitModify,
+.dash_container .main_content #formModifyAnimal #btnSubmitAdd,
+.dash_container .main_content #formModifyAnimal #btnSubmitEdit,
+.dash_container .main_content #formModifyAnimal #btnSubmitAddFile,
+.dash_container .main_content #formAddService #btnSubmitModify,
+.dash_container .main_content #formAddService #btnSubmitAdd,
+.dash_container .main_content #formAddService #btnSubmitEdit,
+.dash_container .main_content #formAddService #btnSubmitAddFile,
+.dash_container .main_content #formModifyService #btnSubmitModify,
+.dash_container .main_content #formModifyService #btnSubmitAdd,
+.dash_container .main_content #formModifyService #btnSubmitEdit,
+.dash_container .main_content #formModifyService #btnSubmitAddFile,
+.dash_container .main_content #formAddHabitat #btnSubmitModify,
+.dash_container .main_content #formAddHabitat #btnSubmitAdd,
+.dash_container .main_content #formAddHabitat #btnSubmitEdit,
+.dash_container .main_content #formAddHabitat #btnSubmitAddFile,
+.dash_container .main_content #formModifyHabitat #btnSubmitModify,
+.dash_container .main_content #formModifyHabitat #btnSubmitAdd,
+.dash_container .main_content #formModifyHabitat #btnSubmitEdit,
+.dash_container .main_content #formModifyHabitat #btnSubmitAddFile,
+.dash_container .main_content #formAddReport #btnSubmitModify,
+.dash_container .main_content #formAddReport #btnSubmitAdd,
+.dash_container .main_content #formAddReport #btnSubmitEdit,
+.dash_container .main_content #formAddReport #btnSubmitAddFile,
+.dash_container .main_content #formModifyReport #btnSubmitModify,
+.dash_container .main_content #formModifyReport #btnSubmitAdd,
+.dash_container .main_content #formModifyReport #btnSubmitEdit,
+.dash_container .main_content #formModifyReport #btnSubmitAddFile,
+.dash_container .main_content #formEditHoraire #btnSubmitModify,
+.dash_container .main_content #formEditHoraire #btnSubmitAdd,
+.dash_container .main_content #formEditHoraire #btnSubmitEdit,
+.dash_container .main_content #formEditHoraire #btnSubmitAddFile {
   font-family: "Montserrat";
   font-size: 1.2rem;
   font-weight: bold;
@@ -4404,7 +4827,54 @@ table {
   cursor: pointer;
   margin-top: 20px;
 }
-.dash_container .main_content #formModifierUser #btnSubmitModifierUser:hover {
+.dash_container .main_content #formAddUser #btnSubmitModify:hover,
+.dash_container .main_content #formAddUser #btnSubmitAdd:hover,
+.dash_container .main_content #formAddUser #btnSubmitEdit:hover,
+.dash_container .main_content #formAddUser #btnSubmitAddFile:hover,
+.dash_container .main_content #formModifyUser #btnSubmitModify:hover,
+.dash_container .main_content #formModifyUser #btnSubmitAdd:hover,
+.dash_container .main_content #formModifyUser #btnSubmitEdit:hover,
+.dash_container .main_content #formModifyUser #btnSubmitAddFile:hover,
+.dash_container .main_content #formAddImage #btnSubmitModify:hover,
+.dash_container .main_content #formAddImage #btnSubmitAdd:hover,
+.dash_container .main_content #formAddImage #btnSubmitEdit:hover,
+.dash_container .main_content #formAddImage #btnSubmitAddFile:hover,
+.dash_container .main_content #formAddAnimal #btnSubmitModify:hover,
+.dash_container .main_content #formAddAnimal #btnSubmitAdd:hover,
+.dash_container .main_content #formAddAnimal #btnSubmitEdit:hover,
+.dash_container .main_content #formAddAnimal #btnSubmitAddFile:hover,
+.dash_container .main_content #formModifyAnimal #btnSubmitModify:hover,
+.dash_container .main_content #formModifyAnimal #btnSubmitAdd:hover,
+.dash_container .main_content #formModifyAnimal #btnSubmitEdit:hover,
+.dash_container .main_content #formModifyAnimal #btnSubmitAddFile:hover,
+.dash_container .main_content #formAddService #btnSubmitModify:hover,
+.dash_container .main_content #formAddService #btnSubmitAdd:hover,
+.dash_container .main_content #formAddService #btnSubmitEdit:hover,
+.dash_container .main_content #formAddService #btnSubmitAddFile:hover,
+.dash_container .main_content #formModifyService #btnSubmitModify:hover,
+.dash_container .main_content #formModifyService #btnSubmitAdd:hover,
+.dash_container .main_content #formModifyService #btnSubmitEdit:hover,
+.dash_container .main_content #formModifyService #btnSubmitAddFile:hover,
+.dash_container .main_content #formAddHabitat #btnSubmitModify:hover,
+.dash_container .main_content #formAddHabitat #btnSubmitAdd:hover,
+.dash_container .main_content #formAddHabitat #btnSubmitEdit:hover,
+.dash_container .main_content #formAddHabitat #btnSubmitAddFile:hover,
+.dash_container .main_content #formModifyHabitat #btnSubmitModify:hover,
+.dash_container .main_content #formModifyHabitat #btnSubmitAdd:hover,
+.dash_container .main_content #formModifyHabitat #btnSubmitEdit:hover,
+.dash_container .main_content #formModifyHabitat #btnSubmitAddFile:hover,
+.dash_container .main_content #formAddReport #btnSubmitModify:hover,
+.dash_container .main_content #formAddReport #btnSubmitAdd:hover,
+.dash_container .main_content #formAddReport #btnSubmitEdit:hover,
+.dash_container .main_content #formAddReport #btnSubmitAddFile:hover,
+.dash_container .main_content #formModifyReport #btnSubmitModify:hover,
+.dash_container .main_content #formModifyReport #btnSubmitAdd:hover,
+.dash_container .main_content #formModifyReport #btnSubmitEdit:hover,
+.dash_container .main_content #formModifyReport #btnSubmitAddFile:hover,
+.dash_container .main_content #formEditHoraire #btnSubmitModify:hover,
+.dash_container .main_content #formEditHoraire #btnSubmitAdd:hover,
+.dash_container .main_content #formEditHoraire #btnSubmitEdit:hover,
+.dash_container .main_content #formEditHoraire #btnSubmitAddFile:hover {
   background-color: #182828;
   color: #FFE888;
 }
@@ -4425,6 +4895,9 @@ table {
     display: inline-table;
     width: 100%;
   }
+  .dash_container .main_content .dash_overview .dash_card {
+    flex-direction: row;
+  }
 }
 @media screen and (min-width: 1200px) {
   .dash_container .main_content {
@@ -4435,6 +4908,9 @@ table {
   .dash_container .main_content .dash_overview .tableau {
     display: inline-table;
     width: 100%;
+  }
+  .dash_container .main_content .dash_overview .dash_card {
+    flex-direction: row;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 992px) {

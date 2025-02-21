@@ -21,6 +21,7 @@
 
       <!--====START  ONGLET SAVANE ==== -->
       <div class="onglet_savane">
+        
         <button class="tab_button active" data-tab="savane">savane</button>
 
         <!--Ici le contenue de onglet savane-->
@@ -31,25 +32,24 @@
 
           <!--CONTENUE TEXTE IMG SAVANE-->
           <div class="onglet_savane_txt">
+            <?php
+              if (isset($habitats[0])) {
+                $description = explode('(delimiteur)', $habitats[0]->getDescriptionHabitat());
+                $savanePart1 = htmlspecialchars($description[0]);
+                $savanePart2 = htmlspecialchars($description[1] ?? '');
+              }
+            ;?>
             <div class="img_texte_savane1">
-              <p>
-                La savane est un écosystème vaste et ouvert, caractérisé par des prairies étendues parsemées de quelques arbres et arbustes.
-                Ce biome se trouve principalement en Afrique, mais aussi en Amérique du Sud, en Australie et en Inde.
-                La savane est connue pour ses deux saisons principales : une saison humide, où la végétation est luxuriante et les animaux prospèrent, et une saison sèche, où l'eau devient rare et les plantes et animaux s'adaptent à des conditions arides.
-              </p>
+              <p><?php echo $savanePart1 ;?></p>
               <div class="img_savane_1">
-                <img src="assets/img/savane/adobestock_93941230.avif" alt="une route dans la savane">
+                <img src="<?= $allFileH[3]; ?>" alt="une route dans la savane">
               </div>
             </div>
 
             <div class="img_texte_savane2">
-              <p>
-                Les animaux de la savane sont divers et adaptés à cet environnement dynamique.
-                Parmi les habitants les plus emblématiques, on trouve les grands herbivores tels que les éléphants, les girafes, les zèbres et les gnous, qui migrent souvent en grandes hardes à la recherche de nourriture et d'eau.
-                Ces herbivores jouent un rôle crucial dans l'écosystème en façonnant la végétation et en maintenant l'équilibre des espèces végétales.
-              </p>
+              <p><?php echo $savanePart2 ;?></p>
               <div class="img_savane_2">
-                <img src="assets/img/savane/adobestock_53362363.avif" alt="un paysage de savane avec un arbre fin">
+                <img src="<?= $allFileH[1]; ?>" alt="un paysage de savane avec un arbre fin">
               </div>
             </div>
 
@@ -60,15 +60,15 @@
             <h2>Ils y Habitent</h2>
             <div class="card_container">
               <div class="card_carousel">
-
+              
                 <!--BTN CAROUSSEL SAVANE-->
                 <button class="btn_carousel_savane" id="prev">&#10096;</button>
                 <button class="btn_carousel_savane" id="next">&#10097;</button>
-
+              
                 <!--card fennec-->
                 <div id="fennec_one" class="slide_savane active2">
                   <div class="card_fennec">
-                    <img src="assets/img/savane/fenec/adobestock_702750986.avif" alt="un fennec qui regarde au loin">
+                    <img src="<?= $allFileA[2];?>" alt="un fennec qui regarde au loin">
                     <h3>le fennec</h3>
 
                     <!--donnée fenec-->
@@ -118,7 +118,7 @@
                 <!--card girafe-->
                 <div id="girafe_one" class="slide_savane">
                   <div class="card_girafe">
-                    <img src="assets/img/savane/girafe/adobestock_248371516.avif" alt="Une girafe qui nous regarde">
+                    <img src="<?= $allFileA[9];?>" alt="Une girafe qui nous regarde">
                     <h3>la girafe</h3>
 
                     <!--donnée girafe-->
@@ -168,7 +168,7 @@
                 <!--card rhinoceros-->
                 <div id="rhinoceros_one" class="slide_savane">
                   <div class="card_rhinoceros">
-                    <img src="assets/img/savane/rhinocéros/adobestock_406127462.avif" alt="Un rhinoceros qui nous regarde">
+                    <img src="<?= $allFileA[15];?>" alt="Un rhinoceros qui nous regarde">
                     <h3>le rhinocers</h3>
 
                     <!--donnée rhinoceros-->
@@ -218,7 +218,7 @@
                 <!--card zebre-->
                 <div id="zebre_one" class="slide_savane">
                   <div class="card_zebre">
-                    <img src="assets/img/savane/zèbre/adobestock_659506346.avif" alt="Un zebre qui nous regarde">
+                    <img src="<?= $allFileA[5];?>" alt="Un zebre qui nous regarde">
                     <h3>le zebre</h3>
 
                     <!--donnée zebre-->
@@ -268,7 +268,7 @@
                 <!--card servale-->
                 <div id="serval_one" class="slide_savane">
                   <div class="card_serval">
-                    <img src="assets/img/savane/serval/adobestock_632821678.avif" alt="Un zebre qui nous regarde">
+                    <img src="<?= $allFileA[19];?>" alt="Un zebre qui nous regarde">
                     <h3>le serval</h3>
 
                     <!--donnée serval-->
@@ -314,6 +314,7 @@
                     </div>
                   </div>
                 </div>
+              
               </div>
             </div>
           </div>
@@ -333,26 +334,24 @@
 
           <!--CONTENUE TEXTE IMG MARAIS-->
           <div class="onglet_marais_txt">
-
+            <?php
+              if (isset($habitats[1])) {
+                $description = explode('(delimiteur)', $habitats[0]->getDescriptionHabitat());
+                $maraisPart1 = htmlspecialchars($description[0]);
+                $maraisPart2 = htmlspecialchars($description[1] ?? '');
+              }
+            ;?>
             <div class="img_texte_marais1">
-              <p>
-                Les marais sont des écosystèmes humides et complexes, caractérisés par des terres basses et des sols saturés d'eau.
-                Ces zones sont présentes dans diverses régions du monde, allant des régions côtières aux terres intérieures.
-                Les marais se forment dans des environnements où l'eau s'accumule, comme le long des cours d'eau, des deltas, des estuaires et des plaines inondables.
-              </p>
+              <p><?= $maraisPart1 ;?></p>
 
               <div class="img_marais_1">
-                <img class="img_mar1" src="assets/img/marais/adobestock_391231580.avif" alt="une route dans la savane">
+                <img class="img_mar1" src="<?= $allFileH[6];?>" alt="une route dans la savane">
               </div>
             </div>
             <div class="img_texte_marais2">
-              <p>
-                Les animaux des marais sont adaptés à vivre dans des conditions humides et souvent boueuses.
-                Les reptiles, comme les crocodiles et les alligators, sont des prédateurs redoutables qui chassent à la fois sur terre et dans l'eau, utilisant leur camouflage et leur patience pour capturer leurs proies.
-                Les amphibiens, tels que les grenouilles et les salamandres, se reproduisent souvent dans les marais, où ils peuvent trouver des habitats humides pour leurs œufs et leurs larves.
-              </p>
+              <p><?= $maraisPart2 ;?></p>
               <div class="img_marais_2">
-                <img class="img_mar2" src="assets/img/marais/adobestock_391231871.avif" alt="un paysage de savane avec un arbre fin">
+                <img class="img_mar2" src="<?= $allFileH[4];?>" alt="un paysage de savane avec un arbre fin">
               </div>
             </div>
 
@@ -367,150 +366,152 @@
                 <!--BTN CAROUSSEL SAVANE-->
                 <button class="btn_carousel_marais" id="prev2">&#10096;</button>
                 <button class="btn_carousel_marais" id="next2">&#10097;</button>
-
-                <!--card caiman-->
-                <div id="caiman_one" class="slide_marais active2">
-                  <div class="card_caiman">
-                    <div class="img_titre">
-                      <img src="assets/img/marais/caiman/adobestock_136547915.avif" alt="Un caiman qui attrape sa nourriture">
-                      <h3>le caiman</h3>
-                    </div>
-
-                    <!--donnée caiman-->
-                    <div class="card_text_marais">
-                      <div class="card_flex_marais">
-                        <div class="card_flex_marais_component">
-                          <div class="card_composant_animal">
-                            <h4>prenom:</h4>
-                            <p>LOUIS</p>
-                          </div>
-                          <div class="card_composant_animal">
-                            <h4>genre:</h4>
-                            <p>voici le genre</p>
-                          </div>
-                          <div class="card_composant_animal">
-                            <h4>sexe:</h4>
-                            <p>voici le sexe</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Régime alimentaire:</h4>
-                            <p>Voici le régime alimentaire d'un fennec</p>
-                          </div>
+              <?php foreach ($animals as $animal) : ?>
+                <?php if ($animal->getIdHabitat() === 2) : ?>
+                    <!--card caiman-->
+                  <?php if($animal->getIdAnimal() === 7) : ?>
+                    <div id="caiman_one" class="slide_marais active2">
+                      <div class="card_caiman">
+                        <div class="img_titre">
+                          <img src="<?= $allFileA[21];?>" alt="Un caiman qui attrape sa nourriture">
+                          <h3>le caiman</h3>
                         </div>
-                        <div class="card_flex_marais_component">
-                          <div class="card_composant">
-                            <h4>Reproduction:</h4>
-                            <p>Voici la methodes de reproduction d'un fennec</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Passage du médecin:</h4>
-                            <p>Etat de l'animal</p>
-                            <p>Voici la date de paassage du medecin</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Quantité de nourriture:</h4>
-                            <p>voici le grammage</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <!--card rainette-->
-                <div id="rainette_one" class="slide_marais">
-                  <div class="card_rainette">
-                    <img src="assets/img/marais/rainetteVerte/adobestock_651948846.avif" alt="Une girafe qui nous regarde">
-                    <h3>la rainette</h3>
-
-                    <!--donnée rainette-->
-                    <div class="card_text_marais">
-                      <div class="card_flex_marais">
-                        <div class="card_flex_marais_component">
-                          <div class="card_composant_animal">
-                            <h4>prenom:</h4>
-                            <p>TIANA</p>
-                          </div>
-                          <div class="card_composant_animal">
-                            <h4>genre:</h4>
-                            <p>voici le genre</p>
-                          </div>
-                          <div class="card_composant_animal">
-                            <h4>sexe:</h4>
-                            <p>voici le sexe</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Régime alimentaire:</h4>
-                            <p>Voici le régime alimentaire d'un fennec</p>
-                          </div>
-                        </div>
-                        <div class="card_flex_marais_component">
-                          <div class="card_composant">
-                            <h4>Reproduction:</h4>
-                            <p>Voici la methodes de reproduction d'un fennec</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Passage du médecin:</h4>
-                            <p>Etat de l'animal</p>
-                            <p>Voici la date de paassage du medecin</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Quantité de nourriture:</h4>
-                            <p>voici le grammage</p>
+                        <!--donnée caiman-->
+                        <div class="card_text_marais">
+                          <div class="card_flex_marais">
+                            <div class="card_flex_marais_component">
+                              <div class="card_composant_animal">
+                                <h4>prenom:</h4>
+                                <p><?= htmlspecialchars($animal->getFirstname()) ?></p>
+                              </div>
+                              <div class="card_composant_animal">
+                                <h4>genre:</h4>
+                                <p><?= htmlspecialchars($animal->getGender()) ?></p>
+                              </div>
+                              <div class="card_composant_animal">
+                                <h4>espèce:</h4>
+                                <p><?= htmlspecialchars($animal->getSpecies()) ?></p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Régime alimentaire:</h4>
+                                <p><?= htmlspecialchars($animal->getDiet()) ?></p>
+                              </div>
+                            </div>
+                            <div class="card_flex_marais_component">
+                              <div class="card_composant">
+                                <h4>Reproduction:</h4>
+                                <p><?= htmlspecialchars($animal->getReproduction()) ?></p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Passage du médecin:</h4>
+                                <p>Etat: </p>
+                                <p>Date: </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  <?php endif; ?>
+                    <!--card rainette-->
+                  <?php if($animal->getIdAnimal() === 8) : ?>
+                    <div id="rainette_one" class="slide_marais">
+                      <div class="card_rainette">
+                        <img src="<?= $allFileA[25];?>" alt="Une girafe qui nous regarde">
+                        <h3>la rainette</h3>
 
-                <!--card salamandre-->
-                <div id="salamandre_one" class="slide_marais">
-                  <div class="card_salamandre">
-                    <img src="assets/img/marais/salamandre/adobestock_443143263.avif" alt="Un rhinoceros qui nous regarde">
-                    <h3>la salamandre</h3>
-
-                    <!--donnée rhinoceros-->
-                    <div class="card_text_marais">
-                      <div class="card_flex_marais">
-                        <div class="card_flex_marais_component">
-                          <div class="card_composant_animal">
-                            <h4>prenom:</h4>
-                            <p>BRUNI</p>
-                          </div>
-                          <div class="card_composant_animal">
-                            <h4>genre:</h4>
-                            <p>voici le genre</p>
-                          </div>
-                          <div class="card_composant_animal">
-                            <h4>sexe:</h4>
-                            <p>voici le sexe</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Régime alimentaire:</h4>
-                            <p>Voici le régime alimentaire d'un fennec</p>
-                          </div>
-                        </div>
-                        <div class="card_flex_marais_component">
-                          <div class="card_composant">
-                            <h4>Reproduction:</h4>
-                            <p>Voici la methodes de reproduction d'un fennec</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Passage du médecin:</h4>
-                            <p>Etat de l'animal</p>
-                            <p>Voici la date de paassage du medecin</p>
-                          </div>
-                          <div class="card_composant">
-                            <h4>Quantité de nourriture:</h4>
-                            <p>voici le grammage</p>
+                        <!--donnée rainette-->
+                        <div class="card_text_marais">
+                          <div class="card_flex_marais">
+                            <div class="card_flex_marais_component">
+                              <div class="card_composant_animal">
+                                <h4>prenom:</h4>
+                                <p><?= htmlspecialchars($animal->getFirstname()) ?></p>
+                              </div>
+                              <div class="card_composant_animal">
+                                <h4>genre:</h4>
+                                <p><?= htmlspecialchars($animal->getGender()) ?></p>
+                              </div>
+                              <div class="card_composant_animal">
+                                <h4>espèce:</h4>
+                                <p><?= htmlspecialchars($animal->getSpecies()) ?></p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Régime alimentaire:</h4>
+                                <p><?= htmlspecialchars($animal->getDiet()) ?></p>
+                              </div>
+                            </div>
+                            <div class="card_flex_marais_component">
+                              <div class="card_composant">
+                                <h4>Reproduction:</h4>
+                                <p><?= htmlspecialchars($animal->getReproduction()) ?></p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Passage du médecin:</h4>
+                                <p>Etat de l'animal</p>
+                                <p>Voici la date de paassage du medecin</p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Quantité de nourriture:</h4>
+                                <p>voici le grammage</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  <?php endif; ?>
+                    <!--card salamandre-->
+                  <?php if($animal->getIdAnimal() === 9) : ?>
+                    <div id="salamandre_one" class="slide_marais">
+                      <div class="card_salamandre">
+                        <img src="<?= $allFileA[27];?>" alt="Un rhinoceros qui nous regarde">
+                        <h3>la salamandre</h3>
 
+                        <!--donnée rhinoceros-->
+                        <div class="card_text_marais">
+                          <div class="card_flex_marais">
+                            <div class="card_flex_marais_component">
+                              <div class="card_composant_animal">
+                                <h4>prenom:</h4>
+                                <p><?= htmlspecialchars($animal->getFirstname()) ?></p>
+                              </div>
+                              <div class="card_composant_animal">
+                                <h4>genre:</h4>
+                                <p><?= htmlspecialchars($animal->getGender()) ?></p>
+                              </div>
+                              <div class="card_composant_animal">
+                                <h4>espèce:</h4>
+                                <p><?= htmlspecialchars($animal->getSpecies()) ?></p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Régime alimentaire:</h4>
+                                <p><?= htmlspecialchars($animal->getDiet()) ?></p>
+                              </div>
+                            </div>
+                            <div class="card_flex_marais_component">
+                              <div class="card_composant">
+                                <h4>Reproduction:</h4>
+                                <p><?= htmlspecialchars($animal->getReproduction()) ?></p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Passage du médecin:</h4>
+                                <p>Etat de l'animal</p>
+                                <p>Voici la date de paassage du medecin</p>
+                              </div>
+                              <div class="card_composant">
+                                <h4>Quantité de nourriture:</h4>
+                                <p>voici le grammage</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php endif; ?>
+                <?php endif; ?>
+              <?php endforeach; ?>
               </div>
             </div>
           </div>
@@ -531,25 +532,24 @@
 
           <!--CONTENUE TEXTE IMG JUNGLE-->
           <div class="onglet_jungle_txt">
+            <?php
+              if (isset($habitats[2])) {
+                $description = explode('(delimiteur)', $habitats[0]->getDescriptionHabitat());
+                $junglePart1 = htmlspecialchars($description[0]);
+                $junglePart2 = htmlspecialchars($description[1] ?? '');
+              }
+            ;?>
             <div class="img_texte_jungle1">
-              <p>
-                La jungle est un environnement dense et luxuriant, caractérisé par une végétation tropicale épaisse et une biodiversité exceptionnelle.
-                Ce biome se trouve principalement en Amérique du Sud, en Afrique centrale, en Asie du Sud-Est et dans certaines régions de l\'Australie.
-                Les jungles sont marquées par un climat chaud et humide avec des précipitations abondantes tout au long de l'année, créant des conditions idéales pour une végétation dense et variée.
-              </p>
+              <p><?= $junglePart1 ;?></p>
               <div class="img_jungle_1">
-                <img src="assets/img/jungle/AdobeStock_228788927.avif" alt="" class="img_jung1">
+                <img src="<?= $allFileH[7] ;?>" alt="" class="img_jung1">
               </div>
             </div>
 
             <div class="img_texte_jungle2">
-              <p>
-                Les animaux de la jungle sont incroyablement diversifiés et adaptés à la vie dans cet écosystème complexe.
-                Les félins, tels que les tigres, les jaguars et les léopards, sont des prédateurs redoutables qui se fondent parfaitement dans l\'environnement dense pour traquer leurs proies.
-                Les oiseaux tropicaux, comme les perroquets, les toucans et les colibris, apportent une touche de couleur et de vie à la canopée avec leurs plumages éclatants et leurs chants mélodieux.
-              </p>
+              <p><?= $junglePart2 ;?></p>
               <div class="img_jungle_2">
-                <img src="assets/img/jungle/AdobeStock_448467078.avif" alt="" class="img_jung2">
+                <img src="<?= $allFileH[8] ;?>" alt="" class="img_jung2">
               </div>
             </div>
 
@@ -570,7 +570,7 @@
                 <!--card tapir-->
                 <div id="tapir_one" class="slide_jungle active2">
                   <div class="card_tapir">
-                    <img src="assets/img/jungle/tapir/adobestock_69669957.avif" alt="Un caiman qui attrape sa nourriture">
+                    <img src="<?= $allFileA[42];?>" alt="Un caiman qui attrape sa nourriture">
                     <h3>le tapir</h3>
 
                     <!--donnée tapir-->
@@ -620,7 +620,7 @@
                 <!--card jaguar-->
                 <div id="jaguar_one" class="slide_jungle">
                   <div class="card_jaguar">
-                    <img src="assets/img/jungle/jaguar/adobestock_178472141.avif" alt="Une girafe qui nous regarde">
+                    <img src="<?= $allFileA[34];?>" alt="Une girafe qui nous regarde">
                     <h3>le jaguar</h3>
 
                     <!--donnée jaguar-->
@@ -670,7 +670,7 @@
                 <!--card toucan-->
                 <div id="toucan_one" class="slide_jungle">
                   <div class="card_toucan">
-                    <img src="./assets/img/jungle/toucanToco/adobestock_272686693.avif" alt="Un rhinoceros qui nous regarde">
+                    <img src="<?= $allFileA[45];?>" alt="Un rhinoceros qui nous regarde">
                     <h3>le toucan toco</h3>
 
                     <!--donnée toucan-->
@@ -721,7 +721,7 @@
                 <!--card ara rouge-->
                 <div id="ara_one" class="slide_jungle">
                   <div class="card_ara">
-                    <img src="./assets/img/jungle/araRouge/adobestock-671364623.avif" alt="Un rhinoceros qui nous regarde">
+                    <img src="<?= $allFileA[31];?>" alt="Un rhinoceros qui nous regarde">
                     <h3>l'ara rouge</h3>
 
                     <!--donnée toucan-->

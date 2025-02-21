@@ -9,8 +9,8 @@ use InvalidArgumentException;
 class Habitat {
 
   private ?int $id_habitat;
-  private string $name_habitat;
-  private string $description_habitat;
+  private string $name;
+  private string $description;
 
   /** Constructeur de la class Habitat
    * 
@@ -18,11 +18,11 @@ class Habitat {
    * @param string le nom de l'habitat
    * @param string la description de l'habitat
    */
-  public function __construct(?int $id_habitat, string $name_habitat, string $description_habitat)
+  public function __construct(?int $id_habitat, string $name, string $description)
   {
     $this->setIdHabitat($id_habitat);
-    $this->setNameHabitat($name_habitat);
-    $this->setDescriptionHabitat($description_habitat);
+    $this->setNameHabitat($name);
+    $this->setDescriptionHabitat($description);
   }
 
   //GETTERS
@@ -37,13 +37,13 @@ class Habitat {
    * 
    * @return string le name de l'habitat
    */
-  public function getNameHabitat(): string { return $this->name_habitat;}
+  public function getNameHabitat(): string { return $this->name;}
 
   /** Obtien la description de l'habitat 
    * 
    * @return string la decription de l'habitat
    */
-  public function getDescriptionHabitat(): string {return $this->description_habitat;}
+  public function getDescriptionHabitat(): string {return $this->description;}
 
 
   //SETTERS
@@ -55,9 +55,8 @@ class Habitat {
    */
   public function setIdHabitat(?int $id_habitat): void
   {
-    if ($id_habitat !== null && $id_habitat <= 0)
-    {
-      throw new InvalidArgumentException("L'id doit un etre un entier positif");
+    if ($id_habitat !== null && $id_habitat <= 0) {
+      throw new InvalidArgumentException("L'ID de l'habitat doit être un entier positif");
     }
     $this->id_habitat = $id_habitat;
   }
@@ -67,18 +66,18 @@ class Habitat {
    * @param string le nouveau nom de l'habitat
    * @throws InvalidArgumentException
    */
-  public function setNameHabitat(string $name_habitat): void
+  public function setNameHabitat(string $name): void
   {
-    $name_habitat = trim($name_habitat);
-    if (empty($name_habitat))
+    $name = trim($name);
+    if (empty($name))
     {
       throw new InvalidArgumentException("Le nom ne peut etre vide");
     }
-    if (strlen($name_habitat) > 50)
+    if (strlen($name) > 50)
     {
       throw new InvalidArgumentException("le nom ne peut dépasser 50 caractère");
     }
-    $this->name_habitat = $name_habitat;
+    $this->name = $name;
   }
 
   /** Defini la description de l'habitat
@@ -86,13 +85,16 @@ class Habitat {
    * @param string la description de l'habitat
    * @throws InvalidArgumentException
    */
-  public function setDescriptionHabitat(string $description_habitat): void
+  public function setDescriptionHabitat(string $description): void
   {
-    $description_habitat = trim($description_habitat);
-    if (empty($description_habitat))
+    $description = trim($description);
+    if (empty($description))
     {
       throw new InvalidArgumentException("La description ne peut etre vide");
     }
-    $this->description_habitat = $description_habitat;
+    if (strlen($description) > 10000) {
+      throw new InvalidArgumentException("La description ne peut dépasser 10000 caractères");
+    }
+    $this->description = $description;
   }
 }

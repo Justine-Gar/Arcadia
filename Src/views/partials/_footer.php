@@ -12,7 +12,7 @@
           <p>56430</p>
           <p>FRANCE</p>
           <p>+33 02 99 99 99 99</p>
-          <p>contact@zooarcadia.fr</p>
+          
         </div>
       </div>
 
@@ -21,7 +21,6 @@
         <a href="/services">Services</a>
         <a href="/habitats">Habitats</a>
         <a href="/faq">FAQ</a>
-        <a href="#">Connexion</a>
       </nav>
 
     </div>
@@ -30,41 +29,44 @@
 
       <div class="footer_horaire">
         <h2>Horaires</h2>
-        <div class="footer_jours_heures">
-          <div class="jours_footer">
-            <p>lundi</p>
-          </div>
-          <div class="heures_footer">
-            <div class="heures_ouverture">
-              <p>10h/</p>
+        <?php if (isset($timetables) && !empty($timetables)): ?>
+          <?php foreach ($timetables as $timetable): ?>
+            <div class="footer_jours_heures">
+                <div class="jours_footer">
+                    <p><?= htmlspecialchars($timetable->getDays()) ?></p>
+                </div>
+                <div class="heures_footer">
+                    <div class="heures_ouverture">
+                        <p><?= htmlspecialchars($timetable->getOpenHours())?>-</p>
+                    </div>
+                    <div class="heures_fermeture">
+                        <p><?= htmlspecialchars($timetable->getCloseHours()) ?></p>
+                    </div>
+                </div>
             </div>
-            <div class="heures_fermeture">
-              <p>18h</p>
-            </div>
-
-          </div>
-        </div>
+          <?php endforeach; ?>
+        <?php endif; ?>
       </div>
 
       <div class="footer_img">
         <div class="footer_logo">
-          <img src="assets/img/Fichier 2.png" alt="Logo Arcadia" />
+          <img src="/assets/image/Logo.png" alt="Logo Arcadia" />
         </div>
 
         <div class="footer_reseaux">
           <div class="footer_icon">
-            <a href="https://www.facebook.com/?locale=fr_FR"><img src="assets/img/icon/fb.png"
+            <a href="https://www.facebook.com/?locale=fr_FR"><img src="/assets/icon/fb.png"
                 alt="Logo Facebook" /></a>
           </div>
           <div class="footer_icon">
-            <a href="https://www.youtube.com/?app=desktop&hl=fr"><img src="assets/img/icon/youtube.png"
+            <a href="https://www.youtube.com/?app=desktop&hl=fr"><img src="/assets/icon/youtube.png"
                 alt="Logo Youtube" /></a>
           </div>
           <div class="footer_icon">
-            <a href="https://www.instagram.com/"><img src="assets/img/icon/insta.png" alt="Logo instagram" /></a>
+            <a href="https://www.instagram.com/"><img src="/assets/icon/insta.png" alt="Logo instagram" /></a>
           </div>
           <div class="footer_icon">
-            <a href="https://x.com/?lang=fr"><img src="assets/img/icon/x.png" alt="Logo X" /></a>
+            <a href="https://x.com/?lang=fr"><img src="assets/icon/x.png" alt="Logo X" /></a>
           </div>
         </div>
 

@@ -43,7 +43,7 @@ class Router
                         $user = $userService->getCurrentUser(); 
                     }
                     if (!$user) {
-
+                        //axes d'amélioration
                         echo 'user non connecter';
                         exit;
                     }

@@ -3,18 +3,11 @@
 
   <div class="slider_container">
     <div class="slides">
-
-      <img src="assets/img/savane/girafe/adobestock_319699532.avif" alt="Girafe" />
-
-
-      <img src="assets/img/jungle/jaguar/adobestock_161417940.avif" alt="Jaguar" />
-
-
-      <img src="assets/img/marais/caiman/adobestock_391231321.avif" alt="Caiman" />
-
-
-      <img src="assets/img/savane/phacochère/adobestock_502594250.avif" alt="Girafe2" />
-
+        <img src="<?= $allFileA[10]; ?>" alt="Girafe" />
+        <img src="<?= $allFileA[33]; ?>" alt="Jaguar" />
+        <img src="<?= $allFileA[22]; ?>" alt="Caiman" />
+        <img src="<?= $allFileA[10]; ?>" alt="Girafe2" />
+      
     </div>
   </div>
 
@@ -23,7 +16,7 @@
   <div class="bienvenue_container">
 
     <div class="bienvenue_img">
-      <img src="assets/img/savane/girafe/adobestock_248371516.avif" alt="" />
+      <img src="<?= $allFileA[9] ;?>" alt="Melman notre girafe fais la pause" />
     </div>
 
     <div class="bienvenue_text">
@@ -60,21 +53,21 @@
       <div class="home_services_button">
 
         <div class="home_button_r">
-          <a href="#" data-text="restauration">restauration</a>
+          <a href="/services#restauration" data-text="restauration">restauration</a>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </div>
         <div class="home_button_v">
-          <a href="#" data-text="visite">visite</a>
+          <a href="/services#visite" data-text="visite">visite</a>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </div>
         <div class="home_button_t">
-          <a href="#" data-text="train">train</a>
+          <a href="/services#train" data-text="train">train</a>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -97,7 +90,7 @@
       <div class="home_title">
         <p>savane</p>
       </div>
-      <img src="assets/img/savane/adobestock_183380256.avif" alt="Image de Savane">
+      <img src="<?= $allFileH[3]; ?>" alt="Image de Savane">
 
       <div class="home_savane_txt_hover">
         <p class="home_savane_txt">
@@ -105,7 +98,7 @@
           Ce biome se trouve principalement en Afrique, mais aussi en Amérique du Sud, en Australie et en Inde ...
         </p>
         <div class="home_savane_button">
-          <a href="#">En savoir plus</a>
+          <a href="/habitats#savane">En savoir plus</a>
         </div>
       </div>
       <div class="home_savane_mobile">
@@ -118,15 +111,15 @@
 
         <div class="home_savane_girafe">
           <div class="home_img_girafe">
-            <img src="assets/img/savane/girafe/adobestock_122134380.avif" alt="Image de girafe">
+            <img src="<?= $allFileA[8]; ?>" alt="Image de girafe">
           </div>
           <div class="home_girafe_button">
-            <a href="La Girafe">La Girafe</a>
+            <a href="">La Girafe</a>
           </div>
         </div>
         <div class="home_savane_fenec">
           <div class="home_img_fenec">
-            <img src="assets/img/savane/fenec/adobestock_509938682.avif" alt="Image de fenec">
+            <img src="<?= $allFileA[3]; ?>" alt="Image de fenec">
           </div>
           <div class="home_fenec_button">
             <a href="">Le Fenec</a>
@@ -134,7 +127,7 @@
         </div>
         <div class="home_savane_rhinoceros">
           <div class="home_img_rhinoceros">
-            <img src="assets/img/savane/rhinocéros/adobestock_328499140.avif" alt="Image de rhinocéros">
+            <img src="<?= $allFileA[14]; ?>" alt="Image de rhinocéros">
           </div>
           <div class="home_rhinoceros_button">
             <a href="">Le Rhinoceros</a>
@@ -147,7 +140,7 @@
       <div class="home_title">
         <p>marais</p>
       </div>
-      <img src="assets/img/marais/adobestock_391231580.avif" alt="Image de Marais">
+      <img src="<?= $allFileH[6]; ?>" alt="Image de Marais">
 
       <div class="home_marais_txt_hover">
         <p class="home_marais_txt">
@@ -156,7 +149,7 @@
           comme le long des cours d'eau, deltas, estuaires et plaines inondables.
         </p>
         <div class="home_marais_button">
-          <a href="#">En savoir plus</a>
+          <a href="/habitats#marais">En savoir plus</a>
         </div>
       </div>
       <div class="home_marais_mobile">
@@ -169,7 +162,7 @@
 
         <div class="home_marais_caiman">
           <div class="home_img_caiman">
-            <img src="assets/img/marais/caiman/adobestock_118815674.avif" alt="Image de caiman">
+            <img src="<?= $allFileA[21]; ?>" alt="Image de caiman">
           </div>
           <div class="home_caiman_button">
             <a href="">Le Caiman</a>
@@ -177,7 +170,7 @@
         </div>
         <div class="home_marais_renette">
           <div class="home_img_renette">
-            <img src="assets/img/marais/rainetteVerte/adobestock_651948841.avif" alt="Image de renette verte">
+            <img src="<?= $allFileA[24]; ?>" alt="Image de renette verte">
           </div>
           <div class="home_renette_button">
             <a href="">La Renette</a>
@@ -185,7 +178,7 @@
         </div>
         <div class="home_marais_salamandre">
           <div class="home_img_salamandre">
-            <img src="assets/img/marais/salamandre/adobestock_443143263.avif" alt="Image de salamandre">
+            <img src="<?= $allFileA[27]; ?>" alt="Image de salamandre">
           </div>
           <div class="home_salamanbre_button">
             <a href="">La Salamandre</a>
@@ -198,7 +191,7 @@
       <div class="home_title">
         <p>jungle</p>
       </div>
-      <img src="assets/img/jungle/AdobeStock_445496398.avif" alt="Image de Jungle">
+      <img src="<?= $allFileH[8]; ?>" alt="Image de Jungle">
       <!--_Jungle_txt_-->
       <div class="home_jungle_txt_hover">
 
@@ -208,7 +201,7 @@
           de l'année, créant des conditions idéales pour une végétation dense et variée...
         </p>
         <div class="home_jungle_button">
-          <a href="habitat.html">En savoir plus</a>
+          <a href="/habitats#jungle">En savoir plus</a>
         </div>
       </div>
       <!--_Jungle_mobile_-->
@@ -222,7 +215,7 @@
       <div class="home_jungle_animaux">
         <div class="home_jungle_paresseux">
           <div class="home_img_paresseux">
-            <img src="assets/img/jungle/paresseux/adobestock_445939941.avif" alt="Image de paresseux">
+            <img src="<?= $allFileA[40]; ?>" alt="Image de paresseux">
           </div>
           <div class="home_paresseux_button">
             <a href="">Le Paresseux</a>
@@ -231,7 +224,7 @@
 
         <div class="home_jungle_toucan">
           <div class="home_img_toucan">
-            <img src="assets/img/jungle/toucanToco/adobestock_448140248.avif" alt="Image de toucanToco">
+            <img src="<?= $allFileA[44]; ?>" alt="Image de toucanToco">
           </div>
           <div class="home_toucan_button">
             <a href="">Le Toucan</a>
@@ -240,7 +233,7 @@
 
         <div class="home_jungle_jaguar">
           <div class="home_img_jaguar">
-            <img src="assets/img/jungle/jaguar/adobestock_161417940.avif" alt="Image de jaguar">
+            <img src="<?= $allFileA[34]; ?>" alt="Image de jaguar">
           </div>
           <div class="home_jaguar_button">
             <a href="">Le Jaguar</a>
@@ -262,56 +255,40 @@
     <h2>les avis</h2>
     <!--Slider -->
     <div class="avis_slider">
-
+  
       <div id="avis_container_text">
         <!--Les card avis-->
+        <?php if(!empty($reviews)): ?>
+          <?php foreach ($reviews as $review): ?>
         <div class="avis_item">
           <div class="avis_header">
-            <h5>Client1</h5>
+            <h5><?= htmlspecialchars($review->getNameReview()) ?></h5>
             <div class="rating">
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star">★</span>
+              <?php 
+                $score = $review->getScore();
+                for($i = 1; $i <= 5; $i++) {
+                  if($i <= $score) {
+                    echo '<span class="star filled">★</span>';
+                  } else {
+                    echo '<span class="star">★</span>';
+                  }
+                }
+              ?>
             </div>
           </div>
           <div class="avis_text">
-            <p>Voici un paragraphe d'exemple</p>
+            <p><?= htmlspecialchars($review->getDescriptionReview()) ?></p>
           </div>
         </div>
+      <?php endforeach; ?>
+      <?php else: ?>
         <div class="avis_item">
-          <div class="avis_header">
-            <h5>Client2</h5>
-            <div class="rating">
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-            </div>
-          </div>
           <div class="avis_text">
-            <p>Voici un paragraphe d'exemple</p>
+            <p>Aucun avis pour le moment.</p>
           </div>
         </div>
-        <div class="avis_item">
-          <div class="avis_header">
-            <h5>Client3</h5>
-            <div class="rating">
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star filled">★</span>
-              <span class="star">★</span>
-              <span class="star">★</span>
-            </div>
-          </div>
-          <div class="avis_text">
-            <p>Voici un paragraphe d'exemple</p>
-          </div>
-        </div>
+      <?php endif; ?>
       </div>
-
     </div>
 
     <div id="btnAvisForm">un avis ?</div>

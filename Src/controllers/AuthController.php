@@ -22,12 +22,12 @@ class AuthController extends Controllers
       $this->userRepository = new UserRepository();
       $this->passwordHasher = new PasswordHasher();
 
-      Logger::info("AuthController initialisation UserRepo et PassHasher success");
+      //Logger::info("AuthController initialisation UserRepo et PassHasher success");
 
     } catch (\Throwable $e) {
 
-      Logger::error("Erreur dans AuthController:" . $e->getMessage());
-      Logger::error("Trace: " . $e->getTraceAsString());
+      //Logger::error("Erreur dans AuthController:" . $e->getMessage());
+      //Logger::error("Trace: " . $e->getTraceAsString());
       $response = new Response();
       $response->json(['succes' => false, 'message' => 'Erreur Interne Authentification']);
       return $response;
@@ -39,7 +39,7 @@ class AuthController extends Controllers
   {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
-      Logger::error("Methode non autorisé: " . $_SERVER['REQUEST_METHOD']);
+      //Logger::error("Methode non autorisé: " . $_SERVER['REQUEST_METHOD']);
 
       $response = new Response();
       $response->setStatusCode(405);
@@ -49,11 +49,11 @@ class AuthController extends Controllers
     }
 
     $email = filter_input(INPUT_POST, 'emailuser', FILTER_SANITIZE_EMAIL);
-    $password = $_POST['password'] ?? '';
+    $password = $_POST['passworduser'] ?? '';
 
     if (empty($email) || empty($password)) {
 
-      Logger::error("identifiant incorrecte");
+      //Logger::error("identifiant incorrecte");
 
       $response = new Response();
       $response->setStatusCode(400);
@@ -69,7 +69,7 @@ class AuthController extends Controllers
 
         session_start();
 
-        Logger::error("Authentification réussis pour l'email: " . $email);
+        //Logger::error("Authentification réussis pour l'email: " . $email);
         $_SESSION['id_user'] = $user->getIdUser();
         $_SESSION['user_role'] = $user->getRole();
 
@@ -79,7 +79,7 @@ class AuthController extends Controllers
         $location = match ($user->getRole()) {
 
           Role::Admin => '/admin',
-          Role::Staff => '/employe',
+          Role::Staff => '/staff',
           Role::Veto => '/veto',
           default => '/'
         };
@@ -98,8 +98,8 @@ class AuthController extends Controllers
 
     } catch (\Throwable $e) {
 
-      Logger::error("Erreur lors de l'authentification: " . $e->getMessage());
-      Logger::error("Trace: " . $e->getTraceAsString());
+      //Logger::error("Erreur lors de l'authentification: " . $e->getMessage());
+      //Logger::error("Trace: " . $e->getTraceAsString());
 
       $response = new Response();
       $response->setStatusCode(500);

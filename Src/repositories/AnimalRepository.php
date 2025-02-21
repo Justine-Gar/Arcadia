@@ -62,7 +62,14 @@ class AnimalRepository extends Repositories
   {
     try {
 
-      $query = "UPDATE `animal` SET `firstname` = :firstname, `gender` = :gender, `species` = :species, `diet` = :diet, `reproduction` = :reproduction WHERE `id_animal` = :id_animal";
+      $query = "UPDATE `animal` 
+                SET `firstname` = :firstname, 
+                    `gender` = :gender, 
+                    `species` = :species, 
+                    `diet` = :diet, 
+                    `reproduction` = :reproduction, 
+                    `id_habitat` = :id_habitat 
+                WHERE `id_animal` = :id_animal";
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':id_animal', $id_animal, PDO::PARAM_INT);
       $stmt->bindValue(':firstname', $firstname, PDO::PARAM_STR);
@@ -196,10 +203,13 @@ class AnimalRepository extends Repositories
    * @param int $byPage
    * @return array
    */
-  public function getAnimalPagination($offset, $byPage): array
+  public function getAnimalPagination(int $offset, int $byPage): array
   {
     try {
-      $query = "SELECT * FROM `animal` LIMIT :offset, :byPage";
+      $query = "SELECT a.* 
+                FROM animal a 
+                ORDER BY a.id_animal 
+                LIMIT :offset, :byPage";
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
       $stmt->bindValue(':byPage', $byPage, PDO::PARAM_INT);

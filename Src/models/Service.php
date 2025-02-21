@@ -55,10 +55,6 @@ class Service {
    */
   public function setIdService(?int $id_service): void 
   {
-    if ($id_service !== null && $id_service <= 0)
-    {
-      throw new InvalidArgumentException("L'id_service doit etre un entier positif");
-    }
     $this->id_service = $id_service;
   }
 

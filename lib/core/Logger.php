@@ -1,5 +1,4 @@
 <?php
-
 namespace lib\core;
 
 /** Classe Logger
@@ -15,12 +14,25 @@ class Logger
     //Stocker le fuseau horaire
     private static $timezone;
 
-    // Définition des codes de couleur ANSI
+    // Définition des codes de couleur ANSI avec des couleurs plus intuitives
     private static $colors = [
-        'INFO' => "\033[0;32m", // Vert
-        'WARNING' => "\033[1;33m", // Jaune
-        'ERROR' => "\033[0;31m", // Rouge
-        'RESET' => "\033[0m", // Réinitialisation
+        'INFO' => "\033[0;34m",    // Bleu
+        'WARNING' => "\033[1;33m",  // Jaune
+        'ERROR' => "\033[0;31m",    // Rouge
+        'SUCCESS' => "\033[0;32m",  // Vert
+        'RESET' => "\033[0m",       // Réinitialisation
+        // Styles supplémentaires
+        'BOLD' => "\033[1m",
+        'UNDERLINE' => "\033[4m",
+        'TIMESTAMP' => "\033[0;36m" // Cyan pour le timestamp
+    ];
+
+    // Définition des icônes pour chaque type de message
+    private static $icons = [
+        'INFO' => '[i]',      // Alternative à ℹ️
+        'WARNING' => '[!]',    // Alternative à ⚠️
+        'ERROR' => '[x]',      // Alternative à ❌
+        'SUCCESS' => '[✓]'     // Alternative à ✅
     ];
 
     /** Initialise du systeme de logging
@@ -35,7 +47,7 @@ class Logger
         self::updateLogFile();
     }
 
-    /** Met à jours le fichier de log pour la date actuell
+    /** Met à jours le fichier de log pour la date actuelle
      * 
      * Créer un répertoire du jour si necessaire
      * @throws \RuntimeException si le répertoire ou fichier ne peuvent pas etre créées
@@ -66,10 +78,10 @@ class Logger
     /** Enregistre un message dans le fichier log
      * 
      * @param string $message Message à enregistrer
-     * @param string $level Niveau de log (INFO, WARNING, ERROR, etc.)
-     * @throws \RuntimeException si le fichier de log n'est pas initialisé ou ne peut pas être ouver
+     * @param string $level Niveau de log (INFO, WARNING, ERROR, SUCCESS, etc.)
+     * @throws \RuntimeException si le fichier de log n'est pas initialisé ou ne peut pas être ouvert
      */
-    public static function log($message, $level= 'INFO')
+    public static function log($message, $level = 'INFO')
     {
         if (!self::$logFile)
         {
@@ -85,10 +97,15 @@ class Logger
 
         $timestamp = self::getDate('Y-m-d H:i:s');
         $colorStart = self::$colors[$level] ?? self::$colors['INFO'];
+        $timestampColor = self::$colors['TIMESTAMP'];
+        $bold = self::$colors['BOLD'];
         $colorEnd = self::$colors['RESET'];
-         // Message coloré pour le terminal
-        $coloredMessage = "{$colorStart}[{$timestamp}] [{$level}] {$message}{$colorEnd}" . PHP_EOL;
-         // Message sans couleur pour le fichier
+        $icon = self::$icons[$level] ?? self::$icons['INFO'];
+        
+        // Message coloré amélioré pour le terminal avec timestamp en cyan
+        $coloredMessage = "{$timestampColor}[{$timestamp}]{$colorEnd} {$colorStart}{$bold}[{$level}]{$colorEnd} {$colorStart}{$message}{$colorEnd}" . PHP_EOL;
+        
+        // Message sans couleur pour le fichier
         $plainMessage = "[{$timestamp}] [{$level}] {$message}" . PHP_EOL;
 
         $file = fopen(self::$logFile, 'a');
@@ -101,9 +118,9 @@ class Logger
         if (flock($file, LOCK_EX)) {
             fwrite($file, $plainMessage);
             flock($file, LOCK_UN);
-
-            // Affichage coloré dans le terminal
-            //echo $coloredMessage;
+            
+            // Affichage coloré dans le terminal avec icône
+            echo $coloredMessage;
         } else {
             throw new \RuntimeException("Impossible de verrouiller le fichier de log : " . self::$logFile);
         }
@@ -119,18 +136,39 @@ class Logger
     }
 
     // Méthodes de commodité pour différents niveaux de log
+    /** Enregistre un message de type INFO
+     * 
+     * @param string $message Message à enregistrer
+     */
     public static function info($message)
     {
         self::log($message, 'INFO');
     }
 
+    /** Enregistre un message de type WARNING
+     * 
+     * @param string $message Message à enregistrer
+     */
     public static function warning($message)
     {
         self::log($message, 'WARNING');
     }
 
+    /** Enregistre un message de type ERROR
+     * 
+     * @param string $message Message à enregistrer
+     */
     public static function error($message)
     {
         self::log($message, 'ERROR');
+    }
+
+    /** Enregistre un message de type SUCCESS
+     * 
+     * @param string $message Message à enregistrer
+     */
+    public static function success($message)
+    {
+        self::log($message, 'SUCCESS');
     }
 }

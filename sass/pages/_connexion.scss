@@ -78,4 +78,204 @@
       }
     }
   }
+  .modal_conter {
+    background-color: #182828;
+    
+    width: 70%;
+    height: 70%;
+    max-width: 520px;
+    max-height: 520px;
+
+    padding: 30px;
+    margin: 10% auto;
+    border-radius: 20px;
+  
+    
+    .model_title{
+
+      color: $color-font-primary;
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      
+      h2 {
+        @include font($font-monserrat, $font-size-regular, 500, $color-font-primary);
+        text-transform: uppercase;
+      }
+      .close {
+        font-size: $font-size-large;
+        cursor: pointer;
+      }
+    }
+    #formLogin {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      color: $color-font-primary;
+      font-size: $font-size-regular;
+
+      .form_group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+        
+        label {
+          margin-bottom: 5px;
+        }
+        
+        input {
+          width: 80%;
+          padding: 8px;
+          border-radius: 4px;
+          border: 1px solid $color-font-primary;
+          background-color: $color-font-third;
+          color: $color-back-primary;
+        }
+      }
+      #btnSubmitLogin {
+        @include button;
+        margin-top: 20px;
+      }
+    }
+  }
+  .modal_petit {
+    background-color: #182828;
+    
+    width: 70%;
+    height: 100%;
+    max-width: 520px;
+    max-height: 370px;
+    padding: 30px;
+    margin: 10% auto;
+    border-radius: 20px;
+  
+    
+    .model_title{
+
+      color: $color-font-primary;
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      
+      h2 {
+        @include font($font-monserrat, $font-size-regular, 500, $color-font-primary);
+        text-transform: uppercase;
+      }
+      .close {
+        font-size: $font-size-large;
+        cursor: pointer;
+      }
+    }
+    #formLogin {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      color: $color-font-primary;
+      font-size: $font-size-regular;
+
+      .form_group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+        
+        label {
+          margin-bottom: 5px;
+        }
+        
+        input {
+          width: 80%;
+          padding: 8px;
+          border-radius: 4px;
+          border: 1px solid $color-font-primary;
+          background-color: $color-font-third;
+          color: $color-back-primary;
+        }
+      }
+      #btnSubmitLogin {
+        @include button;
+        margin-top: 20px;
+      }
+    }
+  }
+  .modal_moyen {
+    background-color: #182828;
+    
+    width: 70%;
+    height: 70%;
+    max-width: 520px;
+    max-height: 400px;
+
+    padding: 30px;
+    margin: 10% auto;
+    border-radius: 20px;
+  
+    
+    .model_title{
+
+      color: $color-font-primary;
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      
+      h2 {
+        @include font($font-monserrat, $font-size-regular, 500, $color-font-primary);
+        text-transform: uppercase;
+      }
+      .close {
+        font-size: $font-size-large;
+        cursor: pointer;
+      }
+    }
+    #formLogin{
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      color: $color-font-primary;
+      font-size: $font-size-regular;
+
+      .form_group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+        
+        label {
+          margin-bottom: 5px;
+        }
+        
+        input {
+          width: 80%;
+          padding: 8px;
+          border-radius: 4px;
+          border: 1px solid $color-font-primary;
+          background-color: $color-font-third;
+          color: $color-back-primary;
+        }
+      }
+      #btnSubmitLogin {
+        @include button;
+        margin-top: 20px;
+      }
+    }
+  }
 }

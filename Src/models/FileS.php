@@ -23,8 +23,8 @@ class FileS {
   public function __construct(?int $id_fileS, string $fileName, string $filePath, int $service_id)
   {
     $this->setIdFileS($id_fileS);
-    $this->setFileSName($fileName);
-    $this->setFileSPath($filePath);
+    $this->setFileName($fileName);
+    $this->setFilePath($filePath);
     $this->setServiceId($service_id);
   }
 
@@ -40,13 +40,13 @@ class FileS {
    * 
    * @return string
    */
-  public function getFileSName(): string { return $this->fileName;}
+  public function getFileName(): string { return $this->fileName;}
 
   /** Obtient le chemin de l'image
    * 
    * @return string
    */
-  public function getFileSPath(): string { return $this->filePath;}
+  public function getFilePath(): string { return $this->filePath;}
 
   /** Obtient l'identifiant habitat du file
    * 
@@ -76,7 +76,7 @@ class FileS {
    * @param string nom de l'image
    * @throws InvalidArgumentException
    */
-  public function setFileSName(string $fileName): void
+  public function setFileName(string $fileName): void
   {
     $fileName = trim($fileName);
     if (empty($fileName))
@@ -95,7 +95,7 @@ class FileS {
    * @param string chemin de l'image
    * @throws InvalidArgumentException
    */
-  public function setFileSPath(string $filePath): void
+  public function setFilePath(string $filePath): void
   {
     $filePath = trim($filePath);
     if (empty($filePath))

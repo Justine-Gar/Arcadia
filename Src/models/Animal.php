@@ -48,7 +48,7 @@ class Animal {
    * 
    * @return ?int 
    */
-  public function getIdAnimal(): int { return $this->id_animal;}
+  public function getIdAnimal(): ?int { return $this->id_animal;}
 
   /** Obtenir le nom de l'animal
    * 

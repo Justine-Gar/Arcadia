@@ -16,14 +16,15 @@
           <p>Une question ? Nous sommes à votre écoute !</p>
         </div>
       </div>
-
+      <!--Message succès/erreur-->
+      <div id="message-status" class="message-status" ></div>
       <!--FORM-->
       <div class="contact_form_container">
         <form action="#" method="post" id="contactForm">
           <!--action ici /api/contact-->
-          <input type="text" id="title" name="title" required placeholder="Titre de votre demande ..">
-          <input type="email" name="mail" id="mail" required placeholder="Votre email ...">
-          <textarea name="description" id="description" cols="35" rows="10" placeholder="Votre demande ..."></textarea>
+          <input type="text" id="title_contact" name="title_contact" required placeholder="Titre de votre demande ..">
+          <input type="email" name="mail_contact" id="mail_contact" required placeholder="Votre email ...">
+          <textarea name="description_contact" id="description_contact" cols="35" rows="10" placeholder="Votre demande ..."></textarea>
           <button type="submit" class="button_contact">Envoyer</button>
         </form>
       </div>

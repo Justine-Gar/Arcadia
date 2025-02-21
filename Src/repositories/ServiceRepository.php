@@ -57,7 +57,7 @@ class ServiceRepository extends Repositories
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':id_service', $id_service, PDO::PARAM_INT);
       $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-      $stmt->bindValue(':name', $description, PDO::PARAM_STR);
+      $stmt->bindValue(':description', $description, PDO::PARAM_STR);
 
       $stmt->execute();
 

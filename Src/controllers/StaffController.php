@@ -18,7 +18,7 @@ class StaffController extends Controllers
       'title' => 'Administration',
     ];
 
-    return $this->render('employe', $data, 'dashboard');
+    return $this->render('staff', $data, 'dashboard');
   }
 
 

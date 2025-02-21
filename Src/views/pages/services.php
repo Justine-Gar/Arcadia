@@ -16,7 +16,7 @@
 <!--START SECTION SERVICES-->
 <section class="services_container">
 
-   <div class="restauration">
+   <div class="restauration" id="restauration">
       <div class="restauration_text">
          <h2><?php echo isset($services[0]) ? htmlspecialchars($services[0]->getNameService()) : 'Restauration et Pique-nique'; ?></h2>
          <?php if (isset($services[0])):
@@ -31,11 +31,13 @@
       </div>
 
       <div class="restauration_img">
-         <img src="assets/img/zoo/adobestock_702047442.avif" alt="un banc en bois dans un parc verdoyant">
+         <img src="<?= isset($serviceImages[$services[0]->getIdService()])
+                        ? $serviceImages[$services[0]->getIdService()]
+                        : '/assets/upload/services/Restauration_et_Pique-Nique_image_1.avif'?>" alt="un banc en bois dans un parc verdoyant">
       </div>
    </div>
 
-   <div class="guide">
+   <div class="guide" id="visite">
       <div class="guide_text">
          <h2><?php echo isset($services[1]) ? htmlspecialchars($services[1]->getNameService()) : 'Visite guidée'; ?></h2>
          <?php if (isset($services[1])):
@@ -50,11 +52,13 @@
       </div>
 
       <div class="guide_img">
-         <img src="assets/img/zoo/adobestock_677717349.avif" alt="Des enfants écoutent le guide dans la zone jungle">
+         <img src=<?= isset($serviceImages[$services[1]->getIdService()])
+                        ? $serviceImages[$services[1]->getIdService()]
+                        : '/assets/upload/services/Visite_guid_e_image_1.avif'?> alt="Des enfants écoutent le guide dans la zone jungle">
       </div>
    </div>
 
-   <div class="train">
+   <div class="train" id="train">
       <div class="train_text">
          <h2><?php echo isset($services[2]) ? htmlspecialchars($services[2]->getNameService()) : 'Visite en petit train'; ?></h2>
          <?php if (isset($services[2])):
@@ -69,7 +73,9 @@
       </div>
 
       <div class="train_img">
-         <img src="assets/img/zoo/adobestock_294848755.avif" alt="des petits trains pour visiter l'environnement">
+         <img src=<?= isset($serviceImages[$services[2]->getIdService()])
+                        ? $serviceImages[$services[2]->getIdService()]
+                        : '/assets/upload/services/visite_en_petit_train_image_1.avif'?> alt="des petits trains pour visiter l'environnement">
       </div>
    </div>
 

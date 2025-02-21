@@ -9,23 +9,23 @@ use InvalidArgumentException;
 class FileH {
 
   private ?int $id_fileH;
-  private string $file_name;
-  private string $file_path;
-  private int $habitatId;
+  private string $fileName;
+  private string $filePath;
+  private int $habitat_id;
 
   /** Constructeur de la classe FileH
    * 
    * @param ?int $id_fileh est l'identifiant du file
-   * @param string $file_name le nom du file
+   * @param string $fileName le nom du file
    * @param string $file_path le chemin de l'image
    * @param ?int $id_habitat l'identifiant de l'habitat
    */
-  public function __construct(?int $id_fileH, string $file_name, string $file_path, int $habitatId)
+  public function __construct(?int $id_fileH, string $fileName, string $filePath, int $habitat_id)
   {
     $this->setIdFileH($id_fileH);
-    $this->setFileName($file_name);
-    $this->setFilePath($file_path);
-    $this->setHabitatId($habitatId);
+    $this->setFileName($fileName);
+    $this->setFilePath($filePath);
+    $this->setHabitatId($habitat_id);
   }
 
   //GETTERS
@@ -40,19 +40,19 @@ class FileH {
    * 
    * @return string
    */
-  public function getFileName(): string { return $this->file_name;}
+  public function getFileName(): string { return $this->fileName;}
 
   /** Obtient le chemin de l'image
    * 
    * @return string
    */
-  public function getFilePath(): string { return $this->file_path;}
+  public function getFilePath(): string { return $this->filePath;}
 
   /** Obtient l'identifiant habitat du file
    * 
    * @return int
    */
-  public function getHabitatId(): int { return $this->habitatId;}
+  public function getHabitatId(): int { return $this->habitat_id;}
 
 
   //SETTERS
@@ -76,18 +76,18 @@ class FileH {
    * @param string nom de l'image
    * @throws InvalidArgumentException
    */
-  public function setFileName(string $file_name): void
+  public function setFileName(string $fileName): void
   {
-    $file_name = trim($file_name);
-    if (empty($file_name))
+    $fileName = trim($fileName);
+    if (empty($fileName))
     {
       throw new InvalidArgumentException("Le nom ne peut etre vide");
     }
-    if (strlen($file_name) > 50)
+    if (strlen($fileName) > 50)
     {
       throw new InvalidArgumentException("le nom ne peut dépasser 50 caractère");
     }
-    $this->file_name = $file_name;
+    $this->fileName = $fileName;
   }
 
   /** Defini le chemin de l'image
@@ -95,14 +95,14 @@ class FileH {
    * @param string chemin de l'image
    * @throws InvalidArgumentException
    */
-  public function setFilePath(string $file_path): void
+  public function setFilePath(string $filePath): void
   {
-    $file_path = trim($file_path);
-    if (empty($file_path))
+    $filePath = trim($filePath);
+    if (empty($filePath))
     {
       throw new InvalidArgumentException("Le chemin de l'image ne peut etre vide");
     }
-    $this->file_path = $file_path;
+    $this->filePath = $filePath;
   }
 
   /** Defini l'id_habitat de l'animal
@@ -110,8 +110,11 @@ class FileH {
    * @param int id_habitat de table habitat
    * @throws InvalidArgumentException
    */
-  public function setHabitatId(int $habitatId): void
+  public function setHabitatId(int $habitat_id): void
   {
-    $this->habitatId = $habitatId;
+    if ($habitat_id <= 0) {
+      throw new InvalidArgumentException("L'ID de l'habitat doit être un entier positif");
+    }
+    $this->habitat_id = $habitat_id;
   }
 }

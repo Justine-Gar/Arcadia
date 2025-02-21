@@ -12,7 +12,6 @@ class Review  {
   private const VALID_STATUS = [
     "En attente",
     "Approuvé",
-    "A modifié",
     "Rejeté",
     "Supprimer"
   ];

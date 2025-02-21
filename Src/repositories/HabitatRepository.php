@@ -24,19 +24,19 @@ class HabitatRepository extends Repositories
   public function createHabitat(string $name, string $description): Habitat
   {
     try {
-
       $query = "INSERT INTO `habitat` (`name`, `description`) VALUES (:name, :description)";
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-      $stmt->bindValue(':name', $description, PDO::PARAM_STR);
+      $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+      $stmt->execute();
 
       $id_habitat = $this->db->lastInsertId();
 
       return new Habitat($id_habitat, $name, $description);
 
     } catch (PDOException $e) {
-
-      Logger::error("Error lors de la création de l'habitat: " . $e->getMessage());
+      Logger::error("Erreur lors de la création de l'habitat: " . $e->getMessage());
+      throw $e;
     }
   }
 
@@ -50,29 +50,23 @@ class HabitatRepository extends Repositories
   public function updateHabitat(int $id_habitat, string $name, string $description): ?Habitat
   {
     try {
-
       $query = "UPDATE `habitat` SET `name` = :name, `description` = :description WHERE `id_habitat` = :id_habitat";
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':id_habitat', $id_habitat, PDO::PARAM_INT);
       $stmt->bindValue(':name', $name, PDO::PARAM_STR);
-      $stmt->bindValue(':name', $description, PDO::PARAM_STR);
-
+      $stmt->bindValue(':description', $description, PDO::PARAM_STR);
       $stmt->execute();
 
-      //vérification habitat bien modifier
       if($stmt->rowCount() > 0) {
-        
         return new Habitat($id_habitat, $name, $description);
-
       } else {
-
         Logger::warning("Aucun habitat trouvé avec l'ID: $id_habitat");
         return null;
       }
 
     } catch (PDOException $e) {
-
       Logger::error("Erreur lors de la modification de l'habitat: " . $e->getMessage());
+      throw $e;
     }
   }
 
@@ -84,7 +78,6 @@ class HabitatRepository extends Repositories
   public function getHabitat(int $id_habitat): ?Habitat
   {
     try {
-
       $query = "SELECT `id_habitat`, `name`, `description` FROM `habitat` WHERE `id_habitat` = :id_habitat";
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':id_habitat', $id_habitat, PDO::PARAM_INT);
@@ -93,15 +86,13 @@ class HabitatRepository extends Repositories
       $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
       if ($result) {
-
         return new Habitat($result['id_habitat'], $result['name'], $result['description']);
-      } else {
 
-        Logger::info("Aucun habitat trouvé avec l'ID: $id_habitat");
+      } else {
+        Logger::warning("Aucun habitat trouvé avec l'ID: $id_habitat");
         return null;
       }
     } catch (PDOException $e) {
-
       Logger::error("Erreur lors de la récupération de l'habitat: " . $e->getMessage());
       return null;
     }
@@ -111,7 +102,7 @@ class HabitatRepository extends Repositories
    * 
    * @return array Un tableau d'objet d'Habitat
    */
-  public function getAllHabitat(): array
+  public function getAllHabitats(): array
   {
     try {
       $query = "SELECT `id_habitat`, `name`, `description` FROM `habitat`";
@@ -126,7 +117,6 @@ class HabitatRepository extends Repositories
       return $habitats;
 
     } catch (PDOException $e) {
-
       Logger::error("Erreur lors de la récupération de tous les habitats: " . $e->getMessage());
       return [];
     }
@@ -146,18 +136,14 @@ class HabitatRepository extends Repositories
       $stmt->execute();
 
       if ($stmt->rowCount() > 0) {
-
         Logger::info("L'Habitat Id : $id_habitat à bien été supprimé");
         return true;
 
       } else {
-
         Logger::warning("Aucun habitat trouvé avec l'ID $id_habitat pour la suppression.");
         return false;
       }
-      
     } catch (PDOException $e) {
-
       Logger::error("Erreur lors de la suppression de l'habitat: " . $e->getMessage());
       return false;
     }

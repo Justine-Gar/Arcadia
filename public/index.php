@@ -37,9 +37,9 @@ require_once BASE_PATH . '/lib/core/Logger.php';
 
 
 //Connection a la BDD
-\lib\core\Logger::info('Tentative de connexion à la base de données');
+//\lib\core\Logger::info('Tentative de connexion à la base de données');
 $dbConnection = \lib\config\Database::getInstance();
-\lib\core\Logger::info('Connexion à la base de données réussie');
+//\lib\core\Logger::info('Connexion à la base de données réussie');
 
 // Charger la configuration en fonction de l'environnement
 //getenv() recupere les variable d'envirronement (juste changer dans .env la variable APP_ENV)
@@ -64,7 +64,7 @@ try {
 } catch (Exception $e)
 {
   // Ajouter un log pour voir l'URL traitée
-  \lib\core\Logger::error('Erreur lors du traitement de la requête : ' . $e->getMessage() . "\n" . $e->getTraceAsString());
+  //\lib\core\Logger::error('Erreur lors du traitement de la requête : ' . $e->getMessage() . "\n" . $e->getTraceAsString());
   $response = new \lib\core\Response();
   $response->setStatusCode(500);
   $response->json(['error' => 'Une erreur interne est survenue: ' . $e->getMessage()]);

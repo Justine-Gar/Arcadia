@@ -3,14 +3,14 @@
 <header>
   <div class="header_container">
     <div class="logo_arcadia">
-      <img src="assets/img/Fichier 2.png" alt="Logo Arcadia" />
+      <img src="/assets/image/Logo.png" alt="Logo Arcadia" />
     </div>
     <div class="navbar">
       <nav id="menu">
         <ul class="menu_items">
           <li><a href="/" data-item="Accueil">accueil</a></li>
           <li><a href="/services" data-item="Services">services</a></li>
-          <li><a href="/habitats" data-item="Habitats">habitat</a></li>
+          <li><a href="/habitats" data-item="Habitats">habitats</a></li>
           <li><a href="/contact" data-item="Contact">contact</a></li>
           <li>
             <?php if (isset($_SESSION['id_user'])): ?>
@@ -36,14 +36,15 @@
       <span class="close"><i class="ri-close-large-line"></i></span>
       <h2>Connexion</h2>
     </div>
-    <form action="../../controllers/AuthController.php" method="POST" id="formLogin" enctype="multipart/form-data">
+    <div id="login-error"></div>
+    <form method="POST" id="formLogin" enctype="multipart/form-data">
       <div class="form_group">
         <label for="emailuser">Email:</label>
         <input type="email" id="emailuser" name="emailuser" required>
       </div>
       <div class="form_group">
-        <label for="password">Mot de passe:</label>
-        <input type="password" name="password" id="password" required>
+        <label for="passworduser">Mot de passe:</label>
+        <input type="password" name="passworduser" id="passworduser" autocomplete="current-password" required>
       </div>
       <button type="submit" id="btnSubmitLogin">se connecter</button>
     </form>

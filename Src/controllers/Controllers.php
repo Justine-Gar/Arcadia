@@ -2,72 +2,128 @@
 
 namespace App\Controllers;
 
+use lib\core\Logger;
 use lib\core\Response;
+use App\Utils\GlobalDataService;
+use DateTime;
+use App\Repositories\ReportRepository;
 
 class Controllers
 {
-  public function __construct()
-  {
-    
-  }
+    public function __construct() {}
 
-  protected function render($view, $data = [], $domain = 'pages')
-  {
-    return $this->renderView($view, $data, $domain);
-  }
-
-  protected function renderAdmin($view, $data = [])
-  {
-    return $this->renderView($view, $data, 'dashboard/admin');
-  }
-
-  protected function renderVeto($view, $data = [])
-  {
-    return $this->renderView($view, $data, 'dashboard/veto');
-  }
-
-  protected function renderEmploye($view, $data = [])
-  {
-    return $this->renderView($view, $data, 'dashboard/employe');
-  }
-
-  protected function renderView($view, $data = [], $domain = 'pages')
-  {
-    //error_log("Render method called with view: " . $view);
-
-    $viewPath = BASE_PATH . '/src/views';
-    $viewName = ucfirst($view);
-    $viewPath = $viewPath . '/' . $domain . '/' . $viewName . '.php';
-
-    // Débogage : vérifiez si le fichier de vue existe
-    if (!file_exists($viewPath)) {
-      throw new \Exception("Vue non trouvée: $viewPath");
+    protected function render($view, $data = [], $domain = 'pages')
+    {
+        $reportRepository = new ReportRepository();
+        $today = new DateTime();
+        $data['todayReports'] = $reportRepository->getReportsByDate($today);
+        $data['timetables'] = GlobalDataService::getInstance()->getTimetables();
+        return $this->renderView($view, $data, $domain);
     }
 
-    // Extrait les données pour qu'elles soient disponibles dans la vue
-    extract($data);
-
-    // Capture le contenu de la vue
-    ob_start();
-    include $viewPath;
-    $content = ob_get_clean();
-
-    // Débogage : vérifiez le contenu capturé
-    if (empty($content)) {
-      error_log("Le contenu de la vue est vide.");
+    protected function renderAdmin($view, $data = [])
+    {
+        //Logger::info("Tentative renderAdmin avec vue : " . $view);
+        try {
+            $reportRepository = new ReportRepository();
+            $today = new DateTime();
+            $data['todayReports'] = $reportRepository->getReportsByDate($today);
+            $data['timetables'] = GlobalDataService::getInstance()->getTimetables();
+            return $this->renderView($view, $data, 'dashboard/admin');
+        } catch (\Exception $e) {
+            //Logger::error("Erreur dans renderAdmin: " . $e->getMessage());
+            throw $e;
+        }
     }
 
-    // Capture le layout avec le contenu de la vue
-    ob_start();
-    include BASE_PATH . '/src/views/layout.php';
-    $fullContent = ob_get_clean();
+    protected function renderVeto($view, $data = [])
+    {
+        //Logger::info("Tentative renderAdmin avec vue : " . $view);
+        try {
+            $reportRepository = new ReportRepository();
+            $today = new DateTime();
+            $data['todayReports'] = $reportRepository->getReportsByDate($today);
+            $data['timetables'] = GlobalDataService::getInstance()->getTimetables();
+            return $this->renderView($view, $data, 'dashboard/veto');
+        } catch (\Exception $e) {
+            //Logger::error("Erreur dans renderAdmin: " . $e->getMessage());
+            throw $e;
+        }
+    }
 
+    protected function renderStaff($view, $data = [])
+    {
+        //Logger::info("Tentative renderStaff avec vue : " . $view);
+        try {
+            $reportRepository = new ReportRepository();
+            $today = new DateTime();
+            $data['todayReports'] = $reportRepository->getReportsByDate($today);
+            $data['timetables'] = GlobalDataService::getInstance()->getTimetables();
+            return $this->renderView($view, $data, 'dashboard/staff');
+        } catch (\Exception $e) {
+            //Logger::error("Erreur dans renderStaff: " . $e->getMessage());
+            throw $e;
+        }
+    }
 
-     // Crée et retourne une Response
-    $response = new Response();
-    $response->setContent($fullContent);
+    protected function renderView($view, $data = [], $domain = 'pages')
+    {
+        //Logger::info("RenderView appelé avec vue: $view, domaine: $domain");
 
-    return $response;
-  }
+        $viewPath = BASE_PATH . '/src/views';
+        $viewName = $view;
+        $fullPath = $viewPath . '/' . $domain . '/' . $viewName . '.php';
 
+        //Logger::info("Chemin complet: $fullPath");
+
+        if (!file_exists($fullPath)) {
+            //Logger::error("Fichier vue non trouvé: $fullPath");
+            throw new \Exception("Vue non trouvée: $fullPath");
+        }
+
+        // Extraction des données
+        try {
+            extract($data);
+        } catch (\Exception $e) {
+            //Logger::error("Erreur lors de l'extraction des données: " . $e->getMessage());
+            throw $e;
+        }
+
+        // Capture du contenu de la vue
+        ob_start();
+        try {
+            include $fullPath;
+            $content = ob_get_clean();
+        } catch (\Exception $e) {
+            ob_end_clean();
+            //Logger::error("Erreur lors de l'inclusion de la vue: " . $e->getMessage());
+            throw $e;
+        }
+
+        // Vérification du contenu
+        if (empty($content)) {
+            //Logger::warning("Le contenu de la vue est vide: $fullPath");
+        }
+
+        // Layout
+        $layoutPath = BASE_PATH . '/src/views/layout.php';
+        if (!file_exists($layoutPath)) {
+            //Logger::error("Layout non trouvé: $layoutPath");
+            throw new \Exception("Layout non trouvé: $layoutPath");
+        }
+
+        ob_start();
+        try {
+            include $layoutPath;
+            $fullContent = ob_get_clean();
+        } catch (\Exception $e) {
+            ob_end_clean();
+            //Logger::error("Erreur lors de l'inclusion du layout: " . $e->getMessage());
+            throw $e;
+        }
+
+        $response = new Response();
+        $response->setContent($fullContent);
+        return $response;
+    }
 }

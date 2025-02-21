@@ -104,11 +104,11 @@ class Report {
   public function getIdUser(): int { return $this->id_user; }
 
 
-  public function getAnimal(): ?Animal {
+  public function getAnimalReport(): ?Animal {
     return $this->animal;
   }
 
-  public function getUser(): ?User {
+  public function getUserReport(): ?User {
     return $this->user;
   }
 

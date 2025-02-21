@@ -70,8 +70,13 @@ class ReportRepository extends Repositories
   public function updateReport(int $id_report, Health $health_status, DateTime $passage, ?string $prescription, ?string $quantity, ?string $habitat_condition): ?Report
   {
     try {
-      $query = "UPDATE `report` SET `health_status` = :health_status, `passage` = :passage, `prescription` = :prescription, 
-                `quantity` = :quantity, `habitat_condition` = :habitat_condition WHERE `id_report` = :id_report";
+      $query = "UPDATE `report` SET 
+        `health_status` = :health_status, 
+        `passage` = :passage, 
+        `prescription` = :prescription, 
+        `quantity` = :quantity, 
+        `habitat_condition` = :habitat_condition 
+        WHERE `id_report` = :id_report";
       $stmt = $this->db->prepare($query);
       $stmt->bindValue(':id_report', $id_report, PDO::PARAM_INT);
       $stmt->bindValue(':health_status', $health_status->value, PDO::PARAM_STR);
@@ -224,6 +229,7 @@ class ReportRepository extends Repositories
     }
   }
 
+  
   /** Methode pour filtrer les rapport animal et/ou date
    * 
    * @param ?int $id_animal
@@ -232,7 +238,73 @@ class ReportRepository extends Repositories
    */
   public function getFiltrer(?int $id_animal = null, ?DateTime $start_date = null): array
   {
-    return $this->getFilteredReportsPaginated($id_animal, $start_date, 0, PHP_INT_MAX);
+    return $this->getFilteredReportsPaginated(0, PHP_INT_MAX, $id_animal, $start_date, );
+  }
+
+  /** Methode pour recupérer les rapport du jours
+   * 
+   */
+  public function getReportsByDate(DateTime $date): array
+  {
+    try {
+        $query = "SELECT r.*, a.firstname, a.gender, a.species, a.diet, a.reproduction, a.id_habitat, 
+                        u.username, u.email, u.password, u.role
+                  FROM `report` r
+                  LEFT JOIN `animal` a ON r.id_animal = a.id_animal
+                  LEFT JOIN `user` u ON r.id_user = u.id_user
+                  WHERE DATE(r.passage) = :date
+                  ORDER BY r.passage DESC";
+                  
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':date', $date->format('Y-m-d'), PDO::PARAM_STR);
+        $stmt->execute();
+
+        $reports = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $report = new Report(
+                $row['id_report'],
+                Health::from($row['health_status']),
+                new DateTime($row['passage']),
+                $row['prescription'],
+                $row['quantity'],
+                $row['habitat_condition'],
+                $row['id_animal'],
+                $row['id_user']
+            );
+
+            if ($row['firstname']) {
+                $animal = new Animal(
+                    $row['id_animal'],
+                    $row['firstname'],
+                    $row['gender'],
+                    $row['species'],
+                    $row['diet'],
+                    $row['reproduction'],
+                    $row['id_habitat']
+                );
+                $report->setAnimalReport($animal);
+            }
+
+            if ($row['username']) {
+                $user = new User(
+                    $row['id_user'],
+                    $row['username'],
+                    $row['email'],
+                    $row['password'],
+                    Role::from($row['role'])
+                );
+                $report->setUserReport($user);
+            }
+
+            $reports[] = $report;
+        }
+
+        return $reports;
+
+    } catch (PDOException $e) {
+        Logger::error("Erreur lors de la récupération des rapports du jour: " . $e->getMessage());
+        return [];
+    }
   }
 
   /** Methode pour obtenir le nbr de rapport
@@ -270,7 +342,7 @@ class ReportRepository extends Repositories
    * @param int $byPage
    * @return array
    */
-  public function getFilteredReportsPaginated(?int $id_animal = null, ?DateTime $start_date = null, int $offset, int $limit): array
+  public function getFilteredReportsPaginated(int $offset, int $limit, ?int $id_animal = null, ?DateTime $start_date = null, ): array
   {
     try {
         $query = "SELECT r.*, a.firstname, a.gender, a.species, a.diet, a.reproduction, a.id_habitat, 
@@ -346,6 +418,85 @@ class ReportRepository extends Repositories
     } catch (PDOException $e) {
       Logger::error("Erreur lors de la récupérationdes des rapports filtrés et paginés: " . $e->getMessage());
       return [];
+    }
+  }
+
+  public function countTotalReports(): int
+  {
+    try {
+        $query = "SELECT COUNT(*) FROM `report`";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return (int)$stmt->fetchColumn();
+    } catch (PDOException $e) {
+        Logger::error("Erreur lors du comptage des rapports: " . $e->getMessage());
+        return 0;
+    }
+  }
+
+  public function getReportsPaginated(int $offset, int $limit): array
+  {
+    try {
+        $query = "SELECT r.*, a.firstname, a.gender, a.species, a.diet, a.reproduction, a.id_habitat, 
+                        u.username, u.email, u.password, u.role
+                  FROM `report` r
+                  LEFT JOIN `animal` a ON r.id_animal = a.id_animal
+                  LEFT JOIN `user` u ON r.id_user = u.id_user
+                  ORDER BY r.passage DESC
+                  LIMIT :offset, :limit";
+                  
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $reports = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            // Votre code existant pour créer les objets Report
+            $report = new Report(
+                $row['id_report'],
+                Health::from($row['health_status']),
+                new DateTime($row['passage']),
+                $row['prescription'],
+                $row['quantity'],
+                $row['habitat_condition'],
+                $row['id_animal'],
+                $row['id_user']
+            );
+
+            // Ajouter l'animal si présent
+            if ($row['firstname']) {
+                $animal = new Animal(
+                    $row['id_animal'],
+                    $row['firstname'],
+                    $row['gender'],
+                    $row['species'],
+                    $row['diet'],
+                    $row['reproduction'],
+                    $row['id_habitat']
+                );
+                $report->setAnimalReport($animal);
+            }
+
+            // Ajouter l'utilisateur si présent
+            if ($row['username']) {
+                $user = new User(
+                    $row['id_user'],
+                    $row['username'],
+                    $row['email'],
+                    $row['password'],
+                    Role::from($row['role'])
+                );
+                $report->setUserReport($user);
+            }
+
+            $reports[] = $report;
+        }
+
+        return $reports;
+    } catch (PDOException $e) {
+        Logger::error("Erreur lors de la récupération des rapports paginés: " . $e->getMessage());
+        return [];
     }
   }
 }

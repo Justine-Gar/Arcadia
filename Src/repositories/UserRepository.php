@@ -60,14 +60,15 @@ class UserRepository extends Repositories
   public function authenticate(string $email, string $password): User|false
   {
     try {
-
+      Logger::info("Tentative d'authentification pour email: " . $email);
       $query = 'SELECT `id_user`,`username`, `email`, `password`, `role` FROM `user` WHERE email = :email';
       $stmt = $this->db->prepare($query);
       $stmt->bindParam(':email', $email);
       $stmt->execute();
 
       $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+      Logger::info("Utilisateur trouvé: " . ($user ? "oui" : "non"));
+      
       //vérification si user existe et si mdp est correct
       if ($user && $this->passwordHasher->verifyPassword($password, $user['password'])) {
         //$role = $user['role'];
@@ -142,7 +143,7 @@ class UserRepository extends Repositories
     }
   }
 
-  /** Methode pour mettre à jours un User
+  /** Methode pour mettre à jours un User sans mot de passe
    * 
    * @param int $id_user
    * @param string $username
@@ -170,6 +171,41 @@ class UserRepository extends Repositories
     }
   }
 
+  /** Methode pour mettre à jours un User avec son mot de passe
+   * 
+   * @param int $id_user
+   * @param string $username
+   * @param string $email
+   * @param Role $role
+   * @param string $hashedPassword le mdp hashé
+   * @return bool
+   */
+  public function updateUserWithPassword(int $id_user, string $username, string $email, Role $role, string $hashedPassword): bool
+  {
+    try {
+      $query = "UPDATE `user` 
+                SET `username` = :username, 
+                    `email` = :email, 
+                    `role` = :role,
+                    `password` = :password 
+                WHERE `id_user` = :id_user";
+      
+      $stmt = $this->db->prepare($query);
+      $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+      $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+      $stmt->bindValue(':role', $role->value, PDO::PARAM_STR);
+      $stmt->bindValue(':password', $hashedPassword, PDO::PARAM_STR);
+      $stmt->bindValue(':id_user', $id_user, PDO::PARAM_INT);
+      
+      return $stmt->execute();
+
+    } catch (PDOException $e) {
+        Logger::error("Erreur lors de la mise à jour de l'utilisateur avec mot de passe: " . $e->getMessage());
+        return false;
+    }
+  }
+  
+
   /** Méthode pour supprimer un user
    * 
    * @param int $id_user
@@ -190,5 +226,27 @@ class UserRepository extends Repositories
       Logger::error("Erreur lors de la suppression de l'user: " . $e->getMessage());
       return false;
     }
+  }
+
+  /** Methode pour vérifier si user existe
+   * 
+   * @param string $username
+   * @param string $email
+   * @return bool
+   */
+  public function userExists(string $username, string $email): bool
+  {
+      try {
+          $query = "SELECT COUNT(*) FROM `user` WHERE `username` = :username OR `email` = :email";
+          $stmt = $this->db->prepare($query);
+          $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+          $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+          $stmt->execute();
+
+          return $stmt->fetchColumn() > 0;
+      } catch (PDOException $e) {
+          Logger::error("Erreur lors de la vérification de l'existence de l'utilisateur: " . $e->getMessage());
+          throw $e;
+      }
   }
 }
