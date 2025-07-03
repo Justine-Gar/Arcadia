@@ -47,6 +47,7 @@ function getJS($filename) {
   </main>
 
   <?php require_once __DIR__ . '/partials/_footer.php';?>
+  <?php require_once __DIR__ . '/partials/_modalAnimal.php';?>
 
   <script src="/js/burger.js"></script>
   <script src="/js/homes.js"></script>
@@ -63,13 +64,7 @@ function getJS($filename) {
   <script src="/js/contact.js"></script>
   <script src="/js/upload.js"></script>
   <script src="/js/review.js"></script>
-
-  <script>
-    console.log('Page chargée');
-    document.querySelector('button[data-type="modify"]')?.addEventListener('click', () => {
-        console.log('Click test');
-    });
-  </script>
+  <script src="/js/modalAnimal.js"></script>
   
 </body>
 </html>

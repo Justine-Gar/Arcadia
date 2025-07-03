@@ -1,0 +1,418 @@
+@use "../abstract/all" as *;
+
+$modal-primary-color: $color-font-primary; // #FFE888
+$modal-text-primary: $color-back-primary; // #182828
+$modal-text-secondary: $color-font-secondary; // #BABCBF
+$modal-text-light: $color-back-secondary; // #254040
+$modal-background-light: $color-font-third; // #f1f0f2
+$modal-success-color: #27ae60;
+$modal-warning-color: #f39c12;
+$modal-danger-color: #e74c3c;
+
+// Tailles et espacements
+$modal-border-radius: 15px;
+$modal-border-radius-small: 10px;
+$modal-border-radius-circle: 50%;
+$modal-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+$modal-box-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+$modal-transition-duration: 0.3s;
+$modal-transition-fast: 0.5s;
+
+// Mixins spécifiques à la modal animal
+@mixin modal-transition($property: all, $duration: $modal-transition-duration, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+@mixin modal-button-style($bg-color: $color-back-primary-alpha, $hover-bg: $color-back-primary) {
+  @include button($font-monserrat, $bg-color, $color-font-primary, 10px, $modal-border-radius-circle);
+  width: 50px;
+  height: 50px;
+  @include flex-center;
+  @include modal-transition(background-color);
+  
+  &:hover {
+    background: $hover-bg;
+  }
+}
+
+@mixin modal-carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  @include modal-button-style();
+  font-size: 18px;
+  z-index: 100;
+}
+
+@mixin modal-info-section {
+  margin-bottom: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: $modal-border-radius-small;
+  box-shadow: $modal-box-shadow-light;
+  @include modal-transition(transform, 0.2s);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  h3 {
+    @include font($font-monserrat, $font-size-medium, bold, $modal-text-primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-left: 4px solid $modal-primary-color;
+    padding-left: 15px;
+  }
+}
+
+@mixin modal-health-status($color) {
+  background: lighten($color, 45%);
+  border-left-color: $color;
+}
+
+@mixin modal-status-badge($color) {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  @include font($font-monserrat, $font-size-xxs, bold, $color);
+  text-transform: uppercase;
+  background: lighten($color, 40%);
+}
+
+@mixin modal-responsive-base {
+  @include respond-to(mobile) {
+    .modal-animal {
+      width: 95%;
+      margin: 5% auto;
+      max-height: 95vh;
+    }
+
+    .modal-animal-content {
+      flex-direction: column;
+      height: auto;
+    }
+
+    .carousel-section {
+      height: 300px;
+    }
+
+    .info-section {
+      padding: 20px;
+    }
+
+    .animal-name {
+      font-size: $font-size-large;
+    }
+
+    .info-item {
+      @include flex-column-center;
+      align-items: flex-start;
+    }
+
+    .info-label {
+      min-width: auto;
+      margin-bottom: 5px;
+    }
+  }
+
+  @include respond-to(tablet) {
+    .modal-animal {
+      width: 85%;
+    }
+  }
+}
+
+@mixin modal-animations {
+  @keyframes fadeInAnimal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInAnimal {
+    from { 
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to { 
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInUpAnimal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spinAnimal {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+}
+
+// Inclusion des animations
+@include modal-animations;
+
+// Modal Animal - Classe principale différente
+.modal-animal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-back-primary-alpha;
+  overflow: auto;
+
+  &.show {
+    display: block;
+    animation: fadeInAnimal $modal-transition-duration ease;
+  }
+}
+
+.modal-animal {
+  background-color: white;
+  margin: 2% auto;
+  padding: 0;
+  border-radius: $modal-border-radius;
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  position: relative;
+  overflow: hidden;
+  box-shadow: $modal-box-shadow;
+
+  &.show {
+    animation: slideInAnimal $modal-transition-duration ease;
+  }
+
+  &:focus-within {
+    outline: 2px solid $modal-primary-color;
+    outline-offset: 2px;
+  }
+}
+
+// Bouton fermer - spécifique à la modal animal
+.modal-animal .close {
+  color: $color-font-primary;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 35px;
+  font-weight: bold;
+  z-index: 1001;
+  cursor: pointer;
+  background: $color-back-primary-alpha;
+  width: 45px;
+  height: 45px;
+  border-radius: $modal-border-radius-circle;
+  @include flex-center;
+  @include modal-transition(background-color);
+
+  &:hover {
+    background: $color-back-primary;
+  }
+
+  &:focus {
+    outline: 2px solid $modal-primary-color;
+    outline-offset: 2px;
+  }
+}
+
+// Conteneur principal avec flex
+.modal-animal-content {
+  @include flex-row-center;
+  height: 80vh;
+  min-height: 500px;
+}
+
+// Section carrousel (gauche)
+.carousel-section {
+  flex: 1;
+  position: relative;
+  background: $color-back-primary;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slides {
+  @include flex-row-center;
+  @include modal-transition(transform, $modal-transition-fast);
+  height: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  @include flex-center;
+  position: relative;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  // Loader pour les images
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid $color-back-secondary;
+    border-top: 3px solid $color-font-primary;
+    border-radius: 50%;
+    animation: spinAnimal 1s linear infinite;
+  }
+  
+  &.loaded::before {
+    display: none;
+  }
+}
+
+// Boutons carrousel
+.carousel-btn {
+  @include modal-carousel-button;
+
+  &.prev {
+    left: 15px;
+  }
+
+  &.next {
+    right: 15px;
+  }
+
+  &:focus {
+    outline: 2px solid $modal-primary-color;
+    outline-offset: 2px;
+  }
+}
+
+// Indicateurs
+.carousel-indicators {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  @include flex-row-center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: $modal-border-radius-circle;
+  background: $color-back-secondary;
+  cursor: pointer;
+  @include modal-transition(background-color);
+
+  &.active {
+    background: $color-font-primary;
+  }
+
+  &:focus {
+    outline: 2px solid $modal-primary-color;
+    outline-offset: 2px;
+  }
+}
+
+// Section informations (droite)
+.info-section {
+  flex: 1;
+  padding: 30px;
+  background: $modal-background-light;
+  overflow-y: auto;
+}
+
+.animal-header {
+  border-bottom: 3px solid $modal-primary-color;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+}
+
+.animal-name {
+  @include font($font-dimsum, $font-size-xlarge, bold, $modal-text-primary);
+  margin: 0 0 10px 0;
+}
+
+.animal-species {
+  @include font($font-monserrat, $font-size-medium, normal, $modal-text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+// Sections d'informations
+.info-group {
+  @include modal-info-section;
+  
+  // Animation d'apparition
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUpAnimal 0.6s ease forwards;
+  
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+.info-item {
+  @include flex-start-center;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.info-label {
+  @include font($font-monserrat, $font-size-small, bold, $modal-text-primary);
+  min-width: 120px;
+  margin-right: 10px;
+}
+
+.info-value {
+  @include font($font-monserrat, $font-size-small, normal, $modal-text-light);
+  flex: 1;
+}
+
+// État de l'animal
+.health-status {
+  @include modal-health-status($modal-success-color);
+
+  &.warning {
+    @include modal-health-status($modal-warning-color);
+  }
+
+  &.critical {
+    @include modal-health-status($modal-danger-color);
+  }
+}
+
+// Badges d'état
+.status-badge {
+  &.healthy {
+    @include modal-status-badge($modal-success-color);
+  }
+  
+  &.warning {
+    @include modal-status-badge($modal-warning-color);
+  }
+  
+  &.critical {
+    @include modal-status-badge($modal-danger-color);
+  }
+}
+
+@include modal-responsive-base;

@@ -8,6 +8,7 @@
 @use 'pages/admindashborad' as *;
 @use 'layout/header' as *;
 @use 'layout/footer' as *;
+@use 'components/modal-animal' as *;
 
 html, body {
   
